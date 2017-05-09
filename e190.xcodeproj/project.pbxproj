@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */; };
+		CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */; };
 		CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120B1EC0A95100BC2556 /* AppDelegate.swift */; };
 		CECC120E1EC0A95100BC2556 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120D1EC0A95100BC2556 /* ViewController.swift */; };
 		CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC120F1EC0A95100BC2556 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableView.swift; path = Screens/Menu/SideMenuTableView.swift; sourceTree = "<group>"; };
 		CECC12081EC0A95100BC2556 /* e190.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e190.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC120B1EC0A95100BC2556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECC120D1EC0A95100BC2556 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,37 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CEA3E9F11EC0B81B00778318 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CEA3E9F41EC0F10800778318 /* Menu */,
+				CEA3E9F31EC0B84500778318 /* login */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		CEA3E9F21EC0B82D00778318 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		CEA3E9F31EC0B84500778318 /* login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
+		CEA3E9F41EC0F10800778318 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		CECC11FF1EC0A95100BC2556 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +111,8 @@
 		CECC120A1EC0A95100BC2556 /* e190 */ = {
 			isa = PBXGroup;
 			children = (
+				CEA3E9F21EC0B82D00778318 /* Network */,
+				CEA3E9F11EC0B81B00778318 /* Screens */,
 				CECC120B1EC0A95100BC2556 /* AppDelegate.swift */,
 				CECC120D1EC0A95100BC2556 /* ViewController.swift */,
 				CECC120F1EC0A95100BC2556 /* Main.storyboard */,
@@ -123,6 +158,8 @@
 				TargetAttributes = {
 					CECC12071EC0A95100BC2556 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = LK6M6GLJ39;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -213,6 +250,7 @@
 			files = (
 				CECC120E1EC0A95100BC2556 /* ViewController.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
+				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +374,7 @@
 			baseConfigurationReference = DE42778C8B306481AE7A4272 /* Pods-e190.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LK6M6GLJ39;
 				INFOPLIST_FILE = e190/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gntec.e190.e190;
@@ -349,6 +388,7 @@
 			baseConfigurationReference = 2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LK6M6GLJ39;
 				INFOPLIST_FILE = e190/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gntec.e190.e190;

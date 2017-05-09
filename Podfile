@@ -13,10 +13,7 @@ pod 'Alamofire', '~> 4.4'
 pod 'AlamofireObjectMapper', '~> 4.1'
 pod 'AlamofireImage', '~> 3.2'
 pod 'AlamofireObjectMapper', '~> 4.1'
-pod 'GoogleMaps', '~> 2.1'
-pod 'GooglePlacesAPI', '~> 1.1'
-pod 'GooglePlacesAutocomplete', '~> 0.3'
-pod 'ImageSlideshow', '~> 1.2'
+pod 'SideMenu', '~> 2.3'
 
 end
 
