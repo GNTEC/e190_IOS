@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class customImageView: UIImageView {
+class CustomImageView: UIImageView {
 
     @IBInspectable
     var radio: CGFloat = 0.0 {

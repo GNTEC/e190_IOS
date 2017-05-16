@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="szL-b7-Nsx">
             <objects>
-                <viewController storyboardIdentifier="loginViewController" id="xO5-ao-yXs" customClass="loginViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="xO5-ao-yXs" customClass="LoginViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QfG-rN-0HR"/>
                         <viewControllerLayoutGuide type="bottom" id="mBW-9r-eEH"/>
@@ -38,13 +38,13 @@
                                 <rect key="frame" x="16" y="286" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fng-8o-j0v">
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="taY-aF-RJ4">
                                 <rect key="frame" x="16" y="366" width="51" height="31"/>
@@ -64,7 +64,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BCp-av-SHc" kind="show" id="Ead-tu-eJv"/>
+                                    <action selector="btnlogon:" destination="xO5-ao-yXs" eventType="touchUpInside" id="czG-g4-btO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hid-Ff-q4O">
@@ -75,6 +75,9 @@
                                 <state key="normal" title="CRIAR NOVA CONTA" backgroundImage="ui__botão_novo_cadastro_preto">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnNovaConta:" destination="xO5-ao-yXs" eventType="touchUpInside" id="6zn-Nr-y8f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3P-Ky-eOl">
                                 <rect key="frame" x="229" y="367" width="130" height="28"/>
@@ -82,6 +85,9 @@
                                 <state key="normal" title="Esqueci minha Senha">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnEsqueciSenha:" destination="xO5-ao-yXs" eventType="touchUpInside" id="zlL-8u-sKp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,6 +119,11 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="swLembraLogin" destination="d36-2k-i3E" id="jLY-1T-FfX"/>
+                        <outlet property="txtEmail" destination="gBv-sh-RId" id="VAG-In-cip"/>
+                        <outlet property="txtSenha" destination="Fng-8o-j0v" id="4Gj-yX-YZR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94P-2P-jvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="-398" y="10"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Controller-->
         <scene sceneID="N3u-qc-4N8">
             <objects>
-                <viewController id="KN2-Bt-1H3" customClass="ViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainController" id="KN2-Bt-1H3" customClass="MainController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g5P-96-Vac"/>
                         <viewControllerLayoutGuide type="bottom" id="yL7-LY-sSw"/>

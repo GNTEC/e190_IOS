@@ -10,6 +10,8 @@
 		A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */; };
 		CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */; };
 		CE6963941EC39149007C744E /* customImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6963931EC39149007C744E /* customImageView.swift */; };
+		CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */; };
+		CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */; };
 		CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */; };
 		CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120B1EC0A95100BC2556 /* AppDelegate.swift */; };
 		CECC120E1EC0A95100BC2556 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120D1EC0A95100BC2556 /* MainController.swift */; };
@@ -24,6 +26,8 @@
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6963931EC39149007C744E /* customImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customImageView.swift; path = Comum/customImageView.swift; sourceTree = "<group>"; };
+		CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiLogin.swift; path = Network/ApiLogin.swift; sourceTree = "<group>"; };
+		CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressIndicator.swift; path = Comum/ProgressIndicator.swift; sourceTree = "<group>"; };
 		CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableView.swift; path = Screens/Menu/SideMenuTableView.swift; sourceTree = "<group>"; };
 		CECC12081EC0A95100BC2556 /* e190.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e190.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC120B1EC0A95100BC2556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			children = (
 				CE6963931EC39149007C744E /* customImageView.swift */,
 				CEDF6FAC1EC5FF4400881752 /* RoundedButton.swift */,
+				CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */,
 			);
 			name = Comum;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 		CEA3E9F21EC0B82D00778318 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -285,6 +291,8 @@
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
+				CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */,
+				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
 			);

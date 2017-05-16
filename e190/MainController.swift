@@ -11,11 +11,10 @@ import SideMenu
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MainController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager:CLLocationManager!
-    //var mapView:MKMapView!
     
     override func viewDidLoad() {
         
@@ -45,7 +44,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         imageView.contentMode = .scaleAspectFit
         imageView.center = (navigationController?.navigationBar.center)! //the put your image at the center
         
-        let image = UIImage(named: "ui_ícone_logo")
+        let image  = UIImage(named: "ui_ícone_logo")
         
         imageView.image = image
         
