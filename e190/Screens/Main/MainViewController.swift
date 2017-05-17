@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  e190
 //
-//  Created by User on 08/05/17.
+//  Created by User on 16/05/17.
 //  Copyright © 2017 GNTEC. All rights reserved.
 //
 
@@ -11,22 +11,24 @@ import SideMenu
 import MapKit
 import CoreLocation
 
-class MainController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+
+class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    
     var locationManager:CLLocationManager!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        setupSideMenu()
-        setupUI()
+
+        //setupUI()
         setUpMaps()
+        setupSideMenu()
+    
     }
-    
+
     func setUpMaps () {
-    
+        
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -35,21 +37,20 @@ class MainController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         mapView.showsUserLocation = true
-    
+ 
     }
     
     func setupUI() {
-    
+
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
         imageView.contentMode = .scaleAspectFit
         imageView.center = (navigationController?.navigationBar.center)! //the put your image at the center
         
-        let image  = UIImage(named: "ui_ícone_logo")
-        
-        imageView.image = image
-        
-        navigationItem.titleView = imageView
+        let image  = UIImage(named: "ui_ícone_logo")
     
+        imageView.image = image
+        navigationItem.titleView = imageView
+
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -57,20 +58,25 @@ class MainController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         if(!locations.isEmpty)
         {
             let myLocation = locations[0] as CLLocation
-            
             mapView.setRegion(MKCoordinateRegionMake(myLocation.coordinate, MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
+            
         }
     }
     
-
     fileprivate func setupSideMenu() {
+        
         // Define the menus
+        
         SideMenuManager.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
         
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         
     }
-
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
-

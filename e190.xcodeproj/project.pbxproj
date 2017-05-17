@@ -12,9 +12,9 @@
 		CE6963941EC39149007C744E /* customImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6963931EC39149007C744E /* customImageView.swift */; };
 		CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */; };
 		CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */; };
+		CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8DE1ECB80D700C4BBF5 /* MainViewController.swift */; };
 		CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */; };
 		CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120B1EC0A95100BC2556 /* AppDelegate.swift */; };
-		CECC120E1EC0A95100BC2556 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120D1EC0A95100BC2556 /* MainController.swift */; };
 		CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC120F1EC0A95100BC2556 /* Main.storyboard */; };
 		CECC12161EC0A95100BC2556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC12141EC0A95100BC2556 /* LaunchScreen.storyboard */; };
 		CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF6FAC1EC5FF4400881752 /* RoundedButton.swift */; };
@@ -28,10 +28,10 @@
 		CE6963931EC39149007C744E /* customImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customImageView.swift; path = Comum/customImageView.swift; sourceTree = "<group>"; };
 		CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiLogin.swift; path = Network/ApiLogin.swift; sourceTree = "<group>"; };
 		CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressIndicator.swift; path = Comum/ProgressIndicator.swift; sourceTree = "<group>"; };
+		CE86D8DE1ECB80D700C4BBF5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Screens/Main/MainViewController.swift; sourceTree = "<group>"; };
 		CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableView.swift; path = Screens/Menu/SideMenuTableView.swift; sourceTree = "<group>"; };
 		CECC12081EC0A95100BC2556 /* e190.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e190.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECC120B1EC0A95100BC2556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CECC120D1EC0A95100BC2556 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		CECC12101EC0A95100BC2556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CECC12151EC0A95100BC2556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECC12171EC0A95100BC2556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 		CEDF6FB01EC654B300881752 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CECC120D1EC0A95100BC2556 /* MainController.swift */,
+				CE86D8DE1ECB80D700C4BBF5 /* MainViewController.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -287,7 +287,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CECC120E1EC0A95100BC2556 /* MainController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
@@ -295,6 +294,7 @@
 				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
+				CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

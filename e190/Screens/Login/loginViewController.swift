@@ -86,32 +86,48 @@ class LoginViewController: UIViewController {
         
         Alamofire.request(urlString, method: .post, parameters: parametros,encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
-            switch response.result {
-            case .success:
-                print(response)
+            
+            if let status = response.response?.statusCode {
                 
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as UIViewController
-                self.present(vc, animated: true, completion: nil)
+                switch(status){
+                case 400:
+                    if let result = response.result.value {
+                    
+                        
+                        let msgRet = result as? NSDictionary
+                        let strMessegeRet = msgRet?["Message"] as! String
+                        
+                        self.indicator!.stop()
+                        
+                        // create the alert
+                        let alert = UIAlertController(title: "Erro", message: strMessegeRet, preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        // add an action (button)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        
+                        // show the alert
+                        self.present(alert, animated: true, completion: nil)
+
+                    }
+                    
+                default:
+
+                    let Result = response.result.value
+                    let objUser = Result as? NSDictionary
+                    print(objUser)
+                    
+                    self.indicator!.stop()
+                    
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as UIViewController
+                    self.present(vc, animated: true, completion: nil)
                 
-                self.indicator!.stop()
-                break
-            case .failure(let error):
-                
-                print(error)
-                self.indicator!.stop()
-                
-                // create the alert
-                let alert = UIAlertController(title: "Erro", message: "Login ou Senha Inválidos", preferredStyle: UIAlertControllerStyle.alert)
-                
-                // add an action (button)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                
-                // show the alert
-                self.present(alert, animated: true, completion: nil)
+                    break
+                    
+                }
             }
+
         }
-        
     }
     
     @IBAction func btnEsqueciSenha(_ sender: Any) {
