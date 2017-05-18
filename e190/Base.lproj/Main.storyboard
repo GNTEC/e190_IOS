@@ -231,14 +231,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYC-mu-Q2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2180" y="-240.62968515742131"/>
+            <point key="canvasLocation" x="2092" y="9"/>
         </scene>
         <!--Side Menu Table View-->
         <scene sceneID="TJK-Gp-ME1">
             <objects>
                 <tableViewController id="MJn-g9-4ST" customClass="SideMenuTableView" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" id="J0Q-RA-ScZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="V60-Yk-P0E">
@@ -604,11 +604,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Caq-E4-D74"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="920"/>
+                    <size key="freeformSize" width="375" height="810"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-8P-den" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="-241.97901049475263"/>
+            <point key="canvasLocation" x="2916" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KCu-u3-duO">

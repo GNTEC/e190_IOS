@@ -30,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
         */
         
-        let x = UIDevice.current.identifierForVendor!.uuidString
-        
         return true
     }
 

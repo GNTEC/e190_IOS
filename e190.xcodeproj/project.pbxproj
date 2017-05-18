@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */; };
+		CE1539A21ECE2BF2006DB75B /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1539A11ECE2BF2006DB75B /* Usuario.swift */; };
 		CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */; };
 		CE6963941EC39149007C744E /* customImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6963931EC39149007C744E /* customImageView.swift */; };
 		CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1539A11ECE2BF2006DB75B /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Usuario.swift; path = Entidades/Usuario.swift; sourceTree = "<group>"; };
 		CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6963931EC39149007C744E /* customImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customImageView.swift; path = Comum/customImageView.swift; sourceTree = "<group>"; };
 		CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiLogin.swift; path = Network/ApiLogin.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CEDF6FAE1EC6519400881752 /* loginViewController.swift */,
+				CE1539A11ECE2BF2006DB75B /* Usuario.swift */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
 				CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */,
 				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
+				CE1539A21ECE2BF2006DB75B /* Usuario.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
 				CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */,
