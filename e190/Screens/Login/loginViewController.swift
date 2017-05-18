@@ -15,21 +15,24 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
-    @IBOutlet weak var swLembraLogin: UILabel!
-    
-    
+    @IBOutlet weak var swLembraLogin: UISwitch!
+
+
     var indicator:ProgressIndicator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if (UserDefaults.standard.value(forKey: "email") != nil) {
+        
+            txtEmail.text = UserDefaults.standard.value(forKey: "email") as! String
+            txtSenha.text = UserDefaults.standard.value(forKey: "senha") as! String
+        }
+    
         self.hideKeyboardWhenTappedAround()
-        
-        
     }
     
     @IBAction func btnlogon(_ sender: Any) {
-        
         
         // VEIRICA SE OS CAMPOS OBRIGATÓRIOS FORAM PREENCHIDOS
         if txtEmail.text == "" {
@@ -118,10 +121,27 @@ class LoginViewController: UIViewController {
                     
                     self.indicator!.stop()
                     
+                    if self.swLembraLogin.isOn == true {
+                        
+                        UserDefaults.standard.setValue(self.txtEmail.text, forKey: "email")
+                        UserDefaults.standard.setValue(self.txtSenha.text, forKey: "senha")
+                    }
+                    else {
+                        
+                        UserDefaults.standard.setValue("", forKey: "email")
+                        UserDefaults.standard.setValue("", forKey: "senha")
+                    }
+                    
+                    
+                    self.performSegue(withIdentifier: "segueLogin", sender: nil)
+                    
+                    
+                    /*
                     let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                     let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as UIViewController
                     self.present(vc, animated: true, completion: nil)
-                
+                    */
+ 
                     break
                     
                 }

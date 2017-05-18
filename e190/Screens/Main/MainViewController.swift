@@ -21,7 +21,7 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //setupUI()
+        setupUI()
         setUpMaps()
         setupSideMenu()
     
@@ -42,11 +42,11 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
     func setupUI() {
 
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
         imageView.contentMode = .scaleAspectFit
         imageView.center = (navigationController?.navigationBar.center)! //the put your image at the center
         
-        let image  = UIImage(named: "ui_ícone_logo")
+        let image  = UIImage(named: "ui__ícone_logo")
     
         imageView.image = image
         navigationItem.titleView = imageView

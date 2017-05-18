@@ -120,10 +120,10 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="swLembraLogin" destination="d36-2k-i3E" id="jLY-1T-FfX"/>
+                        <outlet property="swLembraLogin" destination="taY-aF-RJ4" id="Wsu-w7-7AI"/>
                         <outlet property="txtEmail" destination="gBv-sh-RId" id="VAG-In-cip"/>
                         <outlet property="txtSenha" destination="Fng-8o-j0v" id="4Gj-yX-YZR"/>
-                        <segue destination="a1m-FN-q5O" kind="show" id="Ast-z0-e8w"/>
+                        <segue destination="a1m-FN-q5O" kind="show" identifier="segueLogin" id="Ast-z0-e8w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94P-2P-jvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,13 +194,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k9I-R0-osf">
-                        <barButtonItem key="leftBarButtonItem" image="ui_ícone_menu" style="plain" id="YzI-JY-9Ma">
+                        <barButtonItem key="leftBarButtonItem" image="ui__ícone_menu" style="plain" id="YzI-JY-9Ma">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="LLL-T3-E6D" kind="presentation" id="2os-dc-PB0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="     " style="plain" id="qo4-6Y-4D8"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="     " style="plain" id="qo4-6Y-4D8">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="2mp-mX-XWx" id="v3G-op-3ff"/>
@@ -221,7 +223,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="MJn-g9-4ST" kind="relationship" relationship="rootViewController" id="eXc-fh-4km"/>
@@ -246,7 +248,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui__menu_lateral" translatesAutoresizingMaskIntoConstraints="NO" id="ErW-mj-mSH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="136"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_ícone_perfil" translatesAutoresizingMaskIntoConstraints="NO" id="41S-W6-VhS" customClass="customImageView" customModule="e190" customModuleProvider="target">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui__ícone_perfil" translatesAutoresizingMaskIntoConstraints="NO" id="41S-W6-VhS" customClass="customImageView" customModule="e190" customModuleProvider="target">
                                     <rect key="frame" x="147" y="8" width="80" height="80"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="80" id="ZXj-hL-Z4C"/>
@@ -642,8 +644,10 @@
         <image name="ui__ícone_dúvidas_preto" width="30" height="46"/>
         <image name="ui__ícone_emergência_médica_preto" width="50" height="42"/>
         <image name="ui__ícone_home_preto" width="25" height="23"/>
+        <image name="ui__ícone_menu" width="25" height="25"/>
         <image name="ui__ícone_notificação_preto" width="41" height="48"/>
         <image name="ui__ícone_pagamentos_preto" width="50" height="31"/>
+        <image name="ui__ícone_perfil" width="96" height="96"/>
         <image name="ui__ícone_perfil_preto" width="45" height="46"/>
         <image name="ui__ícone_sair_preto" width="47" height="47"/>
         <image name="ui__ícone_serviços_adicionais_preto" width="43" height="46"/>
@@ -652,7 +656,5 @@
         <image name="ui_botao_ajudar_new_vermelho" width="209" height="209"/>
         <image name="ui_botâo_panico_vermelho" width="209" height="209"/>
         <image name="ui_botâo_socorro_vermelho" width="209" height="209"/>
-        <image name="ui_ícone_menu" width="25" height="25"/>
-        <image name="ui_ícone_perfil" width="96" height="96"/>
     </resources>
 </document>

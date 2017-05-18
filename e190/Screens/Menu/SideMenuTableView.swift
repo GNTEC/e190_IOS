@@ -36,6 +36,8 @@ class SideMenuTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         NSLog("You selected cell number: \(indexPath.row)!")
         
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         if indexPath.row == 9 {
             
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
