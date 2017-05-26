@@ -12,9 +12,7 @@ def common_targets()
 pod 'Alamofire', '~> 4.4'
 pod 'AlamofireObjectMapper', '~> 4.1'
 pod 'AlamofireImage', '~> 3.2'
-pod 'AlamofireObjectMapper', '~> 4.1'
 pod 'SideMenu', '~> 2.3'
-pod 'NMPopUpViewSwift', '~> 4.0'
 
 end
 

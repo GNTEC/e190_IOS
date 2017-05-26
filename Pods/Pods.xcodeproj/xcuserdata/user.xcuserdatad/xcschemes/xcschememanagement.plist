@@ -19,16 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>NMPopUpViewSwift-NMPopUpViewSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>NMPopUpViewSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,16 +37,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>064E6491C69C907F76786FA21D3C9C23</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>0D0E7F12AA75CB3D5F14B44831F2F1EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2F5622F3B18DF497981AB58C6D1FC72F</key>
 		<dict>
 			<key>primary</key>
@@ -77,12 +57,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF57A62361D38AA46155DC1C857A9FB8</key>
+		<key>B78C3B867FD0A748AEEAB37525AFAE1D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C4496D5B7A7EFA690C4A215CB51012CF</key>
+		<key>EED3784E616239E946DF3EC2F9028EBB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

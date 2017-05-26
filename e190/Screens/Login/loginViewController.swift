@@ -8,27 +8,22 @@
 
 import UIKit
 import Alamofire
-import NMPopUpViewSwift
 
 class LoginViewController: UIViewController {
-    
-    
+        
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     @IBOutlet weak var swLembraLogin: UISwitch!
-    
-    var popViewController : PopUpViewControllerSwift!
-
 
     var indicator:ProgressIndicator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (UserDefaults.standard.value(forKey: "email") != nil) {
+        if (UserDefaults.standard.object(forKey: "email") != nil) {
         
-            txtEmail.text = UserDefaults.standard.value(forKey: "email") as? String
-            txtSenha.text = UserDefaults.standard.value(forKey: "senha") as? String
+            txtEmail.text = UserDefaults.standard.object(forKey:"email") as? String
+            txtSenha.text = UserDefaults.standard.object(forKey: "senha") as? String
         }
     
         self.hideKeyboardWhenTappedAround()
@@ -71,7 +66,7 @@ class LoginViewController: UIViewController {
 
             "email": self.txtEmail.text!,
             "senha": self.txtSenha.text!,
-            "serialChip": "89551018439007564806"
+            "serialChip": "89551020407005425391"
         //let x = UIDevice.current.identifierForVendor!.uuidString
         ]
 
@@ -131,8 +126,8 @@ class LoginViewController: UIViewController {
                     }
                     else {
                         
-                        UserDefaults.standard.setValue("", forKey: "email")
-                        UserDefaults.standard.setValue("", forKey: "senha")
+                        UserDefaults.standard.removeObject(forKey: "email")
+                        UserDefaults.standard.removeObject(forKey: "senha")
                     }
                     
                     self.performSegue(withIdentifier: "segueLogin", sender: nil)
@@ -147,39 +142,19 @@ class LoginViewController: UIViewController {
                     
                 }
             }
-
         }
     }
     
     @IBAction func btnEsqueciSenha(_ sender: Any)
     {
-    
-        let bundle = Bundle(for: PopUpViewControllerSwift.self)
-        if (UIDevice.current.userInterfaceIdiom == .pad)
-        {
-            self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPad", bundle: bundle)
-            self.popViewController.title = "This is a popup view"
-            self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-        } else
-        {
-            if UIScreen.main.bounds.size.width > 320 {
-                if UIScreen.main.scale == 3 {
-                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6Plus", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
-                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-                } else {
-                    self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController_iPhone6", bundle: bundle)
-                    self.popViewController.title = "This is a popup view"
-                    self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-                }
-            } else {
-                self.popViewController = PopUpViewControllerSwift(nibName: "PopUpViewController", bundle: bundle)
-                self.popViewController.title = "This is a popup view"
-                self.popViewController.showInView(self.view, withImage: UIImage(named: "typpzDemo"), withMessage: "You just triggered a great popup window", animated: true)
-            }
-        }
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EsqueciASenhaViewController") as! EsqueciASenhaViewController
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
         
-        print ("Teste")
+        self.performSegue(withIdentifier: "segueEsqueciASenha", sender: nil)
+        
     }
     
     @IBAction func btnNovaConta(_ sender: Any) {
