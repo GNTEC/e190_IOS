@@ -2,48 +2,71 @@
 //  EsqueciASenhaViewController.swift
 //  e190
 //
-//  Created by Marcelo Pavani on 26/05/17.
+//  Created by Marcelo Pavani on 29/05/17.
 //  Copyright © 2017 GNTEC. All rights reserved.
 //
 
 import UIKit
 
 class EsqueciASenhaViewController: UIViewController {
+    
+    var strMsgRet: String = ""
+    var apiSenha: EsqueciASenha?
+    
+    @IBOutlet weak var txtEmail: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        //self.showAnimate()
+        self.hideKeyboardWhenTappedAround()
+        
     }
-
+    
+    @IBAction func btnFechar(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
     
     @IBAction func btnEnviar(_ sender: Any) {
         
-        self.removeAnimate()
-    }
+        // VEIRICA SE OS CAMPOS OBRIGATÓRIOS FORAM PREENCHIDOS
+        if txtEmail.text == "" {
+            
+            // create the alert
+            let alert = UIAlertController(title: "Informação", message: "Favor Preencher o Email", preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        }
+        
+        //CHAMA A API PARA ENVIO DE EMAIL
 
-    func showAnimate()
-    {
-        self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        self.view.alpha = 0.0;
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.alpha = 1.0
-            self.view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        });
-    }
-    
-    func removeAnimate()
-    {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-            self.view.alpha = 0.0;
-        }, completion:{(finished : Bool)  in
-            if (finished)
-            {
-                self.view.removeFromSuperview()
-            }
-        });
+        if strMsgRet == EsqueciASenha().SolicitaSenhaNova(email: txtEmail.text!) {
+        
+            print(strMsgRet)
+            
+        }
+        else
+        {
+        
+            // create the alert
+            let alert = UIAlertController(title: "Erro", message: strMsgRet, preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
+            return
+        
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,9 +74,14 @@ class EsqueciASenhaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+//    @POST("api/redefinirsenha/redefinirSenha")
+//    Call<String> RedefinirSenha(@Query("email") String email);
+//    
+//    @POST("api/redefinirsenha/atualizaSenha")
+//    Call<String> AtualizaSenha(@Query("email") String email,
+//    @Query("senhaProvisoria") String senhaProvisoria,
+//    @Query("senhaNova") String senhaNova);
     
-    
-
     /*
     // MARK: - Navigation
 

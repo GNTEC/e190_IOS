@@ -8,11 +8,9 @@
 
 import UIKit
 
-@IBDesignable
-class RoundedButton: UIButton {
+@IBDesignable class RoundedButton: UIButton {
     
-    @IBInspectable
-    var radio: CGFloat = 0.0 {
+    @IBInspectable var radio: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = radio
             layer.borderWidth = 1
