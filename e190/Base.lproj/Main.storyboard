@@ -182,7 +182,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="btnEnviar:" destination="99E-Vb-efi" eventType="touchUpInside" id="Qye-kK-Zgh"/>
-                                                <segue destination="dOi-GQ-OCi" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="zBg-3l-xUK"/>
+                                                <segue destination="dOi-GQ-OCi" kind="show" identifier="segueRedefinirSenha" id="F3t-ob-cIj"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvM-BH-smm">
@@ -241,12 +241,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoU-0w-xHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="735"/>
+            <point key="canvasLocation" x="-129" y="860"/>
         </scene>
         <!--EsqueciA Senha View Controller01-->
         <scene sceneID="JIc-ID-4EQ">
             <objects>
-                <viewController id="dOi-GQ-OCi" customClass="EsqueciASenhaViewController01" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EsqueciASenhaViewController01" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dOi-GQ-OCi" customClass="EsqueciASenhaViewController01" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" contentMode="scaleToFill" id="dXo-xw-XKZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -362,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac4-Pw-XiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="588" y="732.68365817091455"/>
+            <point key="canvasLocation" x="353" y="860"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="N3u-qc-4N8">

@@ -10,7 +10,6 @@ import UIKit
 
 class EsqueciASenhaViewController: UIViewController {
     
-    var strMsgRet: String = ""
     var apiSenha: EsqueciASenha?
     
     @IBOutlet weak var txtEmail: UITextField!
@@ -46,27 +45,40 @@ class EsqueciASenhaViewController: UIViewController {
         }
         
         //CHAMA A API PARA ENVIO DE EMAIL
-
-        if strMsgRet == EsqueciASenha().SolicitaSenhaNova(email: txtEmail.text!) {
         
-            print(strMsgRet)
+        let api = EsqueciASenha()
+        
+        api.SolicitaSenhaNova(email: self.txtEmail.text!) {_ in 
+        
+            self.performSegue(withIdentifier: "segueRedefinirSenha", sender: self)
             
         }
-        else
-        {
         
-            // create the alert
-            let alert = UIAlertController(title: "Erro", message: strMsgRet, preferredStyle: UIAlertControllerStyle.alert)
-            
-            // add an action (button)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            
-            // show the alert
-            self.present(alert, animated: true, completion: nil)
-            
-            return
         
-        }
+//        if EsqueciASenha().SolicitaSenhaNova(email: txtEmail.text!) == 0 {
+//        
+//            let vc = EsqueciASenhaViewController01()
+//            vc.email = txtEmail.text!
+//            
+//            
+//            //self.present(vc, animated: true, completion: nil)
+//            //self.performSegue(withIdentifier: "segueRedefinirSenha", sender: nil)
+//        }
+//        else
+//        {
+//        
+//            // create the alert
+//            let alert = UIAlertController(title: "Erro", message: "Erro no Envio de Email", preferredStyle: UIAlertControllerStyle.alert)
+//            
+//            // add an action (button)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//            
+//            // show the alert
+//            self.present(alert, animated: true, completion: nil)
+//            
+//            return
+//        
+//        }
     }
     
     override func didReceiveMemoryWarning() {
