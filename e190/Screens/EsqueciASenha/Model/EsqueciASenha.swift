@@ -11,7 +11,7 @@ import Alamofire
 
 class EsqueciASenha {
     
-    func SolicitaSenhaNova (email: String, completionHandler:@escaping (_ result:Int)->Void){
+    func SolicitaSenhaNova (email: String, completionHandler:@escaping (_ result:Int) ->Void){
 
         let urlString = "http://sekron.azurewebsites.net/api/redefinirsenha/redefinirSenha?email=" + email
         
@@ -38,10 +38,9 @@ class EsqueciASenha {
             }
         }
 
-        
     }
     
-    func RedefinirSenha (email: String, senhaProvisoria: String, senhaNova: String)-> Int {
+    func RedefinirSenha (email: String, senhaProvisoria: String, senhaNova: String, completionHandler:@escaping (_ result:Int) ->Void) {
         
         let urlString = "http://sekron.azurewebsites.net/api/redefinirsenha/atualizaSenha?email=" + email + "&senhaProvisoria=" + senhaProvisoria + "&senhaNova=" + senhaNova
         
@@ -67,44 +66,11 @@ class EsqueciASenha {
                 default:
                     ret = 0
                 }
+                DispatchQueue.main.async(execute: {
+                    completionHandler(ret)
+                })
             }
         }
-        
-        return ret
     }
-
-//    func getStartData(completion: () -> void) -> Void {
-//        
-//        let sharedBranch = BranchSingleton.sharedInstance
-//        let sharedArticle = ArticleSingleton.sharedInstance
-//        
-//        Alamofire.request(.GET, Config().apiBranch)
-//            .responseJSON { request, response, result in
-//                let jsonObj = SwiftyJSON.JSON(result.value!)
-//                for obj in jsonObj {
-//                    let branch = Mapper<Branch>().map(obj.1.rawString()!)
-//                    sharedBranch.addBranch(branch!)
-//                }
-//        }
-//        
-//        Alamofire.request(.GET, Config().apiArticle)
-//            .responseJSON { request, response, result in
-//                let jsonObj = SwiftyJSON.JSON(result.value!)
-//                for obj in jsonObj {
-//                    let article = Mapper<Article>().map(obj.1.rawString()!)
-//                    sharedArticle.addArticle(article!)
-//                }
-//                //At this point the Alamofire .GET request for Config().apiArticle
-//                //is complete. Call our completion block (passed in as a parameter)
-//                completion()
-//        }
-//    }
-    
-//    getStartData()
-//    {
-//    //This is a "trailing closure", a block of code passed to getStartData
-//    print("At this point, we've finished getting our data from Alamofire.")
-//    print(sharedArticle.articleList)
-//    }
     
 }

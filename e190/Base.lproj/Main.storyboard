@@ -241,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoU-0w-xHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="860"/>
+            <point key="canvasLocation" x="-122" y="715"/>
         </scene>
         <!--EsqueciA Senha View Controller01-->
         <scene sceneID="JIc-ID-4EQ">
@@ -274,19 +274,19 @@
                                             <rect key="frame" x="8" y="81" width="343" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme a nova senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weE-yS-AQc">
                                             <rect key="frame" x="8" y="195" width="343" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a nova senha:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ni-tE-keg">
                                             <rect key="frame" x="8" y="138" width="343" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esl-cq-dY9">
                                             <rect key="frame" x="298" y="267" width="53" height="30"/>
@@ -298,6 +298,7 @@
                                             </state>
                                             <connections>
                                                 <action selector="btnEnviar:" destination="dOi-GQ-OCi" eventType="touchUpInside" id="pVS-BP-CCj"/>
+                                                <segue destination="xO5-ao-yXs" kind="show" identifier="segueRedefinirSenhaLogin" id="JdY-MI-oJX"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0n-w8-SgL">
@@ -362,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac4-Pw-XiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353" y="860"/>
+            <point key="canvasLocation" x="671" y="715"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="N3u-qc-4N8">

@@ -70,19 +70,12 @@ class EsqueciASenhaViewController01: UIViewController {
         
         }
         
-        if EsqueciASenha().RedefinirSenha(email: email, senhaProvisoria: txtSenhaProvisoria.text!, senhaNova: txtSenhaNova.text!) == 0 {
-            
-            //self.performSegue(withIdentifier: "segueRedefinirSenha", sender: nil)
-            
-            let vc = LoginViewController()
-            self.present(vc, animated: true, completion: nil)
-            
-        }
-        else
-        {
+        //CHAMA A API PARA CADASTRAR NOVA SENHA
+        let api = EsqueciASenha()
+        api.RedefinirSenha(email: self.email, senhaProvisoria: self.txtSenhaProvisoria.text!, senhaNova: self.txtSenhaNova.text!) { _ in
             
             // create the alert
-            let alert = UIAlertController(title: "Erro", message: "Erro no Envio de Email", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Informação", message: "Senha Alterada com Sucesso !", preferredStyle: UIAlertControllerStyle.alert)
             
             // add an action (button)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -90,14 +83,16 @@ class EsqueciASenhaViewController01: UIViewController {
             // show the alert
             self.present(alert, animated: true, completion: nil)
             
-            return
-            
+            self.performSegue(withIdentifier: "segueRedefinirSenhaLogin", sender: nil)
         }
-        
     }
     
     @IBAction func btnFechar(_ sender: Any) {
     
+        self.txtSenhaNova.text = ""
+        self.txtSenhaProvisoria.text = ""
+        self.txtConfirmarSenha.text = ""
+        
         dismiss(animated: true, completion: nil)
     
     }

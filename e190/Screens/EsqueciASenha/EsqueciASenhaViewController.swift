@@ -23,6 +23,7 @@ class EsqueciASenhaViewController: UIViewController {
     
     @IBAction func btnFechar(_ sender: Any) {
         
+        self.txtEmail.text = ""
         dismiss(animated: true, completion: nil)
         
     }
@@ -49,36 +50,21 @@ class EsqueciASenhaViewController: UIViewController {
         let api = EsqueciASenha()
         
         api.SolicitaSenhaNova(email: self.txtEmail.text!) {_ in 
-        
-            self.performSegue(withIdentifier: "segueRedefinirSenha", sender: self)
             
+            
+            // create the alert
+            let alert = UIAlertController(title: "Informação", message: "Senha Enviada com Sucesso !", preferredStyle: UIAlertControllerStyle.alert)
+            
+            // add an action (button)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            self.performSegue(withIdentifier: "segueRedefinirSenha", sender: self)
         }
         
-        
-//        if EsqueciASenha().SolicitaSenhaNova(email: txtEmail.text!) == 0 {
-//        
-//            let vc = EsqueciASenhaViewController01()
-//            vc.email = txtEmail.text!
-//            
-//            
-//            //self.present(vc, animated: true, completion: nil)
-//            //self.performSegue(withIdentifier: "segueRedefinirSenha", sender: nil)
-//        }
-//        else
-//        {
-//        
-//            // create the alert
-//            let alert = UIAlertController(title: "Erro", message: "Erro no Envio de Email", preferredStyle: UIAlertControllerStyle.alert)
-//            
-//            // add an action (button)
-//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//            
-//            // show the alert
-//            self.present(alert, animated: true, completion: nil)
-//            
-//            return
-//        
-//        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,22 +72,15 @@ class EsqueciASenhaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    @POST("api/redefinirsenha/redefinirSenha")
-//    Call<String> RedefinirSenha(@Query("email") String email);
-//    
-//    @POST("api/redefinirsenha/atualizaSenha")
-//    Call<String> AtualizaSenha(@Query("email") String email,
-//    @Query("senhaProvisoria") String senhaProvisoria,
-//    @Query("senhaNova") String senhaNova);
-    
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "segueRedefinirSenha" {
+            
+            let vc = segue.destination as! EsqueciASenhaViewController01
+            vc.email = self.txtEmail.text!
+        }
     }
-    */
-
 }
