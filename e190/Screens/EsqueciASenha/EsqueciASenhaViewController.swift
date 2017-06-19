@@ -61,7 +61,6 @@ class EsqueciASenhaViewController: UIViewController {
             // show the alert
             self.present(alert, animated: true, completion: nil)
             
-            
             self.performSegue(withIdentifier: "segueRedefinirSenha", sender: self)
         }
         
