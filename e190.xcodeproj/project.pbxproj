@@ -11,6 +11,7 @@
 		9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553E1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift */; };
 		9CAD55441EDC9CC9002F7298 /* EsqueciASenha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD55431EDC9CC9002F7298 /* EsqueciASenha.swift */; };
 		9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD55451EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift */; };
+		9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */; };
 		A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */; };
 		CE1539A21ECE2BF2006DB75B /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1539A11ECE2BF2006DB75B /* Usuario.swift */; };
 		CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		9CAD553E1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenhaViewController.swift; path = Screens/EsqueciASenha/EsqueciASenhaViewController.swift; sourceTree = "<group>"; };
 		9CAD55431EDC9CC9002F7298 /* EsqueciASenha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenha.swift; path = Screens/EsqueciASenha/Model/EsqueciASenha.swift; sourceTree = "<group>"; };
 		9CAD55451EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenhaViewController01.swift; path = Screens/EsqueciASenha/EsqueciASenhaViewController01.swift; sourceTree = "<group>"; };
+		9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoCadastroViewController.swift; path = Screens/NovoCadastro/NovoCadastroViewController.swift; sourceTree = "<group>"; };
 		CE1539A11ECE2BF2006DB75B /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Usuario.swift; path = Entidades/Usuario.swift; sourceTree = "<group>"; };
 		CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6963931EC39149007C744E /* customImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customImageView.swift; path = Comum/customImageView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9CDCC1BC1EF840AF00B04C38 /* NovoUsuario */ = {
+			isa = PBXGroup;
+			children = (
+				9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */,
+			);
+			name = NovoUsuario;
+			sourceTree = "<group>";
+		};
 		C2624BB8E4728A611E2C40FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 		CEA3E9F11EC0B81B00778318 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9CDCC1BC1EF840AF00B04C38 /* NovoUsuario */,
 				CE1539A51ECF2CFC006DB75B /* EsqueciASenha */,
 				CEDF6FB01EC654B300881752 /* Main */,
 				CEA3E9F41EC0F10800778318 /* Menu */,
@@ -320,6 +331,7 @@
 			files = (
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
+				9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
 				9CAD55441EDC9CC9002F7298 /* EsqueciASenha.swift in Sources */,
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
