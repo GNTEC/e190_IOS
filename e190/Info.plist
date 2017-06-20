@@ -6,6 +6,10 @@
 	<string>Do you allow this app to know your current location?</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Will you allow this app to always know your location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Gostariamos de ter acesso a sua biblioteca de Fotos</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Gostariamos de ter acesso a sua Camera</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
