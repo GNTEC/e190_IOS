@@ -171,7 +171,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
                     
                     self.present(alertController, animated: true, completion: nil)
                 }
-                
             })
         }
         

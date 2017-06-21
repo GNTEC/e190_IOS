@@ -14,11 +14,11 @@ import AlamofireObjectMapper
 class ApiNovoCadastro {
     
     //https://viacep.com.br/ws/09531000/json/
-    let urlapi = "https://viacep.com.br/ws/"
     var objEndereco: NSDictionary = [:]
     
     func buscaEnderecoPorCep (cep: String, completionHandler:@escaping (NSDictionary)-> Void)
     {
+        let urlapi = "https://viacep.com.br/ws/"
         let url = urlapi + cep + "/json/"
     
         Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON {
@@ -47,4 +47,16 @@ class ApiNovoCadastro {
             })
         }
     }
+    
+    func inclui(usuario: Array<Any>, compeletionHandler:@escaping (Bool)-> Void) {
+        
+        let urlString = "http://sekron.azurewebsites.net/api/usuario/novousuario"
+        
+        
+//        @POST("api/usuario/novousuario")
+//        Call<tb_usuario> NovoUsuario(@Body tb_usuario usuario);
+        
+    }
+    
+    
 }
