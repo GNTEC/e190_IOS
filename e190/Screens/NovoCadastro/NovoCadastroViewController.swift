@@ -40,6 +40,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var drop_sexo: UIPickerView!
     @IBOutlet weak var text_estado: UITextField!
     @IBOutlet weak var drop_estado: UIPickerView!
+    @IBOutlet weak var dt_nascimento: UIDatePicker!
     
     
     var imgPicker: UIImagePickerController!
@@ -51,6 +52,9 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
+        
+        // função que esconde o teclado
+        self.hideKeyboardWhenTappedAround()
     
     }
 
@@ -107,6 +111,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         }
     }
     
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if(textField == txt_sexo){
@@ -116,6 +121,30 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         if(textField == text_estado){
             self.drop_estado.isHidden = false
         }
+        
+        if(textField == text_data_nascimento){
+            
+            let datePickerView:UIDatePicker = UIDatePicker()
+            
+            datePickerView.datePickerMode = UIDatePickerMode.date
+            
+            textField.inputView = datePickerView
+            
+            datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
+            
+            //self.dt_nascimento.isHidden = false
+        }
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle =  .medium
+        dateFormatter.timeStyle = .none
+        
+        self.text_data_nascimento.text = dateFormatter.string(from: sender.date)
+        
     }
     
     @IBAction func btnCarregaFotoCarro(_ sender: Any) {
@@ -160,16 +189,234 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
 
+    
+    @IBAction func proximoPasso(_ sender: Any) {
+        
+        if validaCamposObrigatorio() == true
+        {
+            
+            print("ok")
+            
+        }
+        
+    }
+    
+    @IBAction func optSocorrista(_ sender: Any) {
+        
+        alteraEstadoSwitch(nome: "sw_socorrista", opcaoSelecionada: sw_socorrista.isOn)
+        
+    }
+    
+    @IBAction func optMedico(_ sender: Any) {
+        
+        alteraEstadoSwitch(nome: "sw_medico", opcaoSelecionada: sw_medico.isOn)
+    }
+    
+    @IBAction func optPolicial(_ sender: Any) {
+        
+        alteraEstadoSwitch(nome: "sw_policial", opcaoSelecionada: sw_policial.isOn)
+        
+    }
+    
+    @IBAction func optDefesaCivil(_ sender: Any) {
+        
+        alteraEstadoSwitch(nome: "sw_defesa_civil", opcaoSelecionada: sw_defesa_civil.isOn)
+    }
+    
+    @IBAction func optNenhuma(_ sender: Any) {
+    
+        alteraEstadoSwitch(nome: "sw_nenhuma", opcaoSelecionada: sw_nenhuma.isOn)
+        
+    }
+    
+    func alteraEstadoSwitch ( nome: String, opcaoSelecionada: Bool ){
+    
+        if nome == "sw_socorrista" {
+            self.sw_socorrista.isOn = true
+        }
+        else
+        {
+            self.sw_socorrista.isOn = false
+        }
+        
+        if nome == "sw_medico" {
+            self.sw_medico.isOn = true
+        }
+        else
+        {
+            self.sw_medico.isOn = false
+        }
+        
+        if nome == "sw_policial" {
+            self.sw_policial.isOn = true
+        }
+        else
+        {
+            self.sw_policial.isOn = false
+        }
+        
+        if nome == "sw_defesa_civil" {
+            self.sw_defesa_civil.isOn = true
+        }
+        else
+        {
+            self.sw_defesa_civil.isOn = false
+        }
+        
+        if nome == "sw_nenhuma" {
+            self.sw_nenhuma.isOn = true
+        }
+        else
+        {
+            self.sw_nenhuma.isOn = false
+        }
+    
+    }
+    
+    func validaCamposObrigatorio () -> Bool
+    {
+
+        if text_celular.text == "" {
+        
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Número do Celular !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+        
+            return false
+        }
+        
+        if text_nome.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Nome !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_data_nascimento.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher a Data de Nascimento !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_cpf.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o CPF !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+
+        if text_rg.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o RG !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if txt_sexo.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Escolha o Sexo !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_cep.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o CEP !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_endereco.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Endereço !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_numero.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Número !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_cidade.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher a Cidade !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_estado.text == "" {
+            
+            let alertController = UIAlertController(title: "Informação", message: "Favor Escolher o Estado !", preferredStyle: .alert)
+            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
+            
+            alertController.addAction(okAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+            return false
+        }
+    
+        return true
+    }
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func proximoPasso(_ sender: Any) {
-    
-    
-    }
-    
+
     
     /*
     // MARK: - Navigation

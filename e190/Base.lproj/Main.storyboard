@@ -245,6 +245,9 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="pPJ-eW-GbH" id="Bc9-e7-hI1"/>
+                                                                </connections>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="qP9-RO-PSQ" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -355,7 +358,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifV-Qx-ppW">
-                                                        <rect key="frame" x="0.0" y="51" width="359" height="0.0"/>
+                                                        <rect key="frame" x="-0.64079822616384785" y="51" width="359.15742793786939" height="0.0"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="pPJ-eW-GbH" id="CLO-aq-p7s"/>
                                                             <outlet property="delegate" destination="pPJ-eW-GbH" id="00U-s6-f4R"/>
@@ -515,7 +518,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSQ-fg-kfP">
-                                                        <rect key="frame" x="0.0" y="51" width="359" height="0.0"/>
+                                                        <rect key="frame" x="-0.64079822616384785" y="51" width="359.15742793786939" height="0.0"/>
                                                         <connections>
                                                             <outlet property="dataSource" destination="pPJ-eW-GbH" id="48X-to-u1p"/>
                                                             <outlet property="delegate" destination="pPJ-eW-GbH" id="uj5-lH-4zx"/>
@@ -757,6 +760,9 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hT4-v8-jJn">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="optSocorrista:" destination="pPJ-eW-GbH" eventType="valueChanged" id="ShF-aV-QqY"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sou socorrista" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2v9-R3-JYU">
                                                         <rect key="frame" x="57" y="0.0" width="302" height="31"/>
@@ -771,6 +777,9 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="005-yL-lIr">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="optMedico:" destination="pPJ-eW-GbH" eventType="valueChanged" id="V8b-0u-stF"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sou médico" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBd-dO-R3Q">
                                                         <rect key="frame" x="57" y="0.0" width="302" height="31"/>
@@ -785,6 +794,9 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ndm-5H-H9P">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="optPolicial:" destination="pPJ-eW-GbH" eventType="valueChanged" id="a5Q-ex-XuK"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sou policial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwx-fZ-zcc">
                                                         <rect key="frame" x="57" y="0.0" width="302" height="31"/>
@@ -799,6 +811,9 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aeu-Tr-Uhp">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="30.999999999999773"/>
+                                                        <connections>
+                                                            <action selector="optDefesaCivil:" destination="pPJ-eW-GbH" eventType="valueChanged" id="aja-G7-fTw"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sou da defesa civil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R14-hu-Eow">
                                                         <rect key="frame" x="57" y="0.0" width="302" height="30.999999999999773"/>
@@ -813,6 +828,9 @@
                                                 <subviews>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RWr-2M-dwA">
                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="optNenhuma:" destination="pPJ-eW-GbH" eventType="valueChanged" id="dal-jJ-ISb"/>
+                                                        </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não Obrigado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x40-Sh-07n">
                                                         <rect key="frame" x="57" y="0.0" width="302" height="31"/>
