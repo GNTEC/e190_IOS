@@ -46,6 +46,9 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     var imgPicker: UIImagePickerController!
     var sexo = ["feminino","masculino"]
     var estado = ["Acre AC","Alagoas AL","Amapá AP","Amazonas AM","Bahia BA","Ceará CE","Distrito Federal DF","Espírito Santo ES","Goiás GO","Maranhão MA","Mato Grosso MT","Mato Grosso do Sul MS","Minas Gerais MG","Pará PA","Paraíba PB","Paraná PR","Pernambuco PE","Piauí PI","Rio de Janeiro RJ","Rio Grande do Norte RN","Rio Grande do Sul RS","Rondônia RO","Roraima RR","Santa Catarina SC","São Paulo SP","Sergipe SE","Tocantins TO"]
+    
+    var pickerView_sexo = UIPickerView()
+    var pickerView_estado = UIPickerView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,12 +69,12 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         var controls : Int = 0
         
-        if pickerView == drop_sexo {
+        if pickerView == pickerView_sexo {
             
             controls = self.sexo.count
         }
             
-        else if pickerView == drop_estado{
+        else if pickerView == pickerView_estado{
             
             controls = self.estado.count
         }
@@ -81,13 +84,13 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
     
-        if pickerView == drop_sexo {
+        if pickerView == pickerView_sexo {
         
             let tituloLinha = sexo[row]
             
             return tituloLinha
         }
-        else if pickerView == drop_estado {
+        else if pickerView == pickerView_estado {
             
             let tituloLinha = estado[row]
             
@@ -99,27 +102,32 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if pickerView == drop_sexo {
-            
+        if pickerView == pickerView_sexo {
             self.txt_sexo.text = self.sexo[row]
-            self.drop_sexo.isHidden = true
+            //self.pickerView_sexo.isHidden = true
+            
         }
-        else if pickerView == drop_estado {
+        else if pickerView == pickerView_estado {
             
             self.text_estado.text = self.estado[row]
-            self.drop_estado.isHidden = true
+            //self.pickerView_estado.isHidden = true
         }
     }
-    
-    
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         if(textField == txt_sexo){
-            self.drop_sexo.isHidden = false
+            
+            self.pickerView_sexo.delegate = self
+            textField.inputView = self.pickerView_sexo
+            self.pickerView_sexo.isHidden = false
         }
         
         if(textField == text_estado){
-            self.drop_estado.isHidden = false
+            
+            self.pickerView_estado.delegate = self
+            textField.inputView = self.pickerView_estado
+            self.pickerView_estado.isHidden = false
         }
         
         if(textField == text_data_nascimento){
@@ -131,16 +139,48 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
             textField.inputView = datePickerView
             
             datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
-            
-            //self.dt_nascimento.isHidden = false
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let api = ApiNovoCadastro()
+        let retBool: Bool = true
+        let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
+        
+        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+        
+        if(newLength == 8)
+        {
+            api.buscaEnderecoPorCep(cep: newString, completionHandler: { (result) in
+                
+                    self.text_endereco.text = result.object(forKey: "logradouro") as? String
+                    self.txt_complemento.text = result.object(forKey: "complemento") as? String
+                    self.text_cidade.text = result.object(forKey: "localidade") as? String
+                    self.text_estado.text = result.object(forKey: "uf") as? String
+            })
+        }
+        
+        return retBool
+        
+//            {
+//                "cep": "02933-150",
+//                "logradouro": "Rua Antônio de Campos Collaço",
+//                "complemento": "",
+//                "bairro": "Vila Palmeiras",
+//                "localidade": "São Paulo",
+//                "uf": "SP",
+//                "unidade": "",
+//                "ibge": "3550308",
+//                "gia": "1004"
+//        }
     }
     
     func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateStyle =  .medium
+        dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none
         
         self.text_data_nascimento.text = dateFormatter.string(from: sender.date)

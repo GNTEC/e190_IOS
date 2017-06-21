@@ -357,13 +357,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ifV-Qx-ppW">
-                                                        <rect key="frame" x="-0.64079822616384785" y="51" width="359.15742793786939" height="0.0"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="pPJ-eW-GbH" id="CLO-aq-p7s"/>
-                                                            <outlet property="delegate" destination="pPJ-eW-GbH" id="00U-s6-f4R"/>
-                                                        </connections>
-                                                    </pickerView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fyN-Km-JUY">
@@ -403,11 +396,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="yp4-ej-dyA">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-Mv-xjv">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-Mv-xjv">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="pPJ-eW-GbH" id="feh-TE-7JJ"/>
+                                                                </connections>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="UjX-vo-zdz" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -517,13 +513,6 @@
                                                             </imageView>
                                                         </subviews>
                                                     </stackView>
-                                                    <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSQ-fg-kfP">
-                                                        <rect key="frame" x="-0.64079822616384785" y="51" width="359.15742793786939" height="0.0"/>
-                                                        <connections>
-                                                            <outlet property="dataSource" destination="pPJ-eW-GbH" id="48X-to-u1p"/>
-                                                            <outlet property="delegate" destination="pPJ-eW-GbH" id="uj5-lH-4zx"/>
-                                                        </connections>
-                                                    </pickerView>
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veículo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGf-K1-CCE">
@@ -989,8 +978,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="2300"/>
                     <connections>
-                        <outlet property="drop_estado" destination="lSQ-fg-kfP" id="rjf-uh-yIk"/>
-                        <outlet property="drop_sexo" destination="ifV-Qx-ppW" id="M97-Zx-bHz"/>
                         <outlet property="imgCarro" destination="RUm-uL-de2" id="qU3-WN-apn"/>
                         <outlet property="imgPerfil" destination="aKE-QC-Bc3" id="UlP-8t-OxY"/>
                         <outlet property="sw_defesa_civil" destination="aeu-Tr-Uhp" id="OGU-Oa-iS5"/>
