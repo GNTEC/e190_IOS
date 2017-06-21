@@ -154,26 +154,28 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         {
             api.buscaEnderecoPorCep(cep: newString, completionHandler: { (result) in
                 
+                if result.count > 0
+                {
+                
                     self.text_endereco.text = result.object(forKey: "logradouro") as? String
                     self.txt_complemento.text = result.object(forKey: "complemento") as? String
                     self.text_cidade.text = result.object(forKey: "localidade") as? String
-                    self.text_estado.text = result.object(forKey: "uf") as? String
+                    //self.text_estado.text = result.object(forKey: "uf") as? String
+                }
+                else
+                {
+                    let alertController = UIAlertController(title: "Alterta", message: "CEP Inválido", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+                    
+                    alertController.addAction(okAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
             })
         }
         
         return retBool
-        
-//            {
-//                "cep": "02933-150",
-//                "logradouro": "Rua Antônio de Campos Collaço",
-//                "complemento": "",
-//                "bairro": "Vila Palmeiras",
-//                "localidade": "São Paulo",
-//                "uf": "SP",
-//                "unidade": "",
-//                "ibge": "3550308",
-//                "gia": "1004"
-//        }
     }
     
     func datePickerValueChanged(sender:UIDatePicker) {
@@ -318,7 +320,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
 
         if text_celular.text == "" {
         
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Número do Celular !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Número do Celular !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -330,7 +332,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_nome.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Nome !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Nome !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -342,7 +344,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_data_nascimento.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher a Data de Nascimento !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher a Data de Nascimento !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -354,7 +356,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_cpf.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o CPF !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o CPF !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -366,7 +368,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
 
         if text_rg.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o RG !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o RG !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -378,7 +380,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if txt_sexo.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Escolha o Sexo !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Escolha o Sexo !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -390,7 +392,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_cep.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o CEP !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o CEP !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -402,7 +404,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_endereco.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Endereço !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Endereço !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -414,7 +416,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_numero.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher o Número !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Número !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -426,7 +428,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_cidade.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Preencher a Cidade !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher a Cidade !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)
@@ -438,7 +440,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         if text_estado.text == "" {
             
-            let alertController = UIAlertController(title: "Informação", message: "Favor Escolher o Estado !", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alerta", message: "Favor Escolher o Estado !", preferredStyle: .alert)
             let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
             alertController.addAction(okAction)

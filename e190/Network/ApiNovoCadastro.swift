@@ -34,6 +34,11 @@ class ApiNovoCadastro {
                     let Result = response.result.value
                     self.objEndereco = (Result as? NSDictionary)!
                     
+                    if let msgErro = self.objEndereco.object(forKey: "erro"){
+                        
+                        self.objEndereco = [:]
+                    }
+                        
                     break
                 }
             }
