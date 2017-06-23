@@ -128,6 +128,7 @@ class LoginViewController: UIViewController {
                         
                         UserDefaults.standard.removeObject(forKey: "email")
                         UserDefaults.standard.removeObject(forKey: "senha")
+                    
                     }
                     
                     self.performSegue(withIdentifier: "segueLogin", sender: nil)

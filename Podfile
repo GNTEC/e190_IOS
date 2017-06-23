@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, ‘9.0’
+platform :ios, ‘8.0’
 use_frameworks!
 inhibit_all_warnings!
 
@@ -13,6 +13,7 @@ pod 'Alamofire', '~> 4.4'
 pod 'AlamofireObjectMapper', '~> 4.1'
 pod 'AlamofireImage', '~> 3.2'
 pod 'SideMenu', '~> 2.3'
+pod 'AZSClient', '~> 0.2'
 
 end
 

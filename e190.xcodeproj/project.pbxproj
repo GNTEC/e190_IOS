@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
 		9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */; };
 		9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553E1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift */; };
@@ -31,6 +32,8 @@
 /* Begin PBXFileReference section */
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "e190-Bridging-Header.h"; path = "e190/e190-Bridging-Header.h"; sourceTree = "<group>"; };
+		9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiNovoCadastro.swift; path = Network/ApiNovoCadastro.swift; sourceTree = "<group>"; };
 		9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomViewController.swift; path = Comum/CustomViewController.swift; sourceTree = "<group>"; };
 		9CAD553E1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenhaViewController.swift; path = Screens/EsqueciASenha/EsqueciASenhaViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */,
 				A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +73,7 @@
 		05FD56109EF6C0CFFE96E123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */,
 				48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */,
 			);
 			name = Frameworks;
@@ -170,6 +175,7 @@
 		CECC11FF1EC0A95100BC2556 = {
 			isa = PBXGroup;
 			children = (
+				9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */,
 				CECC120A1EC0A95100BC2556 /* e190 */,
 				CECC12091EC0A95100BC2556 /* Products */,
 				C2624BB8E4728A611E2C40FF /* Pods */,

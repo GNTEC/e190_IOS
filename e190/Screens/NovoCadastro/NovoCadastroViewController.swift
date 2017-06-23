@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import AssetsLibrary
+import Photos
+
+struct stImgProfile {
+    static var nomeImg: String?
+    static var img : UIImage?
+    static var path : String?
+}
+
 
 class NovoCadastroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate {
     
-    @IBOutlet weak var imgPerfil: UIImageView!
+    
+    @IBOutlet weak var imgPerfil: UIButton!
     @IBOutlet weak var text_nome: UITextField!
     @IBOutlet weak var text_celular: UITextField!
     @IBOutlet weak var text_data_nascimento: UITextField!
@@ -44,11 +54,15 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     
     var imgPicker: UIImagePickerController!
+    
     var sexo = ["feminino","masculino"]
+    
     var estado = ["Acre AC","Alagoas AL","Amapá AP","Amazonas AM","Bahia BA","Ceará CE","Distrito Federal DF","Espírito Santo ES","Goiás GO","Maranhão MA","Mato Grosso MT","Mato Grosso do Sul MS","Minas Gerais MG","Pará PA","Paraíba PB","Paraná PR","Pernambuco PE","Piauí PI","Rio de Janeiro RJ","Rio Grande do Norte RN","Rio Grande do Sul RS","Rondônia RO","Roraima RR","Santa Catarina SC","São Paulo SP","Sergipe SE","Tocantins TO"]
     
     var pickerView_sexo = UIPickerView()
     var pickerView_estado = UIPickerView()
+    var imgTag:Int = 0
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +72,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         // função que esconde o teclado
         self.hideKeyboardWhenTappedAround()
-    
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -188,11 +201,39 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
     }
     
+    @IBAction func btCarregaFotoPerfil(_ sender: Any) {
+        
+        self.imgTag = (sender as AnyObject).tag
+        
+        let alerController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Usa Camera", style: .default) { (actionCamera) in
+            self.imgPicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
+            self.imgPicker.sourceType = .camera
+            self.imgPicker.allowsEditing = true
+        
+            self.present(self.imgPicker, animated: true, completion: nil)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        
+        
+        alerController.addAction(cameraAction)
+        alerController.addAction(cancelAction)
+        
+        present(alerController, animated: true, completion: nil)
+        
+    }
+    
+    
     @IBAction func btnCarregaFotoCarro(_ sender: Any) {
+        
+        self.imgTag = (sender as AnyObject).tag
         
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cameraAction = UIAlertAction(title: "Usar Camera", style: .default) { (actionCamera) in
+            
             self.imgPicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
             self.imgPicker.sourceType = .camera
             self.imgPicker.allowsEditing = true
@@ -201,6 +242,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         }
         
         let photoLibraryAction = UIAlertAction(title: "Usar Biblioteca de Fotos", style: .default) { (actionPhotoLibrary) in
+            
             self.imgPicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
             self.imgPicker.sourceType = .photoLibrary
             self.imgPicker.allowsEditing = true
@@ -220,8 +262,31 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        let img = info[UIImagePickerControllerEditedImage] as! UIImage
-        imgCarro.setBackgroundImage(img, for: .normal)
+        let img: UIImage!
+        
+        if imgTag == 1 {
+        
+            img = info[UIImagePickerControllerEditedImage] as! UIImage
+            
+            let fileManager = FileManager.default
+            let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("teste.png")
+            print(paths)
+            let imageData = UIImageJPEGRepresentation(img!, 0.5)
+            fileManager.createFile(atPath: paths as String, contents: imageData, attributes: nil)
+            
+            stImgProfile.img = img
+            stImgProfile.nomeImg = "teste.png"
+            stImgProfile.path = paths
+            
+            UIImageWriteToSavedPhotosAlbum(img, nil, nil, nil)
+            
+            imgPerfil.setBackgroundImage(img, for: .normal)
+        }
+        else
+        {
+            img = info[UIImagePickerControllerEditedImage] as! UIImage
+            imgCarro.setBackgroundImage(img, for: .normal)
+        }
         
         dismiss(animated: true, completion: nil)
     }
@@ -233,12 +298,16 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func proximoPasso(_ sender: Any) {
         
-        if validaCamposObrigatorio() == true
-        {
-            
-            print("ok")
-            
-        }
+//        if validaCamposObrigatorio() == true
+//        {
+            let api  = ApiNovoCadastro()
+
+            let nomeImg = stImgProfile.nomeImg
+            let img = stImgProfile.img
+            let pathImg = stImgProfile.path
+        
+            api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
+//        }
         
     }
     
