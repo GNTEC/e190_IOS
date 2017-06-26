@@ -122,22 +122,81 @@ class ApiNovoCadastro {
     
     
     func uploloadImgToAzure(img: UIImage, imgName:String, pathImg: String){
-    
+        
+        // MARK: Authentication
+        
         let conectionStringAzure = "DefaultEndpointsProtocol=https;AccountName=pettediag173;AccountKey=tTwgi2UTEyvnW/hMF1LBDwMYLZX9OKAaA9VDtF/3TvqyLJds+4dYd7Y0n9lj6+Ep4wMFcVWc5k9R7BaWLgA0+w==;EndpointSuffix=core.windows.net"
         
-//        let conectionStringAzure = "https://pettediag173.file.core.windows.net/?sv=2016-05-31&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-06-24T00:20:50Z&st=2017-06-23T16:20:50Z&spr=https&sig=QtZwEs3TC647Si2RvwawgKgciMADsdWV8LkM8Oqarqc%3D"
+        // If using a SAS token, fill it in here.  If using Shared Key access, comment out the following line.
+        let containerURL = "https://myaccount.blob.core.windows.net/mysampleioscontainer?sv=2015-02-21&st=2009-01-01&se=2100-01-01&sr=c&sp=rwdl&sig=mylongsig="
+        let usingSAS = true
         
-        let account:AZSCloudStorageAccount
-        try! account = AZSCloudStorageAccount(fromConnectionString:conectionStringAzure) //I stored the property in my header file
-        let blobClient: AZSCloudBlobClient = account.getBlobClient()
-        let blobContainer: AZSCloudBlobContainer = blobClient.containerReference(fromName: "sekronprofile")
-
-        let blob: AZSCloudBlockBlob = blobContainer.blockBlobReference(fromName: imgName) //If you want a random name, I used let imageName = CFUUIDCreateString(nil, CFUUIDCreate(nil))
-        let imageData = UIImagePNGRepresentation(img)
+        // If using Shared Key access, fill in your credentials here and un-comment the "UsingSAS" line:
+        let connectionString = "DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=myAccountKey=="
+        let containerName = "sekronprofile"
+        // var usingSAS = false
         
-        blob.upload(from: imageData!, completionHandler: {(NSError) -> Void in
-
-        })
+        // MARK: Properties
+        
+        var blobs = [AZSCloudBlob]()
+        var container : AZSCloudBlobContainer
+        var continuationToken : AZSContinuationToken?
+        
+        
+        // MARK: Initializers
+        
+        //required init?(coder aDecoder: NSCoder) {
+            if (usingSAS) {
+                var error: NSError?
+                container = AZSCloudBlobContainer(url: URL(string: conectionStringAzure)!, error: &error)
+                if ((error) != nil) {
+                    print("Error in creating blob container object.  Error code = %ld, error domain = %@, error userinfo = %@", error!.code, error!.domain, error!.userInfo);
+                }
+            }
+            else {
+                //            do {
+                let storageAccount : AZSCloudStorageAccount;
+                try! storageAccount = AZSCloudStorageAccount(fromConnectionString: connectionString)
+                let blobClient = storageAccount.getBlobClient()
+                container = blobClient.containerReference(fromName: containerName)
+                
+                let condition = NSCondition()
+                var containerCreated = false
+                
+                container.createContainerIfNotExists { (error : Error?, created) -> Void in
+                    condition.lock()
+                    containerCreated = true
+                    condition.signal()
+                    condition.unlock()
+                }
+                
+                condition.lock()
+                while (!containerCreated) {
+                    condition.wait()
+                }
+                condition.unlock()
+                //            } catch let error as NSError {
+                //                print("Error in creating blob container object.  Error code = %ld, error domain = %@, error userinfo = %@", error.code, error.domain, error.userInfo);
+                //            }
+            }
+            
+            continuationToken = nil
+            
+            //super.init(coder: aDecoder)
+        
+////        let conectionStringAzure = "https://pettediag173.file.core.windows.net/?sv=2016-05-31&ss=bfqt&srt=sco&sp=rwdlacup&se=2017-06-24T00:20:50Z&st=2017-06-23T16:20:50Z&spr=https&sig=QtZwEs3TC647Si2RvwawgKgciMADsdWV8LkM8Oqarqc%3D"
+//        
+//        let account:AZSCloudStorageAccount
+//        try! account = AZSCloudStorageAccount(fromConnectionString:conectionStringAzure) //I stored the property in my header file
+//        let blobClient: AZSCloudBlobClient = account.getBlobClient()
+//        let blobContainer: AZSCloudBlobContainer = blobClient.containerReference(fromName: "sekronprofile")
+//
+//        let blob: AZSCloudBlockBlob = blobContainer.blockBlobReference(fromName: imgName) //If you want a random name, I used let imageName = CFUUIDCreateString(nil, CFUUIDCreate(nil))
+//        let imageData = UIImagePNGRepresentation(img)
+//        
+//        blob.upload(from: imageData!, completionHandler: {(NSError) -> Void in
+//
+//        })
         
         
 //        let storageAccount : AZSCloudStorageAccount;

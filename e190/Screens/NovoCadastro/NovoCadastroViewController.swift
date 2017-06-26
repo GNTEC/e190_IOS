@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import AssetsLibrary
-import Photos
+import  AZSClient
 
 struct stImgProfile {
     static var nomeImg: String?
@@ -63,7 +62,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     var pickerView_estado = UIPickerView()
     var imgTag:Int = 0
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -300,14 +298,27 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
 //        if validaCamposObrigatorio() == true
 //        {
-            let api  = ApiNovoCadastro()
-
-            let nomeImg = stImgProfile.nomeImg
-            let img = stImgProfile.img
-            let pathImg = stImgProfile.path
-        
-            api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
+//            let api  = ApiNovoCadastro()
+//
+//            let nomeImg = stImgProfile.nomeImg
+//            let img = stImgProfile.img
+//            let pathImg = stImgProfile.path
+//        
+//            api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
 //        }
+        
+        var container: AZSCloudBlobContainer?
+        
+        let blob = container!.blockBlobReference(fromName: "pettediag173")
+        
+        blob.upload(fromText: stImgProfile.path!,  completionHandler: { (error: Error?) -> Void in
+            
+            print(error)
+//            if (self.viewToReloadOnBlobAdd != nil) {
+//                self.viewToReloadOnBlobAdd!.reloadBlobList()
+//            }
+        })
+        
         
     }
     
