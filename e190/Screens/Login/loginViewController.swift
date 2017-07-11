@@ -85,7 +85,7 @@ class LoginViewController: UIViewController {
         
         let urlString = "http://sekron.azurewebsites.net/api/login/logar"
         
-        Alamofire.request(urlString, method: .post, parameters: parametros,encoding: JSONEncoding.default, headers: nil).responseJSON {
+        Alamofire.request(urlString, method: .post, parameters:parametros,encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             
             if let status = response.response?.statusCode {

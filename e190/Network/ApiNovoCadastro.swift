@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 import Alamofire
-import AlamofireObjectMapper
 import AZSClient
 
 
@@ -29,18 +28,11 @@ class ApiNovoCadastro {
             if let status = response.response?.statusCode {
                 
                 switch(status){
-                case 400:
-                    self.objEndereco = [:]
+                case 200:
+                    guard let Result = response.result.value as? NSDictionary  else {break}
+                    self.objEndereco = Result
+
                 default:
-                    
-                    let Result = response.result.value
-                    self.objEndereco = (Result as? NSDictionary)!
-                    
-                    if let msgErro = self.objEndereco.object(forKey: "erro"){
-                        
-                        self.objEndereco = [:]
-                    }
-                        
                     break
                 }
             }
@@ -50,50 +42,78 @@ class ApiNovoCadastro {
         }
     }
     
-    func inclui(usuario: Array<Any>, compeletionHandler:@escaping (Bool)-> Void) {
+    func criaLogin(login: NSDictionary, completionHandler:@escaping (_ result: NSDictionary) ->Void) {
+        
+        //@POST("api/login/novologin") Call NovoLogin(@Body tb_login login);
+        
+        let urlString = "http://sekron.azurewebsites.net/api/login/novologin"
+        var objLogin: NSDictionary = [:]
+        
+        Alamofire.request(urlString, method: .post, parameters:(login as! [String : AnyObject]), encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            
+            if let status = response.response?.statusCode {
+                
+                switch(status){
+                case 200:
+                    
+                    let Result = response.result.value
+                    objLogin = (Result as? NSDictionary)!
+                    print(objLogin)
+                    
+                    break
+                    
+                default:
+                    
+                    if let result = response.result.value {
+                        print(result)
+                    }
+                    break
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    completionHandler(objLogin)
+                })
+            }
+        }
+    }
+    
+    
+    func criaUsuario(usuario: NSDictionary, compeletionHandler:@escaping (_ result: NSDictionary)-> Void) {
+        
+        //        @POST("api/usuario/novousuario"
+        //        Call<tb_usuario> NovoUsuario(@Body tb_usuario usuario);
         
         let urlString = "http://sekron.azurewebsites.net/api/usuario/novousuario"
+        var objUser: NSDictionary = [:]
         
-        
-//        @POST("api/usuario/novousuario")
-//        Call<tb_usuario> NovoUsuario(@Body tb_usuario usuario);
-        
-//        private long codUsuario;
-//        private long codLogin;
-//        private String nome;
-//        private String dataNascimento;
-//        private String cpf;
-//        private String rg;
-//        private String celular;
-//        private String telefone;
-//        private String sexo;
-//        private String cep;
-//        private String rua;
-//        private String complemento;
-//        private String numero;
-//        private String cidade;
-//        private String estado;
-//        private boolean ativo;
-//        private String voluntario;
-//        private String dataCadastro;
-//        private boolean pago;
-//        private String fotoPerfil;
-//        private String uidFirebase;
-//        private boolean notificacaoAmarela;
-//        private boolean notificacaoLaranja;
-//        private boolean notificacaoVermelha;
-//        private String enderecoCasa;
-//        private String enderecoTrabalho;
-//        
-//        private String carroMarca;
-//        private String carroModelo;
-//        private String carroPlaca;
-//        private String carroFoto;
-//        private String carroCor;
-//        
-//        private String cepCasa;
-//        private String cepTrabalho;
-        
+        Alamofire.request(urlString, method: .post, parameters:(usuario as! [String : AnyObject]), encoding: JSONEncoding.default, headers: nil).responseJSON {
+            response in
+            
+            if let status = response.response?.statusCode {
+                
+                switch(status){
+                case 200:
+                    
+                    let Result = response.result.value
+                    objUser = (Result as? NSDictionary)!
+                    print(objUser)
+                    
+                    break
+                    
+                default:
+                    
+                    if let result = response.result.value {
+                        print(result)
+                    }
+                    break
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    compeletionHandler(objUser)
+                })
+            }
+        }
     }
 
     
@@ -101,7 +121,7 @@ class ApiNovoCadastro {
     func uploadBlobSAS(container: String, sas: String, blockname: String, fromfile: String ){
         
         // If using a SAS token, fill it in here.  If using Shared Key access, comment out the following line.
-        var containerURL = "https://yourblobstorage.blob.core.windows.net/\(container)\(sas)"  //here we have to append sas string: + sas
+        let containerURL = "https://yourblobstorage.blob.core.windows.net/\(container)\(sas)"  //here we have to append sas string: + sas
         print("containerURL with SAS: \(containerURL) ")
         var container : AZSCloudBlobContainer
         var error: NSError?

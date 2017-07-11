@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000421A41F0C08670087CBBB /* NovoLogin.swift */; };
+		0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */; };
+		00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D597661F0ECBC800B86CD4 /* Alert.swift */; };
 		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
 		9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */; };
@@ -15,7 +18,6 @@
 		9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD55451EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift */; };
 		9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */; };
 		A8CA5A8FD1DFC95BEAE0A352 /* Pods_e190.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */; };
-		CE1539A21ECE2BF2006DB75B /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1539A11ECE2BF2006DB75B /* Usuario.swift */; };
 		CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */; };
 		CE6963941EC39149007C744E /* customImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6963931EC39149007C744E /* customImageView.swift */; };
 		CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */; };
@@ -30,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000421A41F0C08670087CBBB /* NovoLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoLogin.swift; path = Screens/NovoCadastro/Model/NovoLogin.swift; sourceTree = "<group>"; };
+		0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoUsuario.swift; path = Screens/NovoCadastro/Model/NovoUsuario.swift; sourceTree = "<group>"; };
+		00D597661F0ECBC800B86CD4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Comum/Alert.swift; sourceTree = "<group>"; };
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "e190-Bridging-Header.h"; path = "e190/e190-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -40,7 +45,6 @@
 		9CAD55431EDC9CC9002F7298 /* EsqueciASenha.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenha.swift; path = Screens/EsqueciASenha/Model/EsqueciASenha.swift; sourceTree = "<group>"; };
 		9CAD55451EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EsqueciASenhaViewController01.swift; path = Screens/EsqueciASenha/EsqueciASenhaViewController01.swift; sourceTree = "<group>"; };
 		9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoCadastroViewController.swift; path = Screens/NovoCadastro/NovoCadastroViewController.swift; sourceTree = "<group>"; };
-		CE1539A11ECE2BF2006DB75B /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Usuario.swift; path = Entidades/Usuario.swift; sourceTree = "<group>"; };
 		CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6963931EC39149007C744E /* customImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = customImageView.swift; path = Comum/customImageView.swift; sourceTree = "<group>"; };
 		CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiLogin.swift; path = Network/ApiLogin.swift; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0091FD4F1F0AD6BF00F987D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */,
+				000421A41F0C08670087CBBB /* NovoLogin.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		05FD56109EF6C0CFFE96E123 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,7 @@
 		9CDCC1BC1EF840AF00B04C38 /* NovoUsuario */ = {
 			isa = PBXGroup;
 			children = (
+				0091FD4F1F0AD6BF00F987D1 /* Model */,
 				9CDCC1BD1EF840ED00B04C38 /* NovoCadastroViewController.swift */,
 			);
 			name = NovoUsuario;
@@ -130,6 +144,7 @@
 				CEDF6FAC1EC5FF4400881752 /* RoundedButton.swift */,
 				CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */,
 				9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */,
+				00D597661F0ECBC800B86CD4 /* Alert.swift */,
 			);
 			name = Comum;
 			sourceTree = "<group>";
@@ -159,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				CEDF6FAE1EC6519400881752 /* loginViewController.swift */,
-				CE1539A11ECE2BF2006DB75B /* Usuario.swift */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -248,7 +262,7 @@
 				TargetAttributes = {
 					CECC12071EC0A95100BC2556 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = LK6M6GLJ39;
+						DevelopmentTeam = P8J583ZWC9;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -328,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -341,18 +355,20 @@
 				9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */,
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
+				00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */,
 				9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
 				9CAD55441EDC9CC9002F7298 /* EsqueciASenha.swift in Sources */,
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
 				9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */,
+				0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */,
 				CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */,
 				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
-				CE1539A21ECE2BF2006DB75B /* Usuario.swift in Sources */,
 				9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
 				CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */,
+				000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,7 +492,7 @@
 			baseConfigurationReference = DE42778C8B306481AE7A4272 /* Pods-e190.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LK6M6GLJ39;
+				DEVELOPMENT_TEAM = P8J583ZWC9;
 				INFOPLIST_FILE = e190/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gntec.e190.e190;
@@ -490,7 +506,7 @@
 			baseConfigurationReference = 2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LK6M6GLJ39;
+				DEVELOPMENT_TEAM = P8J583ZWC9;
 				INFOPLIST_FILE = e190/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.gntec.e190.e190;

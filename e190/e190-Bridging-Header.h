@@ -10,7 +10,7 @@
 #define e190_Bridging_Header_h
 
 #import "Pods/AZSClient/AZSClient.h"
-//#import "AZSClient/AZSClient.h"
-
+#import "Pods/VMaskTextField/VMaskTextField.h"
+#import "Pods/VMaskTextField/VMaskEditor.h"
 
 #endif /* e190_Bridging_Header_h */

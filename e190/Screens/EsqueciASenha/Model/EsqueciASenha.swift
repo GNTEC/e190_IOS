@@ -42,6 +42,7 @@ class EsqueciASenha {
     
     func RedefinirSenha (email: String, senhaProvisoria: String, senhaNova: String, completionHandler:@escaping (_ result:Int) ->Void) {
         
+        
         let urlString = "http://sekron.azurewebsites.net/api/redefinirsenha/atualizaSenha?email=" + email + "&senhaProvisoria=" + senhaProvisoria + "&senhaNova=" + senhaNova
         
         var ret: Int = 0

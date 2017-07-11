@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import  AZSClient
+import AZSClient
+import VMaskTextField
 
 struct stImgProfile {
     static var nomeImg: String?
@@ -15,25 +16,23 @@ struct stImgProfile {
     static var path : String?
 }
 
-
 class NovoCadastroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate {
-    
     
     @IBOutlet weak var imgPerfil: UIButton!
     @IBOutlet weak var text_nome: UITextField!
-    @IBOutlet weak var text_celular: UITextField!
+    @IBOutlet weak var text_celular: VMaskTextField!
     @IBOutlet weak var text_data_nascimento: UITextField!
-    @IBOutlet weak var text_cpf: UITextField!
-    @IBOutlet weak var text_rg: UITextField!
-    @IBOutlet weak var text_telefone_fixo: UITextField!
+    @IBOutlet weak var text_cpf: VMaskTextField!
+    @IBOutlet weak var text_rg: VMaskTextField!
+    @IBOutlet weak var text_telefone_fixo: VMaskTextField!
     @IBOutlet weak var text_endereco: UITextField!
-    @IBOutlet weak var text_cep: UITextField!
+    @IBOutlet weak var text_cep: VMaskTextField!
     @IBOutlet weak var text_numero: UITextField!
     @IBOutlet weak var txt_complemento: UITextField!
     @IBOutlet weak var text_cidade: UITextField!
     @IBOutlet weak var text_marca: UITextField!
     @IBOutlet weak var text_modelo: UITextField!
-    @IBOutlet weak var text_placa: UITextField!
+    @IBOutlet weak var text_placa: VMaskTextField!
     @IBOutlet weak var text_cor: UITextField!
     @IBOutlet weak var text_email: UITextField!
     @IBOutlet weak var text_confirma_email: UITextField!
@@ -55,12 +54,16 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     var imgPicker: UIImagePickerController!
     
     var sexo = ["feminino","masculino"]
+    var sexoSelecionado: String = ""
     
     var estado = ["Acre AC","Alagoas AL","Amapá AP","Amazonas AM","Bahia BA","Ceará CE","Distrito Federal DF","Espírito Santo ES","Goiás GO","Maranhão MA","Mato Grosso MT","Mato Grosso do Sul MS","Minas Gerais MG","Pará PA","Paraíba PB","Paraná PR","Pernambuco PE","Piauí PI","Rio de Janeiro RJ","Rio Grande do Norte RN","Rio Grande do Sul RS","Rondônia RO","Roraima RR","Santa Catarina SC","São Paulo SP","Sergipe SE","Tocantins TO"]
     
     var pickerView_sexo = UIPickerView()
     var pickerView_estado = UIPickerView()
     var imgTag:Int = 0
+    var estadoSelecionado: String! = ""
+    var voluntatioSelecionado: String = ""
+    var strCelular: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +71,38 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         
+        self.iniciaMascaras()
+        
         // função que esconde o teclado
         self.hideKeyboardWhenTappedAround()
+        
+    }
+    
+    func iniciaMascaras ()
+    {
+        //CELULAR
+        self.text_celular.mask = "(##) #####-####"
+        self.text_celular.delegate = self
+        
+        //CPF
+        self.text_cpf.mask = "###.###.###-##"
+        self.text_cpf.delegate = self
+        
+        //RG
+        self.text_rg.mask = "##.###.###-##"
+        self.text_rg.delegate = self
+        
+        //TELEFONE FIXO
+        self.text_telefone_fixo.mask = "(##) ####-####"
+        self.text_telefone_fixo.delegate = self
+        
+        //CEP
+        self.text_cep.mask = "#####-###"
+        self.text_cep.delegate = self
+
+        //PLACA
+//        self.text_placa.mask = "###-####"
+//        self.text_placa.delegate = self
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -114,11 +147,18 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if pickerView == pickerView_sexo {
+            
+            if let gender = self.sexo[row].characters.first {
+                self.sexoSelecionado = "\(gender)"
+            }
+            
             self.txt_sexo.text = self.sexo[row]
             //self.pickerView_sexo.isHidden = true
             
         }
         else if pickerView == pickerView_estado {
+            
+            self.estadoSelecionado = self.estado[row].substring(from:self.estado[row].index(self.estado[row].endIndex, offsetBy: -2))
             
             self.text_estado.text = self.estado[row]
             //self.pickerView_estado.isHidden = true
@@ -155,44 +195,68 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let api = ApiNovoCadastro()
-        let retBool: Bool = true
-        let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
-        
-        let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
-        
-        if(newLength == 8)
-        {
-            api.buscaEnderecoPorCep(cep: newString, completionHandler: { (result) in
-                
-                if result.count > 0
-                {
-                
-                    self.text_endereco.text = result.object(forKey: "logradouro") as? String
-                    self.txt_complemento.text = result.object(forKey: "complemento") as? String
-                    self.text_cidade.text = result.object(forKey: "localidade") as? String
-                    //self.text_estado.text = result.object(forKey: "uf") as? String
-                }
-                else
-                {
-                    let alertController = UIAlertController(title: "Alterta", message: "CEP Inválido", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
-                    
-                    alertController.addAction(okAction)
-                    
-                    self.present(alertController, animated: true, completion: nil)
-                }
-            })
+        if textField == self.text_celular {
+            return self.text_celular.shouldChangeCharacters(in: range, replacementString: string)
         }
         
-        return retBool
+        if textField == self.text_cpf {
+            return self.text_cpf.shouldChangeCharacters(in: range, replacementString: string)
+        }
+        
+        if textField == self.text_rg {
+            return self.text_rg.shouldChangeCharacters(in: range, replacementString: string)
+        }
+        
+        if textField == self.text_telefone_fixo {
+            return self.text_telefone_fixo.shouldChangeCharacters(in: range, replacementString: string)
+        }
+        
+        if textField == self.text_cep {
+        
+            let api = ApiNovoCadastro()
+            let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
+            
+            let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
+            
+            if(newLength == 8)
+            {
+                api.buscaEnderecoPorCep(cep: newString, completionHandler: { (result) in
+                    
+                    if result.count > 0
+                    {
+                        self.text_endereco.text = result.object(forKey: "logradouro") as? String
+                        self.txt_complemento.text = result.object(forKey: "complemento") as? String
+                        self.text_cidade.text = result.object(forKey: "localidade") as? String
+                    }
+                    else
+                    {
+                        let alertController = UIAlertController(title: "Alterta", message: "CEP Inválido", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "ok", style: .default, handler: nil)
+                        
+                        alertController.addAction(okAction)
+                        
+                        self.present(alertController, animated: true, completion: nil)
+                    }
+                })
+            }
+        
+            return true
+        }
+        
+        if textField == self.text_placa {
+            return text_placa.shouldChangeCharacters(in: range, replacementString: string);
+        }
+        
+        return false
     }
     
     func datePickerValueChanged(sender:UIDatePicker) {
         
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "pt_BR")
+        dateFormatter.setLocalizedDateFormatFromTemplate("dd/MM/yyyy")
         
-        dateFormatter.dateStyle = .medium
+        dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
         
         self.text_data_nascimento.text = dateFormatter.string(from: sender.date)
@@ -215,12 +279,10 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         let cancelAction = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         
-        
         alerController.addAction(cameraAction)
         alerController.addAction(cancelAction)
         
         present(alerController, animated: true, completion: nil)
-        
     }
     
     
@@ -293,11 +355,36 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
 
-    
     @IBAction func proximoPasso(_ sender: Any) {
         
-//        if validaCamposObrigatorio() == true
-//        {
+        // remove mascara
+        
+        strCelular = String(text_celular.rawToDouble())
+        
+        if validaCamposObrigatorio() == true
+        {
+            let api  = ApiNovoCadastro()
+            
+            // CHAMA A FUNÇÃO QUE GRAVA O LOGIN
+            let modelLogin = NovoLogin(codLogin: 0, email: text_email.text!, senha: text_senha.text!, token: "0", serialChip: "1").toJSON()
+            
+            // GRAVA USUARIO PRIMEIRO
+            api.criaLogin(login: modelLogin, completionHandler: { (retorno) in
+                
+                // SE GRAVOU LOGIN GRAVA USUARIO
+                if (retorno["codLogin"] as? Int) != nil {
+                    
+                    let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: retorno["codLogin"] as! Int , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: self.text_cpf.text!, rg: self.text_rg.text!, celular: self.text_celular.text!, telefone: self.text_telefone_fixo.text!, sexo:self.sexoSelecionado, cep: self.text_cep.text!, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: self.text_placa.text!, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
+                    
+                
+                    // CRIA O USUARIO
+                    api.criaUsuario(usuario: modelUsuario, compeletionHandler: { (retorno) in
+                        print("ok")
+                    })
+                }
+            })
+    
+            
 //            let api  = ApiNovoCadastro()
 //
 //            let nomeImg = stImgProfile.nomeImg
@@ -305,53 +392,49 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
 //            let pathImg = stImgProfile.path
 //        
 //            api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
-//        }
-        
-        var container: AZSCloudBlobContainer?
-        
-        let blob = container!.blockBlobReference(fromName: "pettediag173")
-        
-        blob.upload(fromText: stImgProfile.path!,  completionHandler: { (error: Error?) -> Void in
             
-            print(error)
-//            if (self.viewToReloadOnBlobAdd != nil) {
-//                self.viewToReloadOnBlobAdd!.reloadBlobList()
-//            }
-        })
-        
-        
+            //        var container: AZSCloudBlobContainer?
+            //        let blob = container!.blockBlobReference(fromName: "pettediag173")
+            //        blob.upload(fromText: stImgProfile.path!,  completionHandler: { (error: Error?) -> Void in
+            //            print(error)
+            //        })
+        }
     }
     
     @IBAction func optSocorrista(_ sender: Any) {
         
         alteraEstadoSwitch(nome: "sw_socorrista", opcaoSelecionada: sw_socorrista.isOn)
-        
+        self.voluntatioSelecionado = "SOCORRISTA"
     }
     
     @IBAction func optMedico(_ sender: Any) {
         
         alteraEstadoSwitch(nome: "sw_medico", opcaoSelecionada: sw_medico.isOn)
+        self.voluntatioSelecionado = "MEDICO"
     }
     
     @IBAction func optPolicial(_ sender: Any) {
         
         alteraEstadoSwitch(nome: "sw_policial", opcaoSelecionada: sw_policial.isOn)
-        
+        self.voluntatioSelecionado = "POLICIAL"
     }
     
     @IBAction func optDefesaCivil(_ sender: Any) {
         
         alteraEstadoSwitch(nome: "sw_defesa_civil", opcaoSelecionada: sw_defesa_civil.isOn)
+        self.voluntatioSelecionado = "DEFESA CIVIL"
+        
     }
     
     @IBAction func optNenhuma(_ sender: Any) {
     
         alteraEstadoSwitch(nome: "sw_nenhuma", opcaoSelecionada: sw_nenhuma.isOn)
+        self.voluntatioSelecionado = "NAO OBRIGADO"
         
     }
     
     func alteraEstadoSwitch ( nome: String, opcaoSelecionada: Bool ){
-    
+        
         if nome == "sw_socorrista" {
             self.sw_socorrista.isOn = true
         }

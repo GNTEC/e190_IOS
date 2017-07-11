@@ -14,6 +14,7 @@ pod 'AlamofireObjectMapper', '~> 4.1'
 pod 'AlamofireImage', '~> 3.2'
 pod 'SideMenu', '~> 2.3'
 pod 'AZSClient', '~> 0.2'
+pod 'VMaskTextField', '~> 1.0'
 
 end
 
