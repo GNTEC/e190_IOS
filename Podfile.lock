@@ -6,8 +6,9 @@ PODS:
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 2.0)
   - AZSClient (0.2.4)
-  - ObjectMapper (2.2.7)
+  - ObjectMapper (2.2.8)
   - SideMenu (2.3.3)
+  - SwiftMaskText (1.0.3)
   - VMaskTextField (1.0.8)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - AlamofireObjectMapper (~> 4.1)
   - AZSClient (~> 0.2)
   - SideMenu (~> 2.3)
+  - SwiftMaskText (~> 1.0)
   - VMaskTextField (~> 1.0)
 
 SPEC CHECKSUMS:
@@ -23,10 +25,11 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireObjectMapper: 435adc82f5b367679bd9e71c4974a54efd0b2521
   AZSClient: 086e68a3a043da5e162c7a962efce9fbceb1c9f7
-  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
   SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
+  SwiftMaskText: b3d51379c290f4603421fac248eb699d9b882dc0
   VMaskTextField: e77fe33633f999c5c38e70bed0afece0625624a4
 
-PODFILE CHECKSUM: f823fe80c7e3a3ccf9716935fddefb12a8dc0d56
+PODFILE CHECKSUM: 017157e324d6c5936dfb0aa88d5159eb4eb3887c
 
 COCOAPODS: 1.2.1

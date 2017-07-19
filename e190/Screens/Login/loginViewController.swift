@@ -46,7 +46,6 @@ class LoginViewController: UIViewController {
             return
         }
     
-        
         if txtSenha.text == "" {
             
             // create the alert

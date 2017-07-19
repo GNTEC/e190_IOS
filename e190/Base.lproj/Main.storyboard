@@ -183,11 +183,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0sI-jj-5x6">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2C3-q4-h8I" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2C3-q4-h8I" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="(NN) NNNNN-NNNN"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-5J-MWY" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -261,11 +264,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Q9O-ku-cdv">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-Ev-GC0" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGM-Ev-GC0" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNN.NNN.NNN-NN"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="u5z-bb-8cH" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -286,11 +292,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="eFi-sB-98U">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT9-Jn-gv1" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pT9-Jn-gv1" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NN.NNN.NNN-%"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="SeZ-z8-9mB" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -311,11 +320,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="vpQ-ct-e9M">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNw-bn-rXf" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mNw-bn-rXf" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="(NN) NNNN-NNNN"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="uKk-SK-hJ8" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -389,11 +401,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="yp4-ej-dyA">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-Mv-xjv" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-Mv-xjv" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="NNNNN-NNN"/>
+                                                                </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="pPJ-eW-GbH" id="feh-TE-7JJ"/>
                                                                 </connections>
@@ -576,11 +591,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6LZ-CD-4n5">
                                                         <rect key="frame" x="0.0" y="21" width="359" height="30"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6i-TC-5Hu" customClass="VMaskTextField">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6i-TC-5Hu" customClass="SwiftMaskField" customModule="SwiftMaskText">
                                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="30"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="UUU-NNNN"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textField>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_interrogacao" translatesAutoresizingMaskIntoConstraints="NO" id="r0b-Rx-p1Q" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
                                                                 <rect key="frame" x="335" y="0.0" width="24" height="30"/>
@@ -989,13 +1007,13 @@
                         <outlet property="sw_nenhuma" destination="RWr-2M-dwA" id="prT-l7-PGa"/>
                         <outlet property="sw_policial" destination="Ndm-5H-H9P" id="WZ9-52-411"/>
                         <outlet property="sw_socorrista" destination="hT4-v8-jJn" id="4Be-Fe-7WD"/>
-                        <outlet property="text_celular" destination="2C3-q4-h8I" id="5u1-YQ-1wb"/>
+                        <outlet property="text_celular" destination="2C3-q4-h8I" id="ZPf-sA-W1E"/>
                         <outlet property="text_cep" destination="D2A-Mv-xjv" id="B4U-2a-1cT"/>
                         <outlet property="text_cidade" destination="gKB-Sy-94U" id="Jxq-t1-aZa"/>
                         <outlet property="text_confirma_email" destination="zof-w5-c0u" id="SI3-NJ-MGJ"/>
                         <outlet property="text_confirma_senha" destination="SCX-xV-o7s" id="SQh-WO-kqs"/>
                         <outlet property="text_cor" destination="2iV-B3-PZh" id="f9m-QI-ae0"/>
-                        <outlet property="text_cpf" destination="HGM-Ev-GC0" id="m49-Te-Kw2"/>
+                        <outlet property="text_cpf" destination="HGM-Ev-GC0" id="g1h-rH-xQx"/>
                         <outlet property="text_data_nascimento" destination="XNC-aL-Q5G" id="xyo-B7-vja"/>
                         <outlet property="text_email" destination="jpT-QN-JQY" id="GIW-Pp-hho"/>
                         <outlet property="text_endereco" destination="lsY-Im-mKV" id="JJG-Kb-h4f"/>
@@ -1005,7 +1023,7 @@
                         <outlet property="text_nome" destination="fjf-RI-caI" id="gla-jC-g8n"/>
                         <outlet property="text_numero" destination="AHW-G7-LzN" id="H25-4s-Nry"/>
                         <outlet property="text_placa" destination="K6i-TC-5Hu" id="fUa-3S-3Xg"/>
-                        <outlet property="text_rg" destination="pT9-Jn-gv1" id="Gpa-Wj-yGA"/>
+                        <outlet property="text_rg" destination="pT9-Jn-gv1" id="lYD-LC-ijZ"/>
                         <outlet property="text_senha" destination="BsS-2t-YrM" id="Fkv-de-Mej"/>
                         <outlet property="text_telefone_fixo" destination="mNw-bn-rXf" id="6Mt-Nh-2M7"/>
                         <outlet property="txt_complemento" destination="rT1-m0-ZVE" id="hhd-5J-dA1"/>
@@ -1014,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI7-Lj-BK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-9.4202898550724647" y="1339.4021739130435"/>
+            <point key="canvasLocation" x="-1" y="1300"/>
         </scene>
         <!--EsqueciA Senha View Controller-->
         <scene sceneID="DPG-uf-38o">
@@ -1408,7 +1426,7 @@
                                         <rect key="frame" x="0.0" y="136" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QzV-ge-bUW" id="EEE-4J-Wxy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnG-o0-gWo">
@@ -1439,7 +1457,7 @@
                                         <rect key="frame" x="0.0" y="196" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hxa-X6-jp1" id="Q4g-53-eAQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perfil" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jY-hk-mgk">
@@ -1470,7 +1488,7 @@
                                         <rect key="frame" x="0.0" y="256" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T7h-AQ-gIF" id="oca-u4-H8c">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contatos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy4-R9-M0n">
@@ -1501,7 +1519,7 @@
                                         <rect key="frame" x="0.0" y="316" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w4i-XX-cST" id="sL0-dr-lgA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notificação" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQN-xZ-quz">
@@ -1532,7 +1550,7 @@
                                         <rect key="frame" x="0.0" y="376" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pCA-vB-iWK" id="VCN-Nc-YzU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergência Médica" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-vf-6Yd">
@@ -1563,7 +1581,7 @@
                                         <rect key="frame" x="0.0" y="436" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ESJ-Qo-Koj" id="5PV-Fv-LTI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviços Adicionais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pR-OY-l5X">
@@ -1594,7 +1612,7 @@
                                         <rect key="frame" x="0.0" y="496" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1P6-h4-7v5" id="8d8-Rg-lVN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pagamento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IjL-SN-jZi">
@@ -1625,7 +1643,7 @@
                                         <rect key="frame" x="0.0" y="556" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B92-0S-K24" id="Ih1-CP-1i5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dúvidas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUv-nP-oKj">
@@ -1656,7 +1674,7 @@
                                         <rect key="frame" x="0.0" y="616" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3e-ia-zyI" id="Ehq-g8-jkW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEO-gq-Uvv">
@@ -1687,7 +1705,7 @@
                                         <rect key="frame" x="0.0" y="676" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nLs-Sv-Mcp" id="Pra-j6-kc7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sair" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCH-SR-Pwq">

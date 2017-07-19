@@ -8,7 +8,7 @@
 
 import UIKit
 import AZSClient
-import VMaskTextField
+import SwiftMaskText
 
 struct stImgProfile {
     static var nomeImg: String?
@@ -20,19 +20,19 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBOutlet weak var imgPerfil: UIButton!
     @IBOutlet weak var text_nome: UITextField!
-    @IBOutlet weak var text_celular: VMaskTextField!
+    @IBOutlet weak var text_celular: SwiftMaskField!
     @IBOutlet weak var text_data_nascimento: UITextField!
-    @IBOutlet weak var text_cpf: VMaskTextField!
-    @IBOutlet weak var text_rg: VMaskTextField!
-    @IBOutlet weak var text_telefone_fixo: VMaskTextField!
+    @IBOutlet weak var text_cpf: SwiftMaskField!
+    @IBOutlet weak var text_rg: SwiftMaskField!
+    @IBOutlet weak var text_telefone_fixo: SwiftMaskField!
     @IBOutlet weak var text_endereco: UITextField!
-    @IBOutlet weak var text_cep: VMaskTextField!
+    @IBOutlet weak var text_cep: SwiftMaskField!
     @IBOutlet weak var text_numero: UITextField!
     @IBOutlet weak var txt_complemento: UITextField!
     @IBOutlet weak var text_cidade: UITextField!
     @IBOutlet weak var text_marca: UITextField!
     @IBOutlet weak var text_modelo: UITextField!
-    @IBOutlet weak var text_placa: VMaskTextField!
+    @IBOutlet weak var text_placa: SwiftMaskField!
     @IBOutlet weak var text_cor: UITextField!
     @IBOutlet weak var text_email: UITextField!
     @IBOutlet weak var text_confirma_email: UITextField!
@@ -49,7 +49,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var text_estado: UITextField!
     @IBOutlet weak var drop_estado: UIPickerView!
     @IBOutlet weak var dt_nascimento: UIDatePicker!
-    
     
     var imgPicker: UIImagePickerController!
     
@@ -71,40 +70,11 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         imgPicker = UIImagePickerController()
         imgPicker.delegate = self
         
-        self.iniciaMascaras()
-        
         // função que esconde o teclado
         self.hideKeyboardWhenTappedAround()
         
     }
     
-    func iniciaMascaras ()
-    {
-        //CELULAR
-        self.text_celular.mask = "(##) #####-####"
-        self.text_celular.delegate = self
-        
-        //CPF
-        self.text_cpf.mask = "###.###.###-##"
-        self.text_cpf.delegate = self
-        
-        //RG
-        self.text_rg.mask = "##.###.###-##"
-        self.text_rg.delegate = self
-        
-        //TELEFONE FIXO
-        self.text_telefone_fixo.mask = "(##) ####-####"
-        self.text_telefone_fixo.delegate = self
-        
-        //CEP
-        self.text_cep.mask = "#####-###"
-        self.text_cep.delegate = self
-
-        //PLACA
-//        self.text_placa.mask = "###-####"
-//        self.text_placa.delegate = self
-    }
-
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -195,32 +165,19 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if textField == self.text_celular {
-            return self.text_celular.shouldChangeCharacters(in: range, replacementString: string)
-        }
-        
-        if textField == self.text_cpf {
-            return self.text_cpf.shouldChangeCharacters(in: range, replacementString: string)
-        }
-        
-        if textField == self.text_rg {
-            return self.text_rg.shouldChangeCharacters(in: range, replacementString: string)
-        }
-        
-        if textField == self.text_telefone_fixo {
-            return self.text_telefone_fixo.shouldChangeCharacters(in: range, replacementString: string)
-        }
-        
         if textField == self.text_cep {
         
             let api = ApiNovoCadastro()
-            let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
             
+            let newLength = (textField.text?.characters.count)! + string.characters.count - range.length
             let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
             
-            if(newLength == 8)
+            if(newLength == 9)
             {
-                api.buscaEnderecoPorCep(cep: newString, completionHandler: { (result) in
+                self.text_cep.text = newString
+                let cepSemMascara = self.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
+                
+                api.buscaEnderecoPorCep(cep: cepSemMascara, completionHandler: { (result) in
                     
                     if result.count > 0
                     {
@@ -241,10 +198,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
             }
         
             return true
-        }
-        
-        if textField == self.text_placa {
-            return text_placa.shouldChangeCharacters(in: range, replacementString: string);
         }
         
         return false
@@ -358,8 +311,12 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     @IBAction func proximoPasso(_ sender: Any) {
         
         // remove mascara
-        
-        strCelular = String(text_celular.rawToDouble())
+        let celularSemMascara = self.removeMascara(text: self.text_celular, mascara: "(NN) NNNNN-NNNN")
+        let cpfSemMascara = self.removeMascara(text: self.text_cpf, mascara: "NNN.NNN.NNN-NN")
+        let rgSemMascara = self.removeMascara(text: self.text_rg, mascara: "NN.NNN.NNN-%")
+        let telefoneFixoSemMascara = self.removeMascara(text: self.text_telefone_fixo, mascara: "(NN) NNNN-NNNN")
+        let cepSemMascara = self.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
+        let placaSemMascara = self.removeMascara(text: self.text_placa, mascara: "UUU-NNNN")
         
         if validaCamposObrigatorio() == true
         {
@@ -374,7 +331,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
                 // SE GRAVOU LOGIN GRAVA USUARIO
                 if (retorno["codLogin"] as? Int) != nil {
                     
-                    let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: retorno["codLogin"] as! Int , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: self.text_cpf.text!, rg: self.text_rg.text!, celular: self.text_celular.text!, telefone: self.text_telefone_fixo.text!, sexo:self.sexoSelecionado, cep: self.text_cep.text!, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: self.text_placa.text!, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
+                    let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: retorno["codLogin"] as! Int , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: cpfSemMascara, rg: rgSemMascara, celular: celularSemMascara, telefone: telefoneFixoSemMascara, sexo:self.sexoSelecionado.uppercased(), cep: cepSemMascara, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: placaSemMascara, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
                     
                 
                     // CRIA O USUARIO
@@ -399,6 +356,15 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
             //            print(error)
             //        })
         }
+    }
+    
+    func removeMascara(text:SwiftMaskField, mascara: String) -> String
+    {
+        if let textRecuperado = text.text {
+            return text.removeMaskCharacters(text: textRecuperado, withMask: mascara)
+        }
+        
+        return ""
     }
     
     @IBAction func optSocorrista(_ sender: Any) {
