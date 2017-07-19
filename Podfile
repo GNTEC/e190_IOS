@@ -1,23 +1,17 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, ‘8.0’
-use_frameworks!
-inhibit_all_warnings!
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
 
-use_frameworks!
-inhibit_all_warnings!
+target 'e190' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
 
-def common_targets()
-    # SWIFT LIB
-
-pod 'Alamofire', '~> 4.4'
-pod 'AlamofireObjectMapper', '~> 4.1'
-pod 'AlamofireImage', '~> 3.2'
-pod 'SideMenu', '~> 2.3'
-pod 'AZSClient', '~> 0.2'
-pod 'VMaskTextField', '~> 1.0'
-
-end
-
-target ‘e190’ do
-    common_targets
+  # Pods for e190
+  pod 'Alamofire', '~> 4.4'
+  pod 'AlamofireImage', '~> 3.1'
+  pod 'AlamofireObjectMapper', '~> 4.0'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+  pod 'AZSClient'
+  pod ‘VMaskTextField’
+  pod 'SideMenu'
 end
