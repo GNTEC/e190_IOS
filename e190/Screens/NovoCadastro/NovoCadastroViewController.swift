@@ -140,14 +140,44 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         if(textField == txt_sexo){
             
             self.pickerView_sexo.delegate = self
+            
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.default
+            toolBar.isTranslucent = true
+            toolBar.tintColor = UIColor.red //UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+            toolBar.sizeToFit()
+            
+            let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.done  , target: self, action: #selector(donePickerSexo))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
+            let cancelButton = UIBarButtonItem(title: "Cancelar", style: UIBarButtonItemStyle.done, target: self, action:#selector(cancelPickerSexo))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.isUserInteractionEnabled = true
+            
             textField.inputView = self.pickerView_sexo
+            textField.inputAccessoryView = toolBar
             self.pickerView_sexo.isHidden = false
         }
         
         if(textField == text_estado){
             
             self.pickerView_estado.delegate = self
+            
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.default
+            toolBar.isTranslucent = true
+            toolBar.tintColor = UIColor.red //UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+            toolBar.sizeToFit()
+            
+            let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.done  , target: self, action: #selector(donePickerEstado))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
+            let cancelButton = UIBarButtonItem(title: "Cancelar", style: UIBarButtonItemStyle.done, target: self, action:#selector(cancelPickerEstado))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.isUserInteractionEnabled = true
+            
             textField.inputView = self.pickerView_estado
+            textField.inputAccessoryView = toolBar
             self.pickerView_estado.isHidden = false
         }
         
@@ -155,12 +185,56 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
             
             let datePickerView:UIDatePicker = UIDatePicker()
             
+            let toolBar = UIToolbar()
+            toolBar.barStyle = UIBarStyle.default
+            toolBar.isTranslucent = true
+            toolBar.tintColor = UIColor.red //UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+            toolBar.sizeToFit()
+            
+            let doneButton = UIBarButtonItem(title: "OK", style: UIBarButtonItemStyle.done  , target: self, action: #selector(donePickerDataNascimento))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action:nil)
+            let cancelButton = UIBarButtonItem(title: "Cancelar", style: UIBarButtonItemStyle.done, target: self, action:#selector(cancelPickerDataNascimento))
+            
+            toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+            toolBar.isUserInteractionEnabled = true
+            
             datePickerView.datePickerMode = UIDatePickerMode.date
             
             textField.inputView = datePickerView
+            textField.inputAccessoryView = toolBar
             
             datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), for: UIControlEvents.valueChanged)
         }
+    }
+    
+    func donePickerDataNascimento(){
+        self.text_data_nascimento.resignFirstResponder()
+    }
+    
+    func cancelPickerDataNascimento(){
+        
+        self.text_data_nascimento.resignFirstResponder()
+        self.text_data_nascimento.text = ""
+    }
+    
+    func donePickerEstado(){
+        self.text_estado.resignFirstResponder()
+    }
+    
+    func cancelPickerEstado(){
+        
+        self.text_estado.resignFirstResponder()
+        self.text_estado.text = ""
+    }
+    
+    func donePickerSexo(){
+        self.txt_sexo.resignFirstResponder()
+    }
+    
+    func cancelPickerSexo(){
+        
+        self.txt_sexo.resignFirstResponder()
+        self.txt_sexo.text = ""
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -445,143 +519,104 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func validaCamposObrigatorio () -> Bool
     {
-
+        
+        let alerta = Alert();
+        
         if text_celular.text == "" {
-        
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Número do Celular !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
             
-            alertController.addAction(okAction)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Celular !"), animated: true, completion: nil)
             
-            self.present(alertController, animated: true, completion: nil)
-        
             return false
         }
         
         if text_nome.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Nome !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Nome !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_data_nascimento.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher a Data de Nascimento !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Nascimento !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_cpf.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o CPF !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o CPF !"), animated: true, completion: nil)
             
             return false
         }
-
+        
         if text_rg.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o RG !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o RG !"), animated: true, completion: nil)
             
             return false
         }
         
         if txt_sexo.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Escolha o Sexo !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Sexo !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_cep.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o CEP !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o CEP !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_endereco.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Endereço !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Endereço !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_numero.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher o Número !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher o Número !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_cidade.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Preencher a Cidade !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Preencher a Cidade !"), animated: true, completion: nil)
             
             return false
         }
         
         if text_estado.text == "" {
             
-            let alertController = UIAlertController(title: "Alerta", message: "Favor Escolher o Estado !", preferredStyle: .alert)
-            let okAction = UIAlertAction (title: "OK", style: .default, handler: nil)
-            
-            alertController.addAction(okAction)
-            
-            self.present(alertController, animated: true, completion: nil)
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Favor Escolher o Estado !"), animated: true, completion: nil)
             
             return false
         }
-    
+        
+        if text_email.text != text_confirma_email.text {
+            
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "E-Mails digitados não conferem !"), animated: true, completion: nil)
+            
+            return false
+        }
+        
+        if text_senha.text != text_confirma_senha.text {
+            
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem: "Senhas digitados não conferem !"), animated: true, completion: nil)
+            
+            return false
+        }
+        
+        
         return true
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
