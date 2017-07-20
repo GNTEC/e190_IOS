@@ -41,7 +41,7 @@ class SideMenuTableView: UITableViewController {
         if indexPath.row == 4 {
             
             let mainStoryboard = UIStoryboard(name: "EmergenciaMedica", bundle: Bundle.main)
-            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "EmedicaViewController") as UIViewController
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "EMedica") as UIViewController
             self.present(vc, animated: true, completion: nil)
             
         }
