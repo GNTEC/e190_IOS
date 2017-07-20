@@ -10,6 +10,8 @@
 		000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000421A41F0C08670087CBBB /* NovoLogin.swift */; };
 		0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */; };
 		00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D597661F0ECBC800B86CD4 /* Alert.swift */; };
+		409BD3071F213220003F8542 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409BD3061F213220003F8542 /* TokenViewController.swift */; };
+		409BD3091F213E28003F8542 /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409BD3081F213E28003F8542 /* ApiToken.swift */; };
 		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
 		9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */; };
@@ -36,6 +38,8 @@
 		0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoUsuario.swift; path = Screens/NovoCadastro/Model/NovoUsuario.swift; sourceTree = "<group>"; };
 		00D597661F0ECBC800B86CD4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Comum/Alert.swift; sourceTree = "<group>"; };
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
+		409BD3061F213220003F8542 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Screens/Token/TokenViewController.swift; sourceTree = "<group>"; };
+		409BD3081F213E28003F8542 /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = Network/ApiToken.swift; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "e190-Bridging-Header.h"; path = "e190/e190-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -90,6 +94,14 @@
 				48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		409BD3051F212FF9003F8542 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				409BD3061F213220003F8542 /* TokenViewController.swift */,
+			);
+			name = Token;
 			sourceTree = "<group>";
 		};
 		9CAD55421EDC9C90002F7298 /* Model */ = {
@@ -152,6 +164,7 @@
 		CEA3E9F11EC0B81B00778318 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				409BD3051F212FF9003F8542 /* Token */,
 				9CDCC1BC1EF840AF00B04C38 /* NovoUsuario */,
 				CE1539A51ECF2CFC006DB75B /* EsqueciASenha */,
 				CEDF6FB01EC654B300881752 /* Main */,
@@ -166,6 +179,7 @@
 			children = (
 				CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */,
 				9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */,
+				409BD3081F213E28003F8542 /* ApiToken.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -352,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				409BD3071F213220003F8542 /* TokenViewController.swift in Sources */,
 				9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */,
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
@@ -362,6 +377,7 @@
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
 				9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */,
 				0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */,
+				409BD3091F213E28003F8542 /* ApiToken.swift in Sources */,
 				CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */,
 				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
 				9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */,

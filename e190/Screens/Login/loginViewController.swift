@@ -66,81 +66,56 @@ class LoginViewController: UIViewController {
             "email": self.txtEmail.text!,
             "senha": self.txtSenha.text!,
             "serialChip": "89551020407005425391"
-        //let x = UIDevice.current.identifierForVendor!.uuidString
         ]
-
-        /*
-        let parametros = [
-            
-            "email":"teste@teste.com",
-            "senha":"1234",
-            "serialChip":"89551020407005425391"
-        ]
-        */
         
         indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.black, msg: "Aguarde....")
         self.view.addSubview(indicator!)
         self.indicator!.start()
         
-        let urlString = "http://sekron.azurewebsites.net/api/login/logar"
+        let api  = ApiLogin()
         
-        Alamofire.request(urlString, method: .post, parameters:parametros,encoding: JSONEncoding.default, headers: nil).responseJSON {
-            response in
+        api.login(usuario: parametros) { (retorno) in
             
-            if let status = response.response?.statusCode {
-                
-                switch(status){
-                case 400:
-                    if let result = response.result.value {
+            let alerta = Alert();
+            
+            if retorno.count == 1 {
+            
+                if let messeErro = retorno["Message"]{
                     
-                        
-                        let msgRet = result as? NSDictionary
-                        let strMessegeRet = msgRet?["Message"] as! String
+                    if messeErro as! String  == "Usuario inativo" {
                         
                         self.indicator!.stop()
                         
-                        // create the alert
-                        let alert = UIAlertController(title: "Erro", message: strMessegeRet, preferredStyle: UIAlertControllerStyle.alert)
-                        
-                        // add an action (button)
-                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                        
-                        // show the alert
-                        self.present(alert, animated: true, completion: nil)
+                        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "TokenViewController") as UIViewController
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                    else
+                    {
+                        self.present(alerta.alertaSimples(titulo: "Alerta", mensagem:messeErro  as! String), animated: true, completion: nil)
+                        self.indicator!.stop()
+                        return
+                    }
 
-                    }
+                }
+            }
+            else if retorno.count > 2
+            {
+                self.indicator!.stop()
+                
+                if self.swLembraLogin.isOn == true {
                     
-                default:
-
-                    let Result = response.result.value
-                    let objUser = Result as? NSDictionary
-                    print(objUser)
+                    UserDefaults.standard.setValue(self.txtEmail.text, forKey: "email")
+                    UserDefaults.standard.setValue(self.txtSenha.text, forKey: "senha")
+                }
+                else {
                     
-                    self.indicator!.stop()
-                    
-                    if self.swLembraLogin.isOn == true {
-                        
-                        UserDefaults.standard.setValue(self.txtEmail.text, forKey: "email")
-                        UserDefaults.standard.setValue(self.txtSenha.text, forKey: "senha")
-                    }
-                    else {
-                        
-                        UserDefaults.standard.removeObject(forKey: "email")
-                        UserDefaults.standard.removeObject(forKey: "senha")
-                    
-                    }
-                    
-                    self.performSegue(withIdentifier: "segueLogin", sender: nil)
-                    
-                    /*
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainController") as UIViewController
-                    self.present(vc, animated: true, completion: nil)
-                    */
- 
-                    break
+                    UserDefaults.standard.removeObject(forKey: "email")
+                    UserDefaults.standard.removeObject(forKey: "senha")
                     
                 }
+                
+                self.performSegue(withIdentifier: "segueLogin", sender: nil)
             }
         }
     }

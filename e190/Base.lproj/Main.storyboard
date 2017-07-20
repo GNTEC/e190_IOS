@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="94P-2P-jvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="9"/>
+            <point key="canvasLocation" x="-122" y="-167"/>
         </scene>
         <!--Novo Cadastro View Controller-->
         <scene sceneID="DST-2s-v6I">
@@ -1032,7 +1032,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TI7-Lj-BK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="1300"/>
+            <point key="canvasLocation" x="-93" y="1115"/>
         </scene>
         <!--EsqueciA Senha View Controller-->
         <scene sceneID="DPG-uf-38o">
@@ -1144,7 +1144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoU-0w-xHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="-675"/>
+            <point key="canvasLocation" x="-151" y="-814"/>
         </scene>
         <!--EsqueciA Senha View Controller01-->
         <scene sceneID="JIc-ID-4EQ">
@@ -1266,7 +1266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ac4-Pw-XiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="-675"/>
+            <point key="canvasLocation" x="628" y="-814"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="N3u-qc-4N8">
@@ -1348,7 +1348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mL8-FK-S8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="9"/>
+            <point key="canvasLocation" x="1349" y="-168"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="Qc0-up-pYo">
@@ -1369,7 +1369,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYC-mu-Q2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="9"/>
+            <point key="canvasLocation" x="2055" y="-126"/>
         </scene>
         <!--Side Menu Table View-->
         <scene sceneID="TJK-Gp-ME1">
@@ -1746,7 +1746,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lf1-8P-den" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3765.9420289855075" y="121.46739130434784"/>
+            <point key="canvasLocation" x="2760" y="-126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KCu-u3-duO">
@@ -1771,12 +1771,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOZ-x7-8og" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="705" y="9"/>
+            <point key="canvasLocation" x="656" y="-168"/>
         </scene>
-        <!--View Controller-->
+        <!--Token View Controller-->
         <scene sceneID="qZ8-Ud-dIh">
             <objects>
-                <viewController id="sq0-0D-Q7x" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TokenViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sq0-0D-Q7x" customClass="TokenViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jxQ-Bg-t7q"/>
                         <viewControllerLayoutGuide type="bottom" id="01g-an-2yL"/>
@@ -1799,7 +1799,7 @@
                                     <navigationItem title="Cadastro Token" id="WQC-IA-sfV">
                                         <barButtonItem key="leftBarButtonItem" image="ui_seta_esquerda" style="plain" id="omi-e8-aFG">
                                             <connections>
-                                                <segue destination="pPJ-eW-GbH" kind="show" id="Yhj-tX-9M6"/>
+                                                <action selector="voltar:" destination="sq0-0D-Q7x" id="taO-Qi-aDl"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1832,6 +1832,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="finalizar:" destination="sq0-0D-Q7x" eventType="touchUpInside" id="uHY-oY-ggV"/>
                                     <action selector="proximoPasso:" destination="pPJ-eW-GbH" eventType="touchUpInside" id="zhT-2E-Xz8"/>
                                 </connections>
                             </button>
@@ -1847,6 +1848,7 @@
                                 </state>
                                 <connections>
                                     <action selector="btnNovaConta:" destination="xO5-ao-yXs" eventType="touchUpInside" id="Sq7-hH-MoW"/>
+                                    <action selector="reenviarToken:" destination="sq0-0D-Q7x" eventType="touchUpInside" id="ASE-DS-oG9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vp-qO-qfo">
@@ -1860,7 +1862,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="btnNovaConta:" destination="xO5-ao-yXs" eventType="touchUpInside" id="HHP-Ku-zWe"/>
+                                    <action selector="ligarEmergencia:" destination="sq0-0D-Q7x" eventType="touchUpInside" id="esd-qe-dts"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1887,10 +1889,13 @@
                             <constraint firstItem="zoe-7h-vcp" firstAttribute="leading" secondItem="s7q-xc-dZy" secondAttribute="leadingMargin" constant="8" id="yjX-eV-cml"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textToken" destination="rBF-iN-WY3" id="ir3-Rr-2jP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="diu-zk-XSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.46376811594212" y="701.9021739130435"/>
+            <point key="canvasLocation" x="628" y="478"/>
         </scene>
     </scenes>
     <resources>
@@ -1920,6 +1925,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7K7-0Z-1ud"/>
-        <segue reference="Yhj-tX-9M6"/>
     </inferredMetricsTieBreakers>
 </document>

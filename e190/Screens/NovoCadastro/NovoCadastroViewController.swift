@@ -50,6 +50,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var drop_estado: UIPickerView!
     @IBOutlet weak var dt_nascimento: UIDatePicker!
     
+    var indicator:ProgressIndicator?
     var imgPicker: UIImagePickerController!
     
     var sexo = ["feminino","masculino"]
@@ -72,6 +73,8 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         
         // função que esconde o teclado
         self.hideKeyboardWhenTappedAround()
+        
+        indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.black, msg: "Aguarde....")
         
     }
     
@@ -251,6 +254,9 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
                 self.text_cep.text = newString
                 let cepSemMascara = self.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
                 
+                self.view.addSubview(indicator!)
+                self.indicator!.start()
+                
                 api.buscaEnderecoPorCep(cep: cepSemMascara, completionHandler: { (result) in
                     
                     if result.count > 0
@@ -271,6 +277,7 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
                 })
             }
         
+            self.indicator?.stop()
             return true
         }
         
@@ -384,6 +391,9 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
 
     @IBAction func proximoPasso(_ sender: Any) {
         
+        self.view.addSubview(indicator!)
+        self.indicator!.start()
+        
         // remove mascara
         let celularSemMascara = self.removeMascara(text: self.text_celular, mascara: "(NN) NNNNN-NNNN")
         let cpfSemMascara = self.removeMascara(text: self.text_cpf, mascara: "NNN.NNN.NNN-NN")
@@ -410,26 +420,30 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
                 
                     // CRIA O USUARIO
                     api.criaUsuario(usuario: modelUsuario, compeletionHandler: { (retorno) in
-                        print("ok")
+                        self.uploadImagsAzure()
+                        
+                        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "TokenViewController") as UIViewController
+                        self.present(vc, animated: true, completion: nil)
                     })
                 }
+                
+                self.indicator!.stop()
             })
-    
-            
-//            let api  = ApiNovoCadastro()
-//
-//            let nomeImg = stImgProfile.nomeImg
-//            let img = stImgProfile.img
-//            let pathImg = stImgProfile.path
-//        
-//            api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
-            
-            //        var container: AZSCloudBlobContainer?
-            //        let blob = container!.blockBlobReference(fromName: "pettediag173")
-            //        blob.upload(fromText: stImgProfile.path!,  completionHandler: { (error: Error?) -> Void in
-            //            print(error)
-            //        })
         }
+    }
+    
+    func uploadImagsAzure()
+    {
+
+        let api  = ApiNovoCadastro()
+
+        let nomeImg = stImgProfile.nomeImg
+        let img = stImgProfile.img
+        let pathImg = stImgProfile.path
+
+        api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
+    
     }
     
     func removeMascara(text:SwiftMaskField, mascara: String) -> String
