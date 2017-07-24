@@ -145,19 +145,6 @@ class ApiNovoCadastro {
         
         let conectionStringAzure = "DefaultEndpointsProtocol=https;AccountName=pettediag173;AccountKey=tTwgi2UTEyvnW/hMF1LBDwMYLZX9OKAaA9VDtF/3TvqyLJds+4dYd7Y0n9lj6+Ep4wMFcVWc5k9R7BaWLgA0+w==;EndpointSuffix=core.windows.net"
         
-//        let account:AZSCloudStorageAccount
-//        try! account = AZSCloudStorageAccount(fromConnectionString:conectionStringAzure) //I stored the property in my header file
-//        let blobClient: AZSCloudBlobClient = account.getBlobClient()
-//        let blobContainer: AZSCloudBlobContainer = blobClient.containerReference(fromName: "sekronprofile")
-//
-//        let blob: AZSCloudBlockBlob = blobContainer.blockBlobReference(fromName: imgName) //If you want a random name, I used let imageName = CFUUIDCreateString(nil, CFUUIDCreate(nil))
-//        let imageData = UIImagePNGRepresentation(img)
-//        
-//        blob.upload(from: imageData!, completionHandler: {(NSError) -> Void in
-//
-//            
-//        })
-        
         let storageAccount : AZSCloudStorageAccount;
         try! storageAccount = AZSCloudStorageAccount(fromConnectionString: conectionStringAzure)
         

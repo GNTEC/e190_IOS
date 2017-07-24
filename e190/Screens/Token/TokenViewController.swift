@@ -12,23 +12,33 @@ class TokenViewController: UIViewController {
     
     
     @IBOutlet weak var textToken: UITextField!
+    var emailUsuario: String = ""
+    let alerta = Alert();
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     
     @IBAction func finalizar(_ sender: Any) {
+        
+        
+        //VERICAR SE O TOKEN FOI DIGITADO
+        if self.textToken.text == ""{
+            self.present(alerta.alertaSimples(titulo: "Alerta", mensagem:"Favor Digite o Token !"), animated: true, completion: nil)
+            return
+        }
+        
+        
+        
+        
         
     }
     
     
     @IBAction func reenviarToken(_ sender: Any) {
         
-
 
     }
     
