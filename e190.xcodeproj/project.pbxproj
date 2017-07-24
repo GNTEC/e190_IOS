@@ -10,8 +10,10 @@
 		000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000421A41F0C08670087CBBB /* NovoLogin.swift */; };
 		0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */; };
 		00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D597661F0ECBC800B86CD4 /* Alert.swift */; };
-		409BD3071F213220003F8542 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409BD3061F213220003F8542 /* TokenViewController.swift */; };
-		409BD3091F213E28003F8542 /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409BD3081F213E28003F8542 /* ApiToken.swift */; };
+		2C7C72831F1FAF5A0077E506 /* EMedicaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */; };
+		2C7C72861F1FE1600077E506 /* EmergenciaMedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */; };
+		2C7C72881F1FEC0F0077E506 /* ApiEmedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */; };
+		2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */; };
 		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
 		9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */; };
@@ -37,6 +39,10 @@
 		000421A41F0C08670087CBBB /* NovoLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoLogin.swift; path = Screens/NovoCadastro/Model/NovoLogin.swift; sourceTree = "<group>"; };
 		0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoUsuario.swift; path = Screens/NovoCadastro/Model/NovoUsuario.swift; sourceTree = "<group>"; };
 		00D597661F0ECBC800B86CD4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Comum/Alert.swift; sourceTree = "<group>"; };
+		2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMedicaViewController.swift; sourceTree = "<group>"; };
+		2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergenciaMedica.swift; sourceTree = "<group>"; };
+		2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEmedica.swift; sourceTree = "<group>"; };
+		2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EmergenciaMedica.storyboard; path = StoryBoard/EmergenciaMedica.storyboard; sourceTree = "<group>"; };
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
 		409BD3061F213220003F8542 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Screens/Token/TokenViewController.swift; sourceTree = "<group>"; };
 		409BD3081F213E28003F8542 /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = Network/ApiToken.swift; sourceTree = "<group>"; };
@@ -96,12 +102,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		409BD3051F212FF9003F8542 /* Token */ = {
+		2C7C72841F1FE1330077E506 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				409BD3061F213220003F8542 /* TokenViewController.swift */,
+				2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */,
 			);
-			name = Token;
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2C9946F61F1E5B690018596F /* EmergenciaMedica */ = {
+			isa = PBXGroup;
+			children = (
+				2C7C72841F1FE1330077E506 /* Model */,
+				2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */,
+			);
+			name = EmergenciaMedica;
 			sourceTree = "<group>";
 		};
 		9CAD55421EDC9C90002F7298 /* Model */ = {
@@ -145,6 +160,7 @@
 			children = (
 				CECC120F1EC0A95100BC2556 /* Main.storyboard */,
 				CECC12141EC0A95100BC2556 /* LaunchScreen.storyboard */,
+				2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -179,7 +195,7 @@
 			children = (
 				CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */,
 				9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */,
-				409BD3081F213E28003F8542 /* ApiToken.swift */,
+				2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -195,6 +211,7 @@
 		CEA3E9F41EC0F10800778318 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2C9946F61F1E5B690018596F /* EmergenciaMedica */,
 				CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */,
 			);
 			name = Menu;
@@ -306,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECC12161EC0A95100BC2556 /* LaunchScreen.storyboard in Resources */,
+				2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */,
 				CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */,
 				CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */,
 			);
@@ -370,6 +388,8 @@
 				9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */,
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
+				2C7C72861F1FE1600077E506 /* EmergenciaMedica.swift in Sources */,
+				2C7C72831F1FAF5A0077E506 /* EMedicaViewController.swift in Sources */,
 				00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */,
 				9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
@@ -383,6 +403,7 @@
 				9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */,
 				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
+				2C7C72881F1FEC0F0077E506 /* ApiEmedica.swift in Sources */,
 				CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */,
 				000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */,
 			);

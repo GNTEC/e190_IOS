@@ -91,6 +91,14 @@ SOFTWARE.
 
 
 
+## GoogleMaps
+
+Copyright 2017 Google
+
+## GooglePlaces
+
+Copyright 2017 Google
+
 ## ObjectMapper
 
 The MIT License (MIT)

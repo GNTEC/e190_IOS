@@ -38,6 +38,14 @@ class SideMenuTableView: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        if indexPath.row == 4 {
+            
+            let mainStoryboard = UIStoryboard(name: "EmergenciaMedica", bundle: Bundle.main)
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "EMedica") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        
         if indexPath.row == 9 {
             
             let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)

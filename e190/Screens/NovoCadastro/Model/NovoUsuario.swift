@@ -121,6 +121,7 @@ class NovoUsuario {
         self.carroCor = json[NovoUsuario.keys.carroCor] as? String
         self.cepCasa = json[NovoUsuario.keys.cepCasa] as? String
         self.cepTrabalho = json[NovoUsuario.keys.cepTrabalho] as? String
+
     }
 }
 
