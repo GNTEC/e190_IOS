@@ -11,8 +11,6 @@ import UIKit
 
 class NovoLogin
 {
-    //        this.codLogin = codLogin;        this.email = email;        this.senha = senha;        this.token = token;        this.serialChip = telefone;
-    //
     var codLogin: Int? // 0
     var email: String? // 0
     var senha: String?

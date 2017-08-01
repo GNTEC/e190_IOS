@@ -26,6 +26,10 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         setupSideMenu()
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //setupUI()
+    }
 
     func setUpMaps () {
         
@@ -50,7 +54,6 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
     
         imageView.image = image
         navigationItem.titleView = imageView
-
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -59,14 +62,12 @@ class MainViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         {
             let myLocation = locations[0] as CLLocation
             mapView.setRegion(MKCoordinateRegionMake(myLocation.coordinate, MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)), animated: true)
-            
         }
     }
     
     fileprivate func setupSideMenu() {
         
         // Define the menus
-        
         SideMenuManager.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
         
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)

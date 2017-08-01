@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "e190/Screens/NovoCadastro/NovoCadastroViewController.swift"
-            timestampString = "521139926.274107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "363"
-            endingLineNumber = "363"
-            landmarkName = "proximoPasso(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "e190/Network/ApiNovoCadastro.swift"
-            timestampString = "520891461.949085"
+            timestampString = "522958793.866294"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "criaUsuario(usuario:compeletionHandler:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "BuscarUsuario(codUsuario:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "e190/Screens/NovoCadastro/NovoCadastroViewController.swift"
-            timestampString = "521139933.329247"
+            timestampString = "522960856.029713"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
-            landmarkName = "proximoPasso(_:)"
+            startingLineNumber = "579"
+            endingLineNumber = "579"
+            landmarkName = "carregaTela(dados:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

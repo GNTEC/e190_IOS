@@ -10,9 +10,16 @@ import UIKit
 
 
 class SideMenuTableView: UITableViewController {
+    
+    @IBOutlet weak var label_nomeUsuario: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // VERIFA O NOME DO USUARIO
+        if let nomeUsuario = UserDefaults.standard.object(forKey:"nome") as? String {
+            self.label_nomeUsuario.text = nomeUsuario
+        }
 
         navigationController?.navigationBar.isHidden = true
     }
@@ -38,19 +45,38 @@ class SideMenuTableView: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+        //HOME
+        if indexPath.row == 0 {
+
+            let app = UIApplication.shared.delegate as? AppDelegate
+            app?.start()
+        }
+        
+        //PERFIL
+        if indexPath.row == 1 {
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "NovoCadastro") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+
+        //EMERGENCIA MÉDICA
         if indexPath.row == 4 {
             
-            let mainStoryboard = UIStoryboard(name: "EmergenciaMedica", bundle: Bundle.main)
+            let mainStoryboard = UIStoryboard(name: "EmergenciaMedica", bundle:nil)
             let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "EMedica") as UIViewController
             self.present(vc, animated: true, completion: nil)
             
         }
         
+        //SAIR
         if indexPath.row == 9 {
             
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "loginViewController") as UIViewController
-            self.present(vc, animated: true, completion: nil)
+            UserDefaults.standard.set(false, forKey: "logado")
+            
+            let app = UIApplication.shared.delegate as? AppDelegate
+            app?.start()
             
         }
     }

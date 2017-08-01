@@ -18,6 +18,12 @@ struct stImgProfile {
 
 class NovoCadastroViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate,UIPickerViewDataSource, UITextFieldDelegate {
     
+    @IBOutlet weak var stack_email: UIStackView!
+    @IBOutlet weak var stack_confirmaEmail: UIStackView!
+    @IBOutlet weak var stack_senha: UIStackView!
+    @IBOutlet weak var stack_ConfirmaSenha: UIStackView!
+    
+    
     @IBOutlet weak var imgPerfil: UIButton!
     @IBOutlet weak var text_nome: UITextField!
     @IBOutlet weak var text_celular: SwiftMaskField!
@@ -64,6 +70,9 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     var estadoSelecionado: String! = ""
     var voluntatioSelecionado: String = ""
     var strCelular: String = ""
+    var codLogin: Int = 0
+    var codUsuario: Int = 0
+    var atualizarDados: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +84,17 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         self.hideKeyboardWhenTappedAround()
         
         indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.black, msg: "Aguarde....")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         
+        //chamar api para baixar o cadastro usuario
+        self.view.addSubview(indicator!)
+        self.indicator!.start()
+        
+        self.BuscarUsuario()
+        
+        self.indicator?.stop()
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -394,43 +413,135 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
         self.view.addSubview(indicator!)
         self.indicator!.start()
         
-        // remove mascara
-        let celularSemMascara = self.removeMascara(text: self.text_celular, mascara: "(NN) NNNNN-NNNN")
-        let cpfSemMascara = self.removeMascara(text: self.text_cpf, mascara: "NNN.NNN.NNN-NN")
-        let rgSemMascara = self.removeMascara(text: self.text_rg, mascara: "NN.NNN.NNN-%")
-        let telefoneFixoSemMascara = self.removeMascara(text: self.text_telefone_fixo, mascara: "(NN) NNNN-NNNN")
-        let cepSemMascara = self.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
-        let placaSemMascara = self.removeMascara(text: self.text_placa, mascara: "UUU-NNNN")
-        
         if validaCamposObrigatorio() == true
         {
-            let api  = ApiNovoCadastro()
-            
-            // CHAMA A FUNÇÃO QUE GRAVA O LOGIN
-            let modelLogin = NovoLogin(codLogin: 0, email: text_email.text!, senha: text_senha.text!, token: "0", serialChip: "1").toJSON()
-            
-            // GRAVA USUARIO PRIMEIRO
-            api.criaLogin(login: modelLogin, completionHandler: { (retorno) in
+            if self.atualizarDados == false {
                 
-                // SE GRAVOU LOGIN GRAVA USUARIO
-                if (retorno["codLogin"] as? Int) != nil {
+                if gravar() == true {
                     
-                    let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: retorno["codLogin"] as! Int , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: cpfSemMascara, rg: rgSemMascara, celular: celularSemMascara, telefone: telefoneFixoSemMascara, sexo:self.sexoSelecionado.uppercased(), cep: cepSemMascara, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: placaSemMascara, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "TokenViewController") as UIViewController
+                    self.present(vc, animated: true, completion: nil)
                     
-                
-                    // CRIA O USUARIO
-                    api.criaUsuario(usuario: modelUsuario, compeletionHandler: { (retorno) in
-                        self.uploadImagsAzure()
-                        
-                        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                        let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "TokenViewController") as UIViewController
-                        self.present(vc, animated: true, completion: nil)
-                    })
                 }
+                else
+                {
+                    // ERRO DO GRAVAR
+                    self.indicator!.stop()
+                }
+            }
+            else {
+               // altera os dados
+                if atualizar() == true
+                {
+                    self.indicator?.stop()
+                    
+                    let alertController = UIAlertController(title: "Informação", message: "Dados Atualizados com Sucesso !", preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (Ok) in
+                        self.dismiss(animated: true, completion: nil)
+                    })
+                    
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                else
+                {
+                    //ERRO DO ALTERAR
+                    self.indicator!.stop()
+                }
+            }
+        }
+        else
+        {
+            // else dos campos obrigatorios
+            self.indicator!.stop()
+        }
+    }
+    
+    
+    func gravar() -> Bool{
+        
+        self.indicator!.start()
+        
+        let api  = ApiNovoCadastro()
+        let removeMascara = CustomTextField()
+        
+        // remove mascara
+        let celularSemMascara = removeMascara.removeMascara(text: self.text_celular, mascara: "(NN) NNNNN-NNNN")
+        let cpfSemMascara = removeMascara.removeMascara(text: self.text_cpf, mascara: "NNN.NNN.NNN-NN")
+        let rgSemMascara = removeMascara.removeMascara(text: self.text_rg, mascara: "NN.NNN.NNN-%")
+        let telefoneFixoSemMascara = removeMascara.removeMascara(text: self.text_telefone_fixo, mascara: "(NN) NNNN-NNNN")
+        let cepSemMascara = removeMascara.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
+        let placaSemMascara = removeMascara.removeMascara(text: self.text_placa, mascara: "UUU-NNNN")
+        
+        // CHAMA A FUNÇÃO QUE GRAVA O LOGIN
+        let modelLogin = NovoLogin(codLogin: 0, email: text_email.text!, senha: text_senha.text!, token: "0", serialChip: "1").toJSON()
+        
+        // GRAVA USUARIO PRIMEIRO
+        api.criaLogin(login: modelLogin, completionHandler: { (retornoLgin) in
+            
+            // SE GRAVOU LOGIN GRAVA USUARIO
+            if (retornoLgin["codLogin"] as? Int) != nil {
                 
-                self.indicator!.stop()
+                self.codLogin = retornoLgin["codLogin"] as! Int
+                
+                let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: self.codLogin  , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: cpfSemMascara, rg: rgSemMascara, celular: celularSemMascara, telefone: telefoneFixoSemMascara, sexo:self.sexoSelecionado.uppercased(), cep: cepSemMascara, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: placaSemMascara, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
+                
+                
+                // CRIA O USUARIO
+                api.criaUsuario(parametros: modelUsuario, compeletionHandler: { (retornoUsuario) in
+                    
+                    //GRAVA VARIAVEIS DE AMBIENTE
+                    UserDefaults.standard.setValue(retornoUsuario["codLogin"], forKey: "codLogin")
+                    UserDefaults.standard.setValue(retornoUsuario["codUsuario"], forKey: "codUsuario")
+                    
+                    //FAZ UPLOAD DA IMAGEM PARA O AZURE
+                    //self.uploadImagsAzure()
+                })
+            }
+            
+            self.indicator!.stop()
+        })
+
+        return true
+    }
+    
+    func atualizar() -> Bool{
+        
+        self.indicator!.start()
+        
+        let removeMascara = CustomTextField()
+        let api  = ApiNovoCadastro()
+        
+        //REMOVE MASCARA
+        // remove mascara
+        let celularSemMascara = removeMascara.removeMascara(text: self.text_celular, mascara: "(NN) NNNNN-NNNN")
+        let cpfSemMascara = removeMascara.removeMascara(text: self.text_cpf, mascara: "NNN.NNN.NNN-NN")
+        let rgSemMascara = removeMascara.removeMascara(text: self.text_rg, mascara: "NN.NNN.NNN-%")
+        let telefoneFixoSemMascara = removeMascara.removeMascara(text: self.text_telefone_fixo, mascara: "(NN) NNNN-NNNN")
+        let cepSemMascara = removeMascara.removeMascara(text: self.text_cep, mascara: "NNNNN-NNN")
+        let placaSemMascara = removeMascara.removeMascara(text: self.text_placa, mascara: "UUU-NNNN")
+        
+        codUsuario = UserDefaults.standard.object(forKey: "codUsuario") as! Int
+        
+        // VERIFCA SE O USUARIO ESTÁ LOGAGO
+        if codUsuario != 0 {
+            
+            let modelUsuario = NovoUsuario(codUsuario: 0, codLogin: self.codLogin  , nome: self.text_nome.text!, dataNascimento: self.text_data_nascimento.text!, cpf: cpfSemMascara, rg: rgSemMascara, celular: celularSemMascara, telefone: telefoneFixoSemMascara, sexo:self.sexoSelecionado.uppercased(), cep: cepSemMascara, rua: self.text_endereco.text!, complemento: self.txt_complemento.text!, numero: self.text_numero.text!, cidade: self.text_cidade.text!, estado: self.estadoSelecionado, ativo: false, voluntario: self.voluntatioSelecionado , dataCadastro: "", pago: true, fotoPerfil: "", uidFirebase: "", notificacaoAmarela: true, notificacaoLaranja: true, notificacaoVermelha: true, enderecoCasa: "", enderecoTrabalho: "", carroMarca: self.text_marca.text!, carroModelo: self.text_modelo.text!, carroPlaca: placaSemMascara, carroFoto: "", carroCor: self.text_cor.text!, cepCasa: "", cepTrabalho: "").toJSON()
+            
+            
+            // CRIA O USUARIO
+            api.AtualizarUsuario(parametros: modelUsuario, completionHeadler: { (retornoUsuario) in
+                
+                //FAZ UPLOAD DA IMAGEM PARA O AZURE
+                //self.uploadImagsAzure()
+                
+                self.indicator?.stop()
             })
         }
+        
+        return true
     }
     
     func uploadImagsAzure()
@@ -444,6 +555,68 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
 
         api.uploloadImgToAzure(img: img!, imgName: nomeImg!, pathImg: pathImg!)
     
+    }
+    
+    func BuscarUsuario(){
+    
+        codUsuario = UserDefaults.standard.object(forKey: "codUsuario") as! Int
+        
+        
+        //                let dict:[String:String] = ["key":"Hello"]
+        //                UserDefaults.standard.set(dict, forKey: "dict")
+        //                let result = UserDefaults.standard.value(forKey: "dict")
+        //                print(result!)
+        //                // Output -> { key:hello;}
+        
+        if let objUsuario = UserDefaults.standard.value(forKey: "dict")
+        {
+            self.carregaTela(dados: objUsuario as! NSDictionary)
+        }
+    }
+
+    func carregaTela(dados : NSDictionary){
+        
+        self.codUsuario = dados["codUsuario"] as! Int
+        self.codLogin = dados["codLogin"] as! Int
+        self.text_nome.text = dados["nome"] as? String
+        self.text_data_nascimento.text = dados["dataNascimento"] as? String
+        self.text_cpf.text = dados["cpf"] as? String
+        self.text_rg.text = dados["rg"] as? String
+        self.text_celular.text = dados["celular"] as? String
+        self.text_telefone_fixo.text = dados["telefone"] as? String
+        self.txt_sexo.text = dados["sexo"] as? String
+        self.text_endereco.text = dados["rua"] as? String
+        self.txt_complemento.text = dados["complemento"] as? String
+        self.text_numero.text = dados["numero"] as? String
+        self.text_cidade.text = dados["cidade"] as? String
+        self.text_estado.text = dados["estado"] as? String
+        UserDefaults.standard.set(dados["ativo"], forKey: "Ativo")
+        //self.text_nome.text = dados["voluntario"] as? String
+        //self.text_nome.text = dados["fotoPerfil"] as? String
+        //static let uidFirebase = "uidFirebase"
+        UserDefaults.standard.set(dados["notificacaoAmarela"], forKey: "notificacaoAmarela")
+        UserDefaults.standard.set(dados["notificacaoLaranja"], forKey: "notificacaoLaranja")
+        UserDefaults.standard.set(dados["notificacaoVermelha"], forKey: "notificacaoVermelha")
+        //self.text_nome.text = dados["enderecoCasa"] as? String
+        //self.text_nome.text = dados["enderecoTrabalho"] as? String
+        self.text_marca.text = dados["carroMarca"] as? String
+        self.text_modelo.text = dados["carroModelo"] as? String
+        self.text_placa.text = dados["carroPlaca"] as? String
+        //self.text_nome.text = dados["carroFoto"] as? String
+        self.text_cor.text = dados["carroCor"] as? String
+        //self.text_nome.text = dados["cepCasa"] as? String
+        //self.text_nome.text = dados["cepTrabalho"] as? String
+        
+        //esconde campos
+        escondeCampos()
+    }
+    
+    func escondeCampos()
+    {
+        self.stack_email.isHidden = true
+        self.stack_confirmaEmail.isHidden = true
+        self.stack_senha.isHidden = true
+        self.stack_ConfirmaSenha.isHidden = true
     }
     
     func removeMascara(text:SwiftMaskField, mascara: String) -> String
@@ -533,7 +706,6 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
     
     func validaCamposObrigatorio () -> Bool
     {
-        
         let alerta = Alert();
         
         if text_celular.text == "" {
@@ -627,8 +799,13 @@ class NovoCadastroViewController: UIViewController, UIImagePickerControllerDeleg
             return false
         }
         
-        
         return true
+    }
+    
+    @IBAction func voltar(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {

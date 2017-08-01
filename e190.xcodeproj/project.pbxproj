@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000421A41F0C08670087CBBB /* NovoLogin.swift */; };
+		0011107F1F2619A9003AF1E8 /* ApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011107E1F2619A9003AF1E8 /* ApiToken.swift */; };
+		001110821F261A09003AF1E8 /* TokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001110811F261A09003AF1E8 /* TokenViewController.swift */; };
+		001110841F261AEA003AF1E8 /* ApiEmedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001110831F261AEA003AF1E8 /* ApiEmedica.swift */; };
+		001110861F261B3A003AF1E8 /* EmedicaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001110851F261B3A003AF1E8 /* EmedicaViewController.swift */; };
+		001110881F261B5E003AF1E8 /* EmergenciaMedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001110871F261B5E003AF1E8 /* EmergenciaMedica.swift */; };
+		0011108A1F261BA3003AF1E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001110891F261BA3003AF1E8 /* AppDelegate.swift */; };
+		005AF5C01F27D64F005B3EF4 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005AF5BF1F27D64F005B3EF4 /* CustomTextField.swift */; };
 		0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */; };
+		00C15E0D1F2BACE900BA2A36 /* Contatos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C15E0C1F2BACE900BA2A36 /* Contatos.storyboard */; };
 		00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D597661F0ECBC800B86CD4 /* Alert.swift */; };
-		2C7C72831F1FAF5A0077E506 /* EMedicaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */; };
-		2C7C72861F1FE1600077E506 /* EmergenciaMedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */; };
-		2C7C72881F1FEC0F0077E506 /* ApiEmedica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */; };
 		2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */; };
 		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
@@ -28,7 +33,6 @@
 		CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */; };
 		CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86D8DE1ECB80D700C4BBF5 /* MainViewController.swift */; };
 		CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */; };
-		CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECC120B1EC0A95100BC2556 /* AppDelegate.swift */; };
 		CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC120F1EC0A95100BC2556 /* Main.storyboard */; };
 		CECC12161EC0A95100BC2556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECC12141EC0A95100BC2556 /* LaunchScreen.storyboard */; };
 		CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF6FAC1EC5FF4400881752 /* RoundedButton.swift */; };
@@ -37,15 +41,18 @@
 
 /* Begin PBXFileReference section */
 		000421A41F0C08670087CBBB /* NovoLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoLogin.swift; path = Screens/NovoCadastro/Model/NovoLogin.swift; sourceTree = "<group>"; };
+		0011107E1F2619A9003AF1E8 /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = Network/ApiToken.swift; sourceTree = "<group>"; };
+		001110811F261A09003AF1E8 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Screens/Token/TokenViewController.swift; sourceTree = "<group>"; };
+		001110831F261AEA003AF1E8 /* ApiEmedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiEmedica.swift; path = Network/ApiEmedica.swift; sourceTree = "<group>"; };
+		001110851F261B3A003AF1E8 /* EmedicaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmedicaViewController.swift; path = Screens/Menu/EmergenciaMedica/EmedicaViewController.swift; sourceTree = "<group>"; };
+		001110871F261B5E003AF1E8 /* EmergenciaMedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmergenciaMedica.swift; path = Screens/Menu/EmergenciaMedica/Model/EmergenciaMedica.swift; sourceTree = "<group>"; };
+		001110891F261BA3003AF1E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = e190/AppDelegate.swift; sourceTree = "<group>"; };
+		005AF5BF1F27D64F005B3EF4 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTextField.swift; path = Comum/CustomTextField.swift; sourceTree = "<group>"; };
 		0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoUsuario.swift; path = Screens/NovoCadastro/Model/NovoUsuario.swift; sourceTree = "<group>"; };
+		00C15E0C1F2BACE900BA2A36 /* Contatos.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Contatos.storyboard; path = StoryBoard/Contatos.storyboard; sourceTree = "<group>"; };
 		00D597661F0ECBC800B86CD4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Comum/Alert.swift; sourceTree = "<group>"; };
-		2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMedicaViewController.swift; sourceTree = "<group>"; };
-		2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergenciaMedica.swift; sourceTree = "<group>"; };
-		2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiEmedica.swift; sourceTree = "<group>"; };
 		2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EmergenciaMedica.storyboard; path = StoryBoard/EmergenciaMedica.storyboard; sourceTree = "<group>"; };
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
-		409BD3061F213220003F8542 /* TokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenViewController.swift; path = Screens/Token/TokenViewController.swift; sourceTree = "<group>"; };
-		409BD3081F213E28003F8542 /* ApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiToken.swift; path = Network/ApiToken.swift; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "e190-Bridging-Header.h"; path = "e190/e190-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -62,7 +69,6 @@
 		CE86D8DE1ECB80D700C4BBF5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Screens/Main/MainViewController.swift; sourceTree = "<group>"; };
 		CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuTableView.swift; path = Screens/Menu/SideMenuTableView.swift; sourceTree = "<group>"; };
 		CECC12081EC0A95100BC2556 /* e190.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = e190.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CECC120B1EC0A95100BC2556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECC12101EC0A95100BC2556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CECC12151EC0A95100BC2556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CECC12171EC0A95100BC2556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001110801F2619F4003AF1E8 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				001110811F261A09003AF1E8 /* TokenViewController.swift */,
+			);
+			name = Token;
+			sourceTree = "<group>";
+		};
 		0091FD4F1F0AD6BF00F987D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +105,13 @@
 				000421A41F0C08670087CBBB /* NovoLogin.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		00C15E0E1F2BAD1000BA2A36 /* Contatos */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Contatos;
 			sourceTree = "<group>";
 		};
 		05FD56109EF6C0CFFE96E123 /* Frameworks */ = {
@@ -105,7 +126,7 @@
 		2C7C72841F1FE1330077E506 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C7C72851F1FE1600077E506 /* EmergenciaMedica.swift */,
+				001110871F261B5E003AF1E8 /* EmergenciaMedica.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -113,8 +134,8 @@
 		2C9946F61F1E5B690018596F /* EmergenciaMedica */ = {
 			isa = PBXGroup;
 			children = (
+				001110851F261B3A003AF1E8 /* EmedicaViewController.swift */,
 				2C7C72841F1FE1330077E506 /* Model */,
-				2C7C72821F1FAF5A0077E506 /* EMedicaViewController.swift */,
 			);
 			name = EmergenciaMedica;
 			sourceTree = "<group>";
@@ -161,6 +182,7 @@
 				CECC120F1EC0A95100BC2556 /* Main.storyboard */,
 				CECC12141EC0A95100BC2556 /* LaunchScreen.storyboard */,
 				2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */,
+				00C15E0C1F2BACE900BA2A36 /* Contatos.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 				CE86D8DA1ECA4C0E00C4BBF5 /* ProgressIndicator.swift */,
 				9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */,
 				00D597661F0ECBC800B86CD4 /* Alert.swift */,
+				005AF5BF1F27D64F005B3EF4 /* CustomTextField.swift */,
 			);
 			name = Comum;
 			sourceTree = "<group>";
@@ -180,7 +203,7 @@
 		CEA3E9F11EC0B81B00778318 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				409BD3051F212FF9003F8542 /* Token */,
+				001110801F2619F4003AF1E8 /* Token */,
 				9CDCC1BC1EF840AF00B04C38 /* NovoUsuario */,
 				CE1539A51ECF2CFC006DB75B /* EsqueciASenha */,
 				CEDF6FB01EC654B300881752 /* Main */,
@@ -193,9 +216,10 @@
 		CEA3E9F21EC0B82D00778318 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				001110831F261AEA003AF1E8 /* ApiEmedica.swift */,
+				0011107E1F2619A9003AF1E8 /* ApiToken.swift */,
 				CE86D8D81ECA479800C4BBF5 /* ApiLogin.swift */,
 				9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */,
-				2C7C72871F1FEC0F0077E506 /* ApiEmedica.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -211,6 +235,7 @@
 		CEA3E9F41EC0F10800778318 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				00C15E0E1F2BAD1000BA2A36 /* Contatos */,
 				2C9946F61F1E5B690018596F /* EmergenciaMedica */,
 				CEA3E9FC1EC2545900778318 /* SideMenuTableView.swift */,
 			);
@@ -220,6 +245,7 @@
 		CECC11FF1EC0A95100BC2556 = {
 			isa = PBXGroup;
 			children = (
+				001110891F261BA3003AF1E8 /* AppDelegate.swift */,
 				9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */,
 				CECC120A1EC0A95100BC2556 /* e190 */,
 				CECC12091EC0A95100BC2556 /* Products */,
@@ -243,7 +269,6 @@
 				CEA3E9F21EC0B82D00778318 /* Network */,
 				CEA3E9F11EC0B81B00778318 /* Screens */,
 				CE3ECF9C1EC49A9C00FB48AB /* StoryBoards */,
-				CECC120B1EC0A95100BC2556 /* AppDelegate.swift */,
 				CE3ECF9D1EC4B62700FB48AB /* Assets.xcassets */,
 				CECC12171EC0A95100BC2556 /* Info.plist */,
 			);
@@ -324,6 +349,7 @@
 			files = (
 				CECC12161EC0A95100BC2556 /* LaunchScreen.storyboard in Resources */,
 				2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */,
+				00C15E0D1F2BACE900BA2A36 /* Contatos.storyboard in Resources */,
 				CE3ECF9E1EC4B62700FB48AB /* Assets.xcassets in Resources */,
 				CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */,
 			);
@@ -384,28 +410,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				409BD3071F213220003F8542 /* TokenViewController.swift in Sources */,
+				0011108A1F261BA3003AF1E8 /* AppDelegate.swift in Sources */,
 				9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */,
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
-				2C7C72861F1FE1600077E506 /* EmergenciaMedica.swift in Sources */,
-				2C7C72831F1FAF5A0077E506 /* EMedicaViewController.swift in Sources */,
+				005AF5C01F27D64F005B3EF4 /* CustomTextField.swift in Sources */,
+				001110821F261A09003AF1E8 /* TokenViewController.swift in Sources */,
 				00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */,
 				9CDCC1BE1EF840ED00B04C38 /* NovoCadastroViewController.swift in Sources */,
 				CEDF6FAF1EC6519400881752 /* loginViewController.swift in Sources */,
 				9CAD55441EDC9CC9002F7298 /* EsqueciASenha.swift in Sources */,
 				CE6963941EC39149007C744E /* customImageView.swift in Sources */,
+				001110841F261AEA003AF1E8 /* ApiEmedica.swift in Sources */,
+				0011107F1F2619A9003AF1E8 /* ApiToken.swift in Sources */,
 				9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */,
 				0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */,
-				409BD3091F213E28003F8542 /* ApiToken.swift in Sources */,
 				CE86D8DB1ECA4C0E00C4BBF5 /* ProgressIndicator.swift in Sources */,
+				001110881F261B5E003AF1E8 /* EmergenciaMedica.swift in Sources */,
 				CE86D8D91ECA479800C4BBF5 /* ApiLogin.swift in Sources */,
 				9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */,
-				CECC120C1EC0A95100BC2556 /* AppDelegate.swift in Sources */,
 				CEA3E9FD1EC2545900778318 /* SideMenuTableView.swift in Sources */,
-				2C7C72881F1FEC0F0077E506 /* ApiEmedica.swift in Sources */,
 				CE86D8DF1ECB80D700C4BBF5 /* MainViewController.swift in Sources */,
 				000421A51F0C08670087CBBB /* NovoLogin.swift in Sources */,
+				001110861F261B3A003AF1E8 /* EmedicaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
