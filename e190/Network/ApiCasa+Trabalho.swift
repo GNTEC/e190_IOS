@@ -20,8 +20,13 @@ class ApiCasa_Trabalho
 //        @Query("enderecoCasa") String enderecoCasa,
 //        @Query("cepTrabalho") String cepTrabalho,
 //        @Query("enderecoTrabalho") String enderecoTrabalho);
+    
+//        let urlString = "http://sekron.azurewebsites.net/api/usuario/SalvarConfiguracoes?codUsuario=\(codUsuario)&cepCasa=\'" + cepCasa + "'" + "&enderecoCasa=\'" + enderecoCasa + "'" + "&cepTrabalho=\'" + cepTrabalho + "'" + "&enderecoTrabalho=\'" + enderecoTrabalho + "'"
         
-        let urlString = "http://sekron.azurewebsites.net/api/usuario/salvarconfiguracoes?codUsuario=\(codUsuario)&cepCasa=\(cepCasa)&enderecoCasa=\(enderecoCasa)&cepTrabalho=\(cepTrabalho)&enderecoTrabalho=\(enderecoTrabalho)"
+        //let myString = "I love \"unnecessary\" quotation marks"
+        //let myText = "\""
+        
+        let urlString = "http://sekron.azurewebsites.net/api/usuario/SalvarConfiguracoes?codUsuario=\(codUsuario)&cepCasa=\(cepCasa)&enderecoCasa=\(enderecoCasa)&cepTrabalho=\(cepTrabalho)&enderecoTrabalho=\(enderecoTrabalho)"
         
         var objReturn: NSDictionary = [:]
         

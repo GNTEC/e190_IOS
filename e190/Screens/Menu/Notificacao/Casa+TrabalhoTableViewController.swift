@@ -35,6 +35,7 @@ class Casa_TrabalhoTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         self.buscarEndereco()
+    
     }
     
     @IBAction func salvar(_ sender: Any) {
@@ -155,20 +156,19 @@ class Casa_TrabalhoTableViewController: UITableViewController {
             objUsuario = UserDefaults.standard.value(forKey: "dict") as! [String : Any]
             
             //VERIFICA SE EXISTE ENDEREÇO TRABALHO E CASA
-            if let enderecoCasa = objUsuario["enderecoCasa"]{
+            if objUsuario["enderecoCasa"] as! String != ""{
                 
-                self.text_end_casa.text = enderecoCasa as? String
+                self.text_end_casa.text = objUsuario["enderecoCasa"] as? String
                 self.atualizarDados = true
             }
         
-            if let enderecoTrabalho = objUsuario["enderecoTrabalho"]{
+            if objUsuario["enderecoTrabalho"] as! String != ""{
             
-                self.text_endereco_trabalho.text = enderecoTrabalho as? String
+                self.text_endereco_trabalho.text = objUsuario["enderecoTrabalho"] as? String
                 self.atualizarDados = true
             }
         }
     }
-    
     
     func validaCampos()-> Bool
     {
