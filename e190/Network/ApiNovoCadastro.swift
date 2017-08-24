@@ -77,8 +77,7 @@ class ApiNovoCadastro {
         }
     }
     
-    
-    func criaUsuario(usuario: NSDictionary, compeletionHandler:@escaping (_ result: NSDictionary)-> Void) {
+    func criaUsuario(parametros: NSDictionary, compeletionHandler:@escaping (_ result: NSDictionary)-> Void) {
         
         //        @POST("api/usuario/novousuario"
         //        Call<tb_usuario> NovoUsuario(@Body tb_usuario usuario);
@@ -86,7 +85,7 @@ class ApiNovoCadastro {
         let urlString = "http://sekron.azurewebsites.net/api/usuario/novousuario"
         var objUser: NSDictionary = [:]
         
-        Alamofire.request(urlString, method: .post, parameters:(usuario as! [String : AnyObject]), encoding: JSONEncoding.default, headers: nil).responseJSON {
+        Alamofire.request(urlString, method: .post, parameters:(parametros as! [String : AnyObject]), encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
             
             if let status = response.response?.statusCode {
@@ -114,8 +113,82 @@ class ApiNovoCadastro {
             }
         }
     }
-
     
+//    @POST("api/usuario/atualizarusuario")
+//    Call<tb_usuario> AtualizarUsuario(@Body tb_usuario usuario);
+    func AtualizarUsuario(parametros: NSDictionary, completionHeadler:@escaping (_ result: NSDictionary) -> Void){
+        
+        let urlString = "http://sekron.azurewebsites.net/api/usuario/atualizarusuario"
+        var objEmedica: NSDictionary = [:]
+        
+        Alamofire.request(urlString, method: .post, parameters:(parametros as! [String: AnyObject]), encoding: JSONEncoding.default, headers: nil).responseJSON{
+            
+            response in
+            
+            if let status = response.response?.statusCode{
+                
+                
+                switch(status){
+                case 200:
+                    
+                    let Result = response.value
+                    objEmedica = (Result as? NSDictionary)!
+                    print(objEmedica)
+                    break
+                    
+                default:
+                    
+                    if let result = response.result.value{
+                        print(result)
+                    }
+                    break
+                    
+                }
+                
+                DispatchQueue.main.async {
+                    completionHeadler(objEmedica)
+                }
+            }
+        }
+    }
+    
+//    func BuscarUsuario(codUsuario: Int, completionHandler: ((NSDictionary) -> ())?){
+//        
+//        //    @POST("api/usuario/listarusuarioid/{id}")
+//        //    Call<tb_usuario> ListarUsuario(@Path("id") long codUsuario);
+//        
+//        let urlString = "http://sekron.azurewebsites.net/api/usuario/ListarUsuarioId?codUsuario=\(codUsuario)"
+//        var objEmedica: NSDictionary = [:]
+//        
+//        Alamofire.request(urlString, method: .post, parameters:nil, encoding: JSONEncoding.default, headers: nil).responseJSON{
+//            
+//            response in
+//            
+//            if let status = response.response?.statusCode{
+//                
+//                switch(status){
+//                case 200:
+//                    
+//                    let Result = response.value
+//                    objEmedica = (Result as? NSDictionary)!
+//                    print(objEmedica)
+//                    break
+//                    
+//                default:
+//                    
+//                    if let result = response.result.value{
+//                        print(result)
+//                    }
+//                    break
+//                    
+//                }
+//                DispatchQueue.main.async(execute: {
+//                    completionHandler?(objEmedica)
+//                })
+//            }
+//            
+//        }
+//    }
     //Upload to Azure Blob Storage with help of SAS
     func uploadBlobSAS(container: String, sas: String, blockname: String, fromfile: String ){
         
