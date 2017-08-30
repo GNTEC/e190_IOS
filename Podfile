@@ -9,9 +9,7 @@ target 'e190' do
   pod 'Alamofire', '~> 4.4'
   pod 'AlamofireImage', '~> 3.1'
   pod 'AlamofireObjectMapper', '~> 4.0'
-  pod 'GoogleMaps'
-  pod 'GooglePlaces'
   pod 'AZSClient'
-  pod ‘VMaskTextField’
+  pod 'SwiftMaskText', '~> 1.0'
   pod 'SideMenu'
 end

@@ -89,7 +89,7 @@ class NovoUsuario {
     init(json: NSDictionary) {
         
         self.codUsuario = json[NovoUsuario.keys.codUsuario] as? Int
-        self.codLogin = json[NovoUsuario.keys.codUsuario] as? Int
+        self.codLogin = json[NovoUsuario.keys.codLogin] as? Int
         self.nome = json[NovoUsuario.keys.nome] as? String
         self.dataNascimento = json[NovoUsuario.keys.dataNascimento] as? String
         self.cpf = json[NovoUsuario.keys.cpf] as? String
@@ -121,7 +121,6 @@ class NovoUsuario {
         self.carroCor = json[NovoUsuario.keys.carroCor] as? String
         self.cepCasa = json[NovoUsuario.keys.cepCasa] as? String
         self.cepTrabalho = json[NovoUsuario.keys.cepTrabalho] as? String
-
     }
 }
 

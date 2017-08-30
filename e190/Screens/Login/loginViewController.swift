@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SideMenu
 
 class LoginViewController: UIViewController {
         
@@ -65,7 +66,7 @@ class LoginViewController: UIViewController {
 
             "email": self.txtEmail.text!,
             "senha": self.txtSenha.text!,
-            "serialChip": "89551020407005425391"
+            "serialChip":"1"
         ]
         
         indicator = ProgressIndicator(inview:self.view,loadingViewColor: UIColor.gray, indicatorColor: UIColor.black, msg: "Aguarde....")
@@ -77,6 +78,17 @@ class LoginViewController: UIViewController {
         api.login(usuario: parametros) { (retorno) in
             
             let alerta = Alert();
+            
+            if self.swLembraLogin.isOn == true {
+                
+                UserDefaults.standard.setValue(self.txtEmail.text, forKey: "email")
+                UserDefaults.standard.setValue(self.txtSenha.text, forKey: "senha")
+            }
+            else {
+                
+                UserDefaults.standard.removeObject(forKey: "email")
+                UserDefaults.standard.removeObject(forKey: "senha")
+            }
             
             if retorno.count == 1 {
             
@@ -96,25 +108,21 @@ class LoginViewController: UIViewController {
                         self.indicator!.stop()
                         return
                     }
-
                 }
             }
             else if retorno.count > 2
             {
+                //GRAVA VARIAVEIS DE AMBIENTE
+                UserDefaults.standard.setValue(retorno["codLogin"], forKey: "codLogin")
+                UserDefaults.standard.setValue(retorno["codUsuario"], forKey: "codUsuario")
+                UserDefaults.standard.setValue(retorno["nome"], forKey: "nome")
+                UserDefaults.standard.set(true, forKey: "logado")
+                
+                // SALVA OS DADOS DO USAURIO COMPARTILHADO
+                let objUsuario = NovoUsuario(json: retorno).toJSON()
+                UserDefaults.standard.set(objUsuario, forKey: "dict")
+                
                 self.indicator!.stop()
-                
-                if self.swLembraLogin.isOn == true {
-                    
-                    UserDefaults.standard.setValue(self.txtEmail.text, forKey: "email")
-                    UserDefaults.standard.setValue(self.txtSenha.text, forKey: "senha")
-                }
-                else {
-                    
-                    UserDefaults.standard.removeObject(forKey: "email")
-                    UserDefaults.standard.removeObject(forKey: "senha")
-                    
-                }
-                
                 self.performSegue(withIdentifier: "segueLogin", sender: nil)
             }
         }
