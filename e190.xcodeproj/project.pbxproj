@@ -26,7 +26,10 @@
 		0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */; };
 		00B91FF41F33909200C64B5B /* ApiNotificacao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B91FF31F33909200C64B5B /* ApiNotificacao.swift */; };
 		00C15E0D1F2BACE900BA2A36 /* Contato.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C15E0C1F2BACE900BA2A36 /* Contato.storyboard */; };
+<<<<<<< HEAD
 		00CFD2871F547FBC007D62D0 /* ServicosAdicionaisTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CFD2861F547FBC007D62D0 /* ServicosAdicionaisTableViewController.swift */; };
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
 		00D597671F0ECBC800B86CD4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D597661F0ECBC800B86CD4 /* Alert.swift */; };
 		00D69CB81F2FC8C1002B6267 /* ContatoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D69CB71F2FC8C1002B6267 /* ContatoTableViewController.swift */; };
 		00D69CBA1F2FC916002B6267 /* ContatoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D69CB91F2FC916002B6267 /* ContatoTableViewCell.swift */; };
@@ -73,7 +76,10 @@
 		0091FD501F0AD6E100F987D1 /* NovoUsuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NovoUsuario.swift; path = Screens/NovoCadastro/Model/NovoUsuario.swift; sourceTree = "<group>"; };
 		00B91FF31F33909200C64B5B /* ApiNotificacao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiNotificacao.swift; path = Network/ApiNotificacao.swift; sourceTree = "<group>"; };
 		00C15E0C1F2BACE900BA2A36 /* Contato.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Contato.storyboard; path = StoryBoard/Contato.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		00CFD2861F547FBC007D62D0 /* ServicosAdicionaisTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServicosAdicionaisTableViewController.swift; path = Screens/Menu/ServicosAdicionais/ServicosAdicionaisTableViewController.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
 		00D597661F0ECBC800B86CD4 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = Comum/Alert.swift; sourceTree = "<group>"; };
 		00D69CB71F2FC8C1002B6267 /* ContatoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContatoTableViewController.swift; path = Screens/Menu/Contato/ContatoTableViewController.swift; sourceTree = "<group>"; };
 		00D69CB91F2FC916002B6267 /* ContatoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContatoTableViewCell.swift; path = Screens/Menu/Contato/ContatoTableViewCell.swift; sourceTree = "<group>"; };
@@ -165,6 +171,7 @@
 			name = Contatos;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		00CFD2851F547F64007D62D0 /* ServicosAdicionais */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +180,8 @@
 			name = ServicosAdicionais;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
 		00E1CBA31F30F84500A5FD49 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +316,10 @@
 		CEA3E9F41EC0F10800778318 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				00CFD2851F547F64007D62D0 /* ServicosAdicionais */,
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
 				007853151F334E8300C7EBF8 /* Notificacao */,
 				00C15E0E1F2BAD1000BA2A36 /* Contatos */,
 				2C9946F61F1E5B690018596F /* EmergenciaMedica */,
@@ -504,7 +516,10 @@
 				001110841F261AEA003AF1E8 /* ApiEmedica.swift in Sources */,
 				00E1CBA71F30FB5E00A5FD49 /* ApiContato.swift in Sources */,
 				00B91FF41F33909200C64B5B /* ApiNotificacao.swift in Sources */,
+<<<<<<< HEAD
 				00CFD2871F547FBC007D62D0 /* ServicosAdicionaisTableViewController.swift in Sources */,
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
 				0011107F1F2619A9003AF1E8 /* ApiToken.swift in Sources */,
 				9CAD55461EDC9CF8002F7298 /* EsqueciASenhaViewController01.swift in Sources */,
 				0091FD511F0AD6E100F987D1 /* NovoUsuario.swift in Sources */,

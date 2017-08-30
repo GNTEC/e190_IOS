@@ -88,12 +88,22 @@ class SideMenuTableView: UITableViewController {
             
         }
         
+<<<<<<< HEAD
         //SERVICOS ADICIONAIS
         if indexPath.row == 5 {
             
             let mainStoryboard = UIStoryboard(name: "ServicosAdcionais", bundle:nil)
             let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "navServAdicionais") as UIViewController
             self.present(vc, animated: true, completion: nil)
+=======
+        //SAIR
+        if indexPath.row == 9 {
+            
+            UserDefaults.standard.set(false, forKey: "logado")
+            
+            let app = UIApplication.shared.delegate as? AppDelegate
+            app?.start()
+>>>>>>> 633917810c5123989472f26290a17a06df064820
             
         }
         

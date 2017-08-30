@@ -93,6 +93,12 @@ class NotificacaoTableViewController: UITableViewController {
     
     @IBAction func casaTrabalho(_ sender: Any) {
         
+<<<<<<< HEAD
+=======
+    
+        //present(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+        
+>>>>>>> 633917810c5123989472f26290a17a06df064820
     }
     
     @IBAction func voltar(_ sender: Any) {
@@ -108,7 +114,11 @@ class NotificacaoTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+<<<<<<< HEAD
         return 5
+=======
+        return 4
+>>>>>>> 633917810c5123989472f26290a17a06df064820
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

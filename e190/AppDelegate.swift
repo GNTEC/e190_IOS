@@ -19,6 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         start()
         return true
+<<<<<<< HEAD
+=======
+    }
+    
+    func start()
+    {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        var controller = storyBoard.instantiateInitialViewController()
+        
+        if UserDefaults.standard.value(forKey: "dict")  != nil {
+            
+            objUsuario = UserDefaults.standard.value(forKey: "dict") as! NSDictionary
+            
+            UserDefaults.standard.setValue(objUsuario["codLogin"], forKey: "codLogin")
+            UserDefaults.standard.setValue(objUsuario["codUsuario"], forKey: "codUsuario")
+        }
+        
+        if !UserDefaults.standard.bool(forKey: "logado") || objUsuario.count == 0 {
+            let nav : UIViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController")
+            controller = nav
+        }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
+>>>>>>> 633917810c5123989472f26290a17a06df064820
     }
     
     func start()

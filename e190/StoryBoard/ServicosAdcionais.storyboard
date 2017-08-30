@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+>>>>>>> 633917810c5123989472f26290a17a06df064820
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+<<<<<<< HEAD
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Serviços Adicionais-->
         <scene sceneID="B9z-Pk-CHG">
             <objects>
+<<<<<<< HEAD
                 <tableViewController storyboardIdentifier="ServicosAdicionaisTableViewController" id="Rln-hf-pxf" customClass="ServicosAdicionaisTableViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncX-oq-Koo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
@@ -26,11 +34,28 @@
                                     <rect key="frame" x="8" y="8" width="359" height="175"/>
                                     <string key="text">Os serviços são prestados 24 horas por dia, 365 dias por ano e serão cobrados via cartão de crédito mensalmente por este aplicativo, Os serviços de Pronto Atendimento e Ambulância Particular serão cobrados adicionalmente por acionamento, e poderão prestados por fornecedores diferentes do contrato dependendo do CEP de sua posição geográfica no momento do uso, pelos valores previamente contratados.</string>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+=======
+                <tableViewController id="Rln-hf-pxf" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncX-oq-Koo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="g6K-Ye-egL">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-Dk-khI">
+                                    <rect key="frame" x="8" y="8" width="359" height="211"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <string key="text">Os serviços são prestados 24 horas por dia, 365 dias por ano e serão cobrados via cartão de crédito mensalmente por este aplicativo, Os serviços de Pronto Atendimento e Ambulância Particular serão cobrados adicionalmente por acionamento, e poderão prestados por fornecedores diferentes do contrato dependendo do CEP de sua posição geográfica no momento do uso, pelos valores previamente contratados.</string>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+>>>>>>> 633917810c5123989472f26290a17a06df064820
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+<<<<<<< HEAD
                             <constraints>
                                 <constraint firstItem="QiK-Dk-khI" firstAttribute="leading" secondItem="g6K-Ye-egL" secondAttribute="leading" constant="8" id="8nU-5v-iLa"/>
                                 <constraint firstItem="QiK-Dk-khI" firstAttribute="top" secondItem="g6K-Ye-egL" secondAttribute="top" constant="8" id="KUt-lY-Usj"/>
@@ -349,12 +374,44 @@
                                 </cells>
                             </tableViewSection>
                         </sections>
+=======
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="118" id="4hM-9h-QrT">
+                                <rect key="frame" x="0.0" y="255" width="375" height="118"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hM-9h-QrT" id="FJ8-z3-jra">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MONITORAMENTO PESSOAL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMu-nQ-Neg">
+                                            <rect key="frame" x="150" y="8" width="176" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-f7-0n2" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="19" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="radio">
+                                                    <real key="value" value="40"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+>>>>>>> 633917810c5123989472f26290a17a06df064820
                         <connections>
                             <outlet property="dataSource" destination="Rln-hf-pxf" id="gt5-yC-Uhg"/>
                             <outlet property="delegate" destination="Rln-hf-pxf" id="hrY-f7-UIQ"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Serviços Adicionais" id="s1a-F8-Kqz">
+<<<<<<< HEAD
                         <barButtonItem key="leftBarButtonItem" image="ui_seta_esquerda" id="SWz-Cz-uxb">
                             <connections>
                                 <action selector="voltar:" destination="Rln-hf-pxf" id="PhC-Ry-aTd"/>
@@ -374,12 +431,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcX-cd-zPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="139.43028485757122"/>
+=======
+                        <barButtonItem key="leftBarButtonItem" image="ui_seta_esquerda" id="SWz-Cz-uxb"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NcX-cd-zPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.40000000000001" y="139.880059970015"/>
+>>>>>>> 633917810c5123989472f26290a17a06df064820
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gYW-GY-vxA">
             <objects>
+<<<<<<< HEAD
                 <navigationController storyboardIdentifier="navServAdicionais" id="Rje-FJ-KyU" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Weh-ka-NtD">
+=======
+                <navigationController id="Rje-FJ-KyU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Weh-ka-NtD">
+>>>>>>> 633917810c5123989472f26290a17a06df064820
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -398,11 +468,14 @@
         </scene>
     </scenes>
     <resources>
+<<<<<<< HEAD
         <image name="ui_icone_ambulancia_part" width="105" height="104"/>
         <image name="ui_icone_m_medico" width="104" height="104"/>
         <image name="ui_icone_m_pessoal" width="102" height="102"/>
         <image name="ui_icone_m_veicular" width="105" height="104"/>
         <image name="ui_icone_pronto_atendimento" width="104" height="104"/>
+=======
+>>>>>>> 633917810c5123989472f26290a17a06df064820
         <image name="ui_seta_esquerda" width="25" height="25"/>
     </resources>
 </document>
