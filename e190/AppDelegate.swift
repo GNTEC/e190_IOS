@@ -7,30 +7,41 @@
 //
 
 import UIKit
+import SideMenu
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var objUsuario : NSDictionary = [:]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        /*
-        
-        // Override point for customization after application launch.
-        // Sets background to a blank/empty image
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        // Sets shadow (line below the bar) to a blank image
-        UINavigationBar.appearance().shadowImage = UIImage()
-        // Sets the translucent background color
-        UINavigationBar.appearance().backgroundColor = UIColor.black
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        // Set translucent. (Default value is already true, so this can be removed if desired.)
-        UINavigationBar.appearance().isTranslucent = true
- 
-        */
-        
+        start()
         return true
+    }
+    
+    func start()
+    {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        var controller = storyBoard.instantiateInitialViewController()
+//        
+//        if UserDefaults.standard.value(forKey: "dict")  != nil {
+//            
+//            objUsuario = UserDefaults.standard.value(forKey: "dict") as! NSDictionary
+//            
+//            UserDefaults.standard.setValue(objUsuario["codLogin"], forKey: "codLogin")
+//            UserDefaults.standard.setValue(objUsuario["codUsuario"], forKey: "codUsuario")
+//        }
+//        
+//        if !UserDefaults.standard.bool(forKey: "logado") || objUsuario.count == 0 {
+//            let nav : UIViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController")
+//            controller = nav
+//        }
+
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.rootViewController = controller
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -54,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
