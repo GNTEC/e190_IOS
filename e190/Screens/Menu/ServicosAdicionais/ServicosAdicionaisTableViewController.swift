@@ -11,6 +11,8 @@ import UIKit
 class ServicosAdicionaisTableViewController: UITableViewController {
 
     private var dataCellexpanded:Bool = false
+    private var cellSelected: Int = 0
+    
     @IBOutlet weak var label_pessoal: UILabel!
     @IBOutlet weak var label_veicular: UILabel!
     @IBOutlet weak var label_pronto_atendimento: UILabel!
@@ -54,7 +56,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cellSize: CGFloat = 118
+        cellSelected = indexPath.row
         
         if indexPath.row == 0 {
             
@@ -67,7 +69,6 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             {
                 dataCellexpanded = true
                 label_pessoal.isHidden = true
-                tableView.rowHeight = 250
             }
         }
         if indexPath.row == 1 {
@@ -80,6 +81,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             {
                 dataCellexpanded = true
                 label_veicular.isHidden = true
+                tableView.rowHeight = 250
             }
         }
         if indexPath.row == 2 {
@@ -121,63 +123,63 @@ class ServicosAdicionaisTableViewController: UITableViewController {
     
         tableView.beginUpdates()
         tableView.endUpdates()
-        //tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//    
-//        let cellSize: CGFloat = 118
-//        
-//        if tableView.tag == indexPath.row
-//        {
-//            if dataCellexpanded {
-//                return 250
-//            }
-//            else
-//            {
-//                return cellSize
-//            }
-//        }
-////        if tableView.tag == indexPath.row
-////        {
-////            if dataCellexpanded {
-////                return 250
-////            }
-////            else
-////            {
-////                return cellSize
-////            }
-////        }
-////        if tableView.tag == indexPath.row
-////        {
-////            if dataCellexpanded {
-////                return 250
-////            }
-////            else
-////            {
-////                return cellSize
-////            }
-////        }
-////        if tableView.tag == indexPath.row
-////        {
-////            if dataCellexpanded {
-////                return 250
-////            }
-////            else
-////            {
-////                return cellSize
-////            }
-////        }
-////        if tableView.tag == indexPath.row
-////        {
-////            if dataCellexpanded {
-////                return 250
-////            }
-////            else
-////            {
-////                return cellSize
-////            }
-////        }
-//        return cellSize
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+        let cellSize: CGFloat = 118
+        
+        if  indexPath.row == cellSelected
+        {
+            if dataCellexpanded {
+                return 340
+            }
+            else
+            {
+                return cellSize
+            }
+        }
+        if indexPath.row == cellSelected
+        {
+            if dataCellexpanded {
+                return 250
+            }
+            else
+            {
+                return cellSize
+            }
+        }
+        if tableView.tag == cellSelected
+        {
+            if dataCellexpanded {
+                return 250
+            }
+            else
+            {
+                return cellSize
+            }
+        }
+        if tableView.tag == cellSelected
+        {
+            if dataCellexpanded {
+                return 250
+            }
+            else
+            {
+                return cellSize
+            }
+        }
+        if tableView.tag == cellSelected
+        {
+            if dataCellexpanded {
+                return 250
+            }
+            else
+            {
+                return cellSize
+            }
+        }
+        return cellSize
+    }
 }
