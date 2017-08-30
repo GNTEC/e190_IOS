@@ -62,6 +62,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
                 
                 dataCellexpanded = false
                 label_pessoal.isHidden = false
+                tableView.rowHeight = cellSize
             }
             else
             {
