@@ -83,6 +83,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             }
         }
         if indexPath.row == 1 {
+            
             if dataCellexpanded {
                 
                 dataCellexpanded = false
@@ -97,6 +98,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             }
         }
         if indexPath.row == 2 {
+            
             if dataCellexpanded {
                 
                 dataCellexpanded = false
@@ -111,6 +113,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             }
         }
         if indexPath.row == 3 {
+            
             if dataCellexpanded {
                 
                 dataCellexpanded = false
@@ -125,6 +128,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
             }
         }
         if indexPath.row == 4 {
+            
             if dataCellexpanded {
                 
                 dataCellexpanded = false
@@ -183,7 +187,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
         if indexPath.row == 3 && cellSelected == 3
         {
             if dataCellexpanded {
-                return cellSizeExpand
+                return 480
             }
             else
             {
@@ -193,7 +197,7 @@ class ServicosAdicionaisTableViewController: UITableViewController {
         if indexPath.row == 4 && cellSelected == 4
         {
             if dataCellexpanded {
-                return cellSizeExpand
+                return 400
             }
             else
             {

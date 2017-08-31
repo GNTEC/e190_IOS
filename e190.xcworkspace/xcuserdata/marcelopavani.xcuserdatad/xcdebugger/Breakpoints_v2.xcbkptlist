@@ -106,7 +106,7 @@
                   moduleName = "e190"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/MAC%20OS%202/Projetos/e190_IOS/e190/Network/ApiLogin.swift"
-                  timestampString = "525751409.566075"
+                  timestampString = "525833431.082435"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
@@ -121,7 +121,7 @@
                   moduleName = "e190"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/MAC%20OS%202/Projetos/e190_IOS/e190/Network/ApiLogin.swift"
-                  timestampString = "525751409.571691"
+                  timestampString = "525833431.087212"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
@@ -129,38 +129,6 @@
                   offsetFromSymbolStart = "15">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "e190/Screens/Menu/ServicosAdicionais/ServicosAdicionaisTableViewController.swift"
-            timestampString = "525750901.407662"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "numberOfSections(in:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "e190/Screens/Menu/ServicosAdicionais/ServicosAdicionaisTableViewController.swift"
-            timestampString = "525751461.535262"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
