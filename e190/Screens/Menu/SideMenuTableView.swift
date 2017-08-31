@@ -97,6 +97,15 @@ class SideMenuTableView: UITableViewController {
             
         }
         
+        //CARTOES
+        if indexPath.row == 6 {
+            
+            let mainStoryboard = UIStoryboard(name: "FormasPagamento", bundle:nil)
+            let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "navPagamento") as UIViewController
+            self.present(vc, animated: true, completion: nil)
+            
+        }
+        
         //SAIR
         if indexPath.row == 9 {
             

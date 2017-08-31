@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="191" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hM-9h-QrT" id="FJ8-z3-jra">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_m_pessoal" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-f7-0n2" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -135,7 +135,7 @@
                                         <rect key="frame" x="0.0" y="531" width="375" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ian-da-yLS" id="oT5-1b-YNj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="429.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_m_veicular" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-FZ-7kP" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -225,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="961" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRk-gT-TJQ" id="Idq-MY-EgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_pronto_atendimento" translatesAutoresizingMaskIntoConstraints="NO" id="xpy-Wg-l0W" customClass="CustomImageView" customModule="e190" customModuleProvider="target">

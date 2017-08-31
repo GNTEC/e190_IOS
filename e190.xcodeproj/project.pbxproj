@@ -34,6 +34,8 @@
 		00E1CBA51F30F86600A5FD49 /* Contato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1CBA41F30F86600A5FD49 /* Contato.swift */; };
 		00E1CBA71F30FB5E00A5FD49 /* ApiContato.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1CBA61F30FB5E00A5FD49 /* ApiContato.swift */; };
 		2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */; };
+		40651A121F579D6000FD807C /* FormasPagamento.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40651A111F579D6000FD807C /* FormasPagamento.storyboard */; };
+		40651A151F57A08B00FD807C /* CartoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40651A141F57A08B00FD807C /* CartoesTableViewController.swift */; };
 		9C99D8431EFC59C700C42C74 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */; };
 		9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD48EE1EFAB5340080EB66 /* ApiNovoCadastro.swift */; };
 		9CAD553D1EDC65F5002F7298 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAD553C1EDC65F5002F7298 /* CustomViewController.swift */; };
@@ -82,6 +84,8 @@
 		00E1CBA61F30FB5E00A5FD49 /* ApiContato.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiContato.swift; path = Network/ApiContato.swift; sourceTree = "<group>"; };
 		2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = EmergenciaMedica.storyboard; path = StoryBoard/EmergenciaMedica.storyboard; sourceTree = "<group>"; };
 		2E70F6ADB0C06A04E81A0B40 /* Pods-e190.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-e190.release.xcconfig"; path = "Pods/Target Support Files/Pods-e190/Pods-e190.release.xcconfig"; sourceTree = "<group>"; };
+		40651A111F579D6000FD807C /* FormasPagamento.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FormasPagamento.storyboard; path = StoryBoard/FormasPagamento.storyboard; sourceTree = "<group>"; };
+		40651A141F57A08B00FD807C /* CartoesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartoesTableViewController.swift; path = Screens/Menu/Cartoes/CartoesTableViewController.swift; sourceTree = "<group>"; };
 		48C911AE9A6E9D093CDAABCE /* Pods_e190.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_e190.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C99D8411EFC110200C42C74 /* e190-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "e190-Bridging-Header.h"; path = "e190/e190-Bridging-Header.h"; sourceTree = "<group>"; };
 		9C99D8421EFC59C700C42C74 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -207,6 +211,14 @@
 			name = EmergenciaMedica;
 			sourceTree = "<group>";
 		};
+		40651A131F57A03600FD807C /* Cartoes */ = {
+			isa = PBXGroup;
+			children = (
+				40651A141F57A08B00FD807C /* CartoesTableViewController.swift */,
+			);
+			name = Cartoes;
+			sourceTree = "<group>";
+		};
 		9CAD55421EDC9C90002F7298 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +258,7 @@
 		CE3ECF9C1EC49A9C00FB48AB /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
+				40651A111F579D6000FD807C /* FormasPagamento.storyboard */,
 				CECC120F1EC0A95100BC2556 /* Main.storyboard */,
 				CECC12141EC0A95100BC2556 /* LaunchScreen.storyboard */,
 				2C9946F41F1E55340018596F /* EmergenciaMedica.storyboard */,
@@ -307,6 +320,7 @@
 		CEA3E9F41EC0F10800778318 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				40651A131F57A03600FD807C /* Cartoes */,
 				00CFD2851F547F64007D62D0 /* ServicosAdicionais */,
 				007853151F334E8300C7EBF8 /* Notificacao */,
 				00C15E0E1F2BAD1000BA2A36 /* Contatos */,
@@ -426,6 +440,7 @@
 				0023A7521F3E368C00C1E326 /* ServicosAdcionais.storyboard in Resources */,
 				2C9946F51F1E55340018596F /* EmergenciaMedica.storyboard in Resources */,
 				00C15E0D1F2BACE900BA2A36 /* Contato.storyboard in Resources */,
+				40651A121F579D6000FD807C /* FormasPagamento.storyboard in Resources */,
 				0007F9BE1F338B4E00D7A241 /* Assets.xcassets in Resources */,
 				CECC12111EC0A95100BC2556 /* Main.storyboard in Resources */,
 			);
@@ -488,6 +503,7 @@
 			files = (
 				0007F9BA1F33717100D7A241 /* NotificacaoTableViewController.swift in Sources */,
 				0011108A1F261BA3003AF1E8 /* AppDelegate.swift in Sources */,
+				40651A151F57A08B00FD807C /* CartoesTableViewController.swift in Sources */,
 				9CAD48EF1EFAB5340080EB66 /* ApiNovoCadastro.swift in Sources */,
 				9CAD553F1EDC6EBD002F7298 /* EsqueciASenhaViewController.swift in Sources */,
 				CEDF6FAD1EC5FF4400881752 /* RoundedButton.swift in Sources */,
