@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,8 +14,8 @@
         <scene sceneID="B9z-Pk-CHG">
             <objects>
                 <tableViewController storyboardIdentifier="ServicosAdicionaisTableViewController" id="Rln-hf-pxf" customClass="ServicosAdicionaisTableViewController" customModule="e190" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncX-oq-Koo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="920"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="ncX-oq-Koo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="2300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="g6K-Ye-egL">
@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="191" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4hM-9h-QrT" id="FJ8-z3-jra">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="340"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_m_pessoal" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-f7-0n2" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -80,19 +80,15 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MONITORAMENTO PESSOAL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMu-nQ-Neg">
                                                     <rect key="frame" x="130" y="16" width="229" height="45.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="229" id="ZWE-PV-F4U"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-2U-A5m">
-                                                    <rect key="frame" x="133" y="69" width="234" height="213"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-2U-A5m">
+                                                    <rect key="frame" x="133" y="71.5" width="234" height="213"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
-                                                            <mutableString key="content">O Monitoramento Pessoal permite que uma empresa de monitorização acompanhe suas informações que trafeguem na rede e190 Emergência. Em casos de pânico gerado por você ou mesmo alertas de roubo, furto ou sequestro que envolvam a placa de seu veículo, será capturada por esse serviço de monitoramento e providências, conforme suas orientações, serão tomadas imediatamente pela empresa.  </mutableString>
+                                                            <string key="content">O Monitoramento Pessoal permite que uma empresa de monitorização acompanhe suas informações que trafeguem na rede e190 Emergência. Em casos de pânico gerado por você ou mesmo alertas de roubo, furto ou sequestro que envolvam a placa de seu veículo, será capturada por esse serviço de monitoramento e providências, conforme suas orientações, serão tomadas imediatamente pela empresa.  </string>
                                                             <attributes>
                                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
@@ -119,23 +115,27 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="zWM-f7-0n2" firstAttribute="top" secondItem="FJ8-z3-jra" secondAttribute="topMargin" constant="15" id="1JT-XI-R77"/>
-                                                <constraint firstItem="IMu-nQ-Neg" firstAttribute="top" secondItem="FJ8-z3-jra" secondAttribute="topMargin" constant="8" id="6gQ-kt-jtu"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IMu-nQ-Neg" secondAttribute="trailing" constant="8" id="8Ti-4I-tYt"/>
                                                 <constraint firstAttribute="bottom" secondItem="0QC-t3-3xg" secondAttribute="bottom" id="Cae-SX-Y5p"/>
                                                 <constraint firstItem="zWM-f7-0n2" firstAttribute="leading" secondItem="FJ8-z3-jra" secondAttribute="leadingMargin" constant="9" id="Cw6-5l-htN"/>
+                                                <constraint firstItem="IMu-nQ-Neg" firstAttribute="leading" secondItem="zWM-f7-0n2" secondAttribute="trailing" constant="55" id="Ebd-sL-h6n"/>
                                                 <constraint firstItem="LR1-su-Xon" firstAttribute="trailing" secondItem="FJ8-z3-jra" secondAttribute="trailingMargin" id="F4W-V8-tPa"/>
-                                                <constraint firstItem="IMu-nQ-Neg" firstAttribute="leading" secondItem="zWM-f7-0n2" secondAttribute="trailing" constant="55" id="KM0-gv-BSp"/>
+                                                <constraint firstItem="d1G-2U-A5m" firstAttribute="top" secondItem="IMu-nQ-Neg" secondAttribute="bottom" constant="10" id="Gse-vq-c10"/>
+                                                <constraint firstItem="d1G-2U-A5m" firstAttribute="trailing" secondItem="FJ8-z3-jra" secondAttribute="trailingMargin" id="JR4-7z-X1n"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IMu-nQ-Neg" secondAttribute="trailing" constant="8" id="QpQ-Px-QKL"/>
                                                 <constraint firstItem="0QC-t3-3xg" firstAttribute="top" secondItem="LR1-su-Xon" secondAttribute="bottom" constant="8" id="eoq-6c-N7C"/>
+                                                <constraint firstItem="0QC-t3-3xg" firstAttribute="top" secondItem="d1G-2U-A5m" secondAttribute="bottom" constant="35" id="iYu-Az-ZZU"/>
                                                 <constraint firstAttribute="trailing" secondItem="0QC-t3-3xg" secondAttribute="trailing" id="j3M-iL-9o0"/>
+                                                <constraint firstItem="IMu-nQ-Neg" firstAttribute="top" secondItem="FJ8-z3-jra" secondAttribute="topMargin" constant="8" id="oe3-Cj-rUT"/>
+                                                <constraint firstItem="d1G-2U-A5m" firstAttribute="leading" secondItem="FJ8-z3-jra" secondAttribute="leadingMargin" constant="125" id="tqi-Bz-37A"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_veicular" rowHeight="118" id="Ian-da-yLS">
-                                        <rect key="frame" x="0.0" y="531" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_veicular" rowHeight="430" id="Ian-da-yLS">
+                                        <rect key="frame" x="0.0" y="531" width="375" height="430"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ian-da-yLS" id="oT5-1b-YNj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="429.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_m_veicular" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-FZ-7kP" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -151,7 +151,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8O-b5-ZRQ">
-                                                    <rect key="frame" x="272" y="97" width="103" height="20"/>
+                                                    <rect key="frame" x="272" y="409.5" width="103" height="20"/>
                                                     <color key="backgroundColor" red="0.85270017389999997" green="0.1193051413" blue="0.104769446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="KT9-Mq-OfQ"/>
@@ -162,8 +162,8 @@
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para mais informações" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-XT-bpb">
-                                                    <rect key="frame" x="216" y="76.5" width="151" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Toque para mais informações" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-XT-bpb">
+                                                    <rect key="frame" x="216" y="389" width="151" height="12"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -177,6 +177,34 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aii-ce-t1P">
+                                                    <rect key="frame" x="133" y="71.5" width="234" height="299"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <mutableString key="content">O Monitoramento Veicular consiste no envio da posição GPS de seu veículo, nos casos em que você acione seu botão de pânico ou a placa de seu veículo se envolva em algum evento na rede e190 Emergência. Sendo assim qualquer alerta de roubo, furto ou sequestro que envolva a placa do seu veículo a Polícia Militar e outros serviços adicionais, se contratados, receberam a localização se seu veículo, independente do funcionamento se seu dispositivo celular. Para essa função a empresa prestadora do serviço deverá fornecer e instalar um equipamento de rastreamento GPS em seu veículo que poderá ser vendido ou locado diretamente por esta.  </mutableString>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Valor médio de R$ 50,00 por mês, variando conforme o fornecedor do serviço. ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="  ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cqJ-GZ-2tM" firstAttribute="top" secondItem="oT5-1b-YNj" secondAttribute="topMargin" constant="8" id="63X-zj-KPF"/>
@@ -185,19 +213,22 @@
                                                 <constraint firstItem="HI8-FZ-7kP" firstAttribute="leading" secondItem="oT5-1b-YNj" secondAttribute="leadingMargin" constant="8" id="J5V-aZ-SVw"/>
                                                 <constraint firstItem="HI8-FZ-7kP" firstAttribute="top" secondItem="oT5-1b-YNj" secondAttribute="topMargin" constant="10" id="LWx-hE-2Bd"/>
                                                 <constraint firstAttribute="bottom" secondItem="e8O-b5-ZRQ" secondAttribute="bottom" id="Tgt-nj-apc"/>
+                                                <constraint firstItem="aii-ce-t1P" firstAttribute="top" secondItem="cqJ-GZ-2tM" secondAttribute="bottom" constant="10" id="Wdc-mB-D6H"/>
+                                                <constraint firstItem="aii-ce-t1P" firstAttribute="leading" secondItem="oT5-1b-YNj" secondAttribute="leadingMargin" constant="125" id="Whc-xe-jdp"/>
                                                 <constraint firstAttribute="trailing" secondItem="e8O-b5-ZRQ" secondAttribute="trailing" id="YhY-uq-Tin"/>
-                                                <constraint firstItem="0aN-XT-bpb" firstAttribute="top" secondItem="cqJ-GZ-2tM" secondAttribute="bottom" constant="15" id="eDP-td-5EH"/>
+                                                <constraint firstItem="aii-ce-t1P" firstAttribute="trailing" secondItem="oT5-1b-YNj" secondAttribute="trailingMargin" id="f5v-dA-s8V"/>
                                                 <constraint firstItem="e8O-b5-ZRQ" firstAttribute="top" secondItem="0aN-XT-bpb" secondAttribute="bottom" constant="8.5" id="goU-4s-4Fm"/>
+                                                <constraint firstItem="e8O-b5-ZRQ" firstAttribute="top" secondItem="aii-ce-t1P" secondAttribute="bottom" constant="39" id="kTn-vz-wbi"/>
                                                 <constraint firstItem="cqJ-GZ-2tM" firstAttribute="leading" secondItem="HI8-FZ-7kP" secondAttribute="trailing" constant="56" id="q43-XL-Jzf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_pronto_atend" rowHeight="118" id="aRk-gT-TJQ">
-                                        <rect key="frame" x="0.0" y="649" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_pronto_atend" rowHeight="340" id="aRk-gT-TJQ">
+                                        <rect key="frame" x="0.0" y="961" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aRk-gT-TJQ" id="Idq-MY-EgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="339.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_pronto_atendimento" translatesAutoresizingMaskIntoConstraints="NO" id="xpy-Wg-l0W" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -213,7 +244,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHR-Cb-vG7">
-                                                    <rect key="frame" x="272" y="97" width="103" height="20"/>
+                                                    <rect key="frame" x="272" y="319.5" width="103" height="20"/>
                                                     <color key="backgroundColor" red="0.85270017389999997" green="0.1193051413" blue="0.104769446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="103" id="8mG-o8-kU1"/>
@@ -225,7 +256,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para mais informações" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-vh-IAa">
-                                                    <rect key="frame" x="216" y="73" width="151" height="12"/>
+                                                    <rect key="frame" x="216" y="295.5" width="151" height="12"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -236,14 +267,46 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jv1-pH-Cic">
+                                                    <rect key="frame" x="130" y="53" width="237" height="240"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <mutableString key="content">O serviço de Pronto Atendimento consiste no acompanhamento, a distância segura, de um vigilante motorizado informando sua posição as autoridades policiais, após o acionamento do botão de pânico, ou pelos serviços de monitoramento Pessoal e/ou Veicular se contratados, analisando os eventos da rede e190 Emergência. Proporcionando-lhe assim maior segurança nos casos que você necessitar.  </mutableString>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Valor médio de R$ 60,00 por mês, variando conforme o fornecedor do serviço. ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="  ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xpy-Wg-l0W" firstAttribute="top" secondItem="Idq-MY-EgI" secondAttribute="topMargin" constant="10" id="9Ff-jp-fTP"/>
                                                 <constraint firstAttribute="bottom" secondItem="wHR-Cb-vG7" secondAttribute="bottom" id="AqW-hB-7mW"/>
+                                                <constraint firstItem="jv1-pH-Cic" firstAttribute="top" secondItem="4wE-II-tPX" secondAttribute="bottom" constant="10" id="F9a-a6-XTJ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jv1-pH-Cic" secondAttribute="trailing" id="JBH-he-5FM"/>
                                                 <constraint firstItem="4wE-II-tPX" firstAttribute="leading" secondItem="xpy-Wg-l0W" secondAttribute="trailing" constant="56" id="OER-Fn-ldG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="4wE-II-tPX" secondAttribute="trailing" constant="8" id="Olh-9L-XV0"/>
                                                 <constraint firstItem="xpy-Wg-l0W" firstAttribute="leading" secondItem="Idq-MY-EgI" secondAttribute="leadingMargin" constant="8" id="QT0-Cy-hgn"/>
                                                 <constraint firstItem="4wE-II-tPX" firstAttribute="top" secondItem="Idq-MY-EgI" secondAttribute="topMargin" constant="12" id="V5c-M4-Dxu"/>
+                                                <constraint firstItem="wHR-Cb-vG7" firstAttribute="top" secondItem="jv1-pH-Cic" secondAttribute="bottom" constant="26.5" id="aYc-ie-jUH"/>
+                                                <constraint firstItem="jv1-pH-Cic" firstAttribute="leading" secondItem="Idq-MY-EgI" secondAttribute="leadingMargin" constant="122" id="fcM-2t-2oM"/>
                                                 <constraint firstItem="wHR-Cb-vG7" firstAttribute="top" secondItem="jmH-vh-IAa" secondAttribute="bottom" constant="12" id="jEA-68-0eu"/>
                                                 <constraint firstItem="jmH-vh-IAa" firstAttribute="trailing" secondItem="Idq-MY-EgI" secondAttribute="trailingMargin" id="n6q-o8-UaT"/>
                                                 <constraint firstAttribute="trailing" secondItem="wHR-Cb-vG7" secondAttribute="trailing" id="xPo-Ps-NVY"/>
@@ -251,11 +314,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_monit_medico" rowHeight="118" id="eoP-vJ-7o9">
-                                        <rect key="frame" x="0.0" y="767" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_monit_medico" rowHeight="480" id="eoP-vJ-7o9">
+                                        <rect key="frame" x="0.0" y="1301" width="375" height="480"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eoP-vJ-7o9" id="fil-wY-VK0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="479.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_m_medico" translatesAutoresizingMaskIntoConstraints="NO" id="tjm-vF-dCq" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -271,7 +334,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ec-iy-rux">
-                                                    <rect key="frame" x="272" y="97" width="103" height="20"/>
+                                                    <rect key="frame" x="272" y="459.5" width="103" height="20"/>
                                                     <color key="backgroundColor" red="0.85270017389999997" green="0.1193051413" blue="0.104769446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="R5t-Aj-ep9"/>
@@ -283,7 +346,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para mais informações" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKe-bz-qAd">
-                                                    <rect key="frame" x="216" y="76.5" width="151" height="12"/>
+                                                    <rect key="frame" x="216" y="439" width="151" height="12"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -292,6 +355,35 @@
                                                     <rect key="frame" x="130" y="16" width="229" height="45.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cb1-H2-5Pd">
+                                                    <rect key="frame" x="130" y="69" width="234" height="362"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <mutableString key="content">O Monitoramento Médico permite a uma empresa prestadora destes serviços acompanhar suas informações na rede e190 Emergência, e caso você se envolva, em algum tipo de evento que necessite de socorro médico, esta será imediatamente conectada ao seu celular e coordenará todas as ações para sua remoção até um hospital de sua escolha ou dependendo de sua localização GPS até o hospital mais próximo. O serviço adicional de Ambulância, se contratado, será orientado por esta empresa de conformidade com sua equipe médica. Dependendo do fornecedor, outros equipamentos auxiliares poderão ser fornecidos, tais como, medidores de pressão, batimento cardíaco, etc. Estes equipamentos poderão ser vendidos ou locados diretamente por esta.   </mutableString>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Valor médio de R$ 50,00 por mês, variando conforme o fornecedor do serviço. ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="  ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -310,11 +402,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_amb_part" rowHeight="118" id="xEb-kw-0pv">
-                                        <rect key="frame" x="0.0" y="885" width="375" height="118"/>
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_amb_part" rowHeight="400" id="xEb-kw-0pv">
+                                        <rect key="frame" x="0.0" y="1781" width="375" height="400"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xEb-kw-0pv" id="QbA-DJ-ZXA">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ui_icone_ambulancia_part" translatesAutoresizingMaskIntoConstraints="NO" id="WD0-hN-XuS" customClass="CustomImageView" customModule="e190" customModuleProvider="target">
@@ -330,7 +422,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7u-rR-gGW">
-                                                    <rect key="frame" x="272" y="97" width="103" height="20"/>
+                                                    <rect key="frame" x="272" y="379.5" width="103" height="20"/>
                                                     <color key="backgroundColor" red="0.85270017389999997" green="0.1193051413" blue="0.104769446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="103" id="7sM-eg-X8B"/>
@@ -342,7 +434,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toque para mais informações" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ev-L6-8gf">
-                                                    <rect key="frame" x="216" y="76.5" width="151" height="12"/>
+                                                    <rect key="frame" x="216" y="359" width="151" height="12"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -351,6 +443,35 @@
                                                     <rect key="frame" x="130" y="16" width="229" height="45.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu1-3U-PMF">
+                                                    <rect key="frame" x="122" y="64" width="237" height="287"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <mutableString key="content">O Serviço de Ambulância Particular será acionado quando você apertar o botão de Socorro Médico. Este serviço consiste em chamar uma ambulância particular para sua posição GPS, que receberá todas as informações médicas contidas no aplicativo, e fará o seu transporte de urgência para o hospital mais próximo ou designado pelo serviço de Monitoramento Médico, se contratado, que poderá passar aos paramédicos maior informações clínicas e procedimentos previamente determinados por sua equipe médica.  </mutableString>
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="Valor médio de R$ 1.500,00 por mês, variando conforme o fornecedor do serviço. ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name="Arial-BoldMT"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="  ">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -384,13 +505,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="920"/>
+                    <size key="freeformSize" width="375" height="2300"/>
                     <connections>
                         <outlet property="label_ambulancia" destination="1ev-L6-8gf" id="Pm9-dF-ufD"/>
+                        <outlet property="label_ambulancia_inf" destination="wu1-3U-PMF" id="VXs-N9-Wv0"/>
                         <outlet property="label_medico" destination="SKe-bz-qAd" id="6kt-oz-Wxe"/>
+                        <outlet property="label_medico_inf" destination="cb1-H2-5Pd" id="shf-MG-lEv"/>
                         <outlet property="label_pessoal" destination="LR1-su-Xon" id="suw-JL-XCD"/>
+                        <outlet property="label_pessoal_inf" destination="d1G-2U-A5m" id="bUl-2X-qjW"/>
                         <outlet property="label_pronto_atendimento" destination="jmH-vh-IAa" id="wwK-8W-MYF"/>
+                        <outlet property="label_pronto_atendimento_inf" destination="jv1-pH-Cic" id="P1o-4V-iiE"/>
                         <outlet property="label_veicular" destination="0aN-XT-bpb" id="Tku-3K-QRt"/>
+                        <outlet property="label_veicular_inf" destination="aii-ce-t1P" id="K7o-FT-J5W"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcX-cd-zPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
